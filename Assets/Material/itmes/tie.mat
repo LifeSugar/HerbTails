@@ -149,7 +149,7 @@ Material:
     - _MainLightLevels: 4.06
     - _Metallic: 0
     - _MiniDarkness: 0.34
-    - _NormalEdgeStrength: -3.28
+    - _NormalEdgeStrength: -1.02
     - _NormalThreshold: 1.8
     - _OcclusionStrength: 1
     - _Parallax: 0.005

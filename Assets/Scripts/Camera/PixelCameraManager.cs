@@ -1,38 +1,57 @@
-
 using UnityEngine;
 
 namespace PixelPerfectURP
 {
-    
-
     /// <summary>
-    /// Tooltips for Unity inspector fields
+    /// 为 Unity 检视面板（Inspector）中的字段提供的中文提示
     /// </summary>
     public static class Tooltips
     {
-        public const string TT_FOLLOWED_TRANSFORM = "Transform that this camera follow for pixel perfect corrections.";
-        public const string TT_GRID_MOVEMENT = "Camera moves on a voxel grid to avoid jittering for stationary objects.";
-        public const string TT_SUB_PIXEL = "Subpixel adjustments to counter the blocky movement when snapping to a grid.";
-        public const string TT_FOLLOW_ROTATION = "Should the camera also follow the rotation of the target transform?";
-        public const string TT_GAME_RESOLUTION = "The resolution of the game's render texture. Lower values look more pixelated.";
-        public const string TT_RESOLUTION_SYNCHRONIZATION_MODE = "How 'GameResolution' should be calculated or synchronized with the display aspect.";
-        public const string TT_CONTROL_GAME_ZOOM = "Should this script control the game's orthographic size?";
-        public const string TT_GAME_ZOOM = "Controls how zoomed in the scene is by adjusting the camera's orthographic size.";
-        public const string TT_VIEW_ZOOM = "Zoom level for the view camera, preserving pixel size while changing how big the final view is.";
-
-        // 新增提示
-        public const string TT_USE_PERSPECTIVE = "Use Perspective Camera instead of Orthographic. Some pixel-related features will be ignored.";
+        public const string TT_FOLLOWED_TRANSFORM =
+            "此相机需要跟随的Transform，用于像素级修正。";
+        
+        public const string TT_GRID_MOVEMENT =
+            "相机在体素网格上移动，以避免静止对象出现抖动。";
+        
+        public const string TT_SUB_PIXEL =
+            "亚像素调整，用于抵消网格对齐时的块状感。";
+        
+        public const string TT_FOLLOW_ROTATION =
+            "相机是否跟随被跟随物体的旋转。";
+        
+        public const string TT_GAME_RESOLUTION =
+            "游戏渲染纹理分辨率。值越低，像素化越明显。";
+        
+        public const string TT_RESOLUTION_SYNCHRONIZATION_MODE =
+            "如何根据显示宽高比计算 GameResolution。";
+        
+        public const string TT_CONTROL_GAME_ZOOM =
+            "是否由本脚本来控制游戏相机的正交大小。";
+        
+        public const string TT_GAME_ZOOM =
+            "通过调整相机正交大小，控制场景的放大倍率。";
+        
+        public const string TT_VIEW_ZOOM =
+            "在像素大小不变的前提下，拉近或拉远视图相机的画面。";
+        
+        public const string TT_USE_PERSPECTIVE =
+            "是否使用透视相机（而非正交），部分像素相关特性将会被忽略。";
     }
 
     /// <summary>
-    /// 管理整个像素摄像机系统的脚本 (可切换正交或透视)
+    /// 管理整个像素摄像机系统的脚本（可切换正交或透视）
     /// </summary>
     [ExecuteInEditMode]
     public class PixelCameraManager : MonoBehaviour
     {
+        /// <summary>
+        /// 单例实例
+        /// </summary>
+        public static PixelCameraManager Instance { get; private set; }
+
         [Header("Camera Type")]
         [Tooltip(Tooltips.TT_USE_PERSPECTIVE)]
-        public bool UsePerspective = false;  // 新增字段：是否使用透视相机
+        public bool UsePerspective = false; // 是否使用透视相机
 
         [Tooltip(Tooltips.TT_FOLLOWED_TRANSFORM)]
         public Transform FollowedTransform;
@@ -47,7 +66,8 @@ namespace PixelPerfectURP
 
         [Header("Resolution")]
         [Tooltip(Tooltips.TT_RESOLUTION_SYNCHRONIZATION_MODE)]
-        public ResolutionSynchronizationMode resolutionSynchronizationMode = ResolutionSynchronizationMode.SetHeight;
+        public ResolutionSynchronizationMode resolutionSynchronizationMode = 
+            ResolutionSynchronizationMode.SetHeight;
 
         [Tooltip(Tooltips.TT_GAME_RESOLUTION)]
         public Vector2Int GameResolution = new Vector2Int(640, 360);
@@ -61,11 +81,25 @@ namespace PixelPerfectURP
         [Range(-1f, 1f)]
         public float ViewCameraZoom = 1f;
 
+        // 内部引用
         Camera gameCamera;
         CanvasViewCamera viewCamera;
         UpscaledCanvas upscaledCanvas;
 
         float renderTextureAspect;
+
+        #region 单例初始化
+        private void Awake()
+        {
+            // 确保只有一个实例
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+            Instance = this;
+        }
+        #endregion
 
         void OnEnable()
         {
@@ -78,7 +112,7 @@ namespace PixelPerfectURP
         }
 
         /// <summary>
-        /// 相机像素在世界空间中对应的大小 (正交模式下有效)
+        /// 相机像素在世界空间中对应的大小（仅正交模式有意义）
         /// </summary>
         float PixelWorldSize
             => 2f * this.gameCamera.orthographicSize / this.gameCamera.pixelHeight;
@@ -94,17 +128,14 @@ namespace PixelPerfectURP
                      this.gameCamera.targetTexture.height);
 
         /// <summary>
-        /// 将给定世界坐标对齐到像素网格上 (仅在正交模式下实际有用)
+        /// 将给定世界坐标对齐到像素网格上（仅在正交模式下有用）
         /// </summary>
         public Vector3 PositionToGrid(Vector3 worldPosition)
         {
             // 如果是透视相机，直接返回原始坐标
-            if (this.UsePerspective)
-            {
-                return worldPosition;
-            }
+            if (this.UsePerspective) return worldPosition;
 
-            // 正交模式才计算网格对齐
+            // 正交模式下，才计算网格对齐
             var localPosition = this.transform.InverseTransformDirection(worldPosition);
             var localPositionInPixels = localPosition / this.PixelWorldSize;
             var integerMovement = (Vector3)Vector3Int.RoundToInt(localPositionInPixels);
@@ -125,11 +156,11 @@ namespace PixelPerfectURP
         }
 
         /// <summary>
-        /// 同步视图相机的裁剪平面 (仅在正交时可直接使用，否则自行调节)
+        /// 同步视图相机的裁剪平面
         /// </summary>
         void SynchronizeClipPlanes()
         {
-            // 若是透视，直接套用相同 near/far 即可
+            // 若是透视，使用同样的 near/far
             if (this.UsePerspective)
             {
                 this.viewCamera.SetClipPlanes(
@@ -139,7 +170,7 @@ namespace PixelPerfectURP
             }
             else
             {
-                // 正交模式下考虑视图相机的 Z 偏移
+                // 正交模式下，考虑到视图相机本地 Z 偏移
                 this.viewCamera.SetClipPlanes(
                     0f,
                     this.gameCamera.farClipPlane - this.viewCamera.transform.localPosition.z
@@ -148,7 +179,7 @@ namespace PixelPerfectURP
         }
 
         /// <summary>
-        /// 初始化，确保获取相机、视图相机和画布引用，并进行层级检查
+        /// 初始化：获取相机、视图相机与放大画布，并做层级和属性检查
         /// </summary>
         private void Initialize()
         {
@@ -189,7 +220,7 @@ namespace PixelPerfectURP
             {
                 Debug.LogError("No parent object found. Check your prefab setup!");
             }
-            if (this.transform.parent != null && this.transform.parent.childCount > 2)
+            else if (this.transform.parent.childCount > 2)
             {
                 Debug.LogWarning("PixelCameraManager's parent usually only has 2 children: This manager and the target transform.");
             }
@@ -200,7 +231,7 @@ namespace PixelPerfectURP
                 Debug.LogError("FollowedTransform is null. Please set it in the inspector.");
             }
 
-            // 初始化时先同步裁剪平面
+            // 同步裁剪平面
             this.SynchronizeClipPlanes();
         }
 
@@ -220,19 +251,21 @@ namespace PixelPerfectURP
         void UpdateCameraSystem()
         {
             // 1. 检测宽高比或分辨率是否变化
-            var aspectRatioChanged = this.renderTextureAspect != (this.viewCamera ? this.viewCamera.Aspect : 0f);
+            var aspectRatioChanged = (this.viewCamera != null) &&
+                                     (this.renderTextureAspect != this.viewCamera.Aspect);
             var pixelResolutionChanged = this.GameResolution != this.TargetTextureResolution;
             var resizeCanvas = false;
 
             if (aspectRatioChanged || pixelResolutionChanged || this.gameCamera.targetTexture == null)
             {
-                // 根据视图相机实际宽高比进行同步计算（若无视图相机，则跳过）
+                // 根据视图相机实际宽高比进行同步计算
                 if (this.viewCamera != null)
                 {
                     this.GameResolution = RenderTextureFunctions.TextureResultion(
                         this.viewCamera.Aspect,
                         this.GameResolution,
-                        this.resolutionSynchronizationMode);
+                        this.resolutionSynchronizationMode
+                    );
                 }
 
                 // 释放旧纹理
@@ -251,13 +284,16 @@ namespace PixelPerfectURP
                 }
                 else
                 {
-                    this.SetRenderTexture(1f, newRenderTexture); // 若无视图相机，先用默认值
+                    this.SetRenderTexture(1f, newRenderTexture);
                 }
+
                 resizeCanvas = true;
             }
-            else if (Application.isEditor && this.upscaledCanvas && this.upscaledCanvas.MaterialHasRenderTexture)
+            else if (Application.isEditor && 
+                     this.upscaledCanvas != null && 
+                     this.upscaledCanvas.MaterialHasRenderTexture)
             {
-                // 在编辑器下，如已有正确的 RenderTexture，仍重设以防变化
+                // 在编辑器下，如果材质已绑定 RT，仍然重设一下以防万一
                 this.SetRenderTexture(this.renderTextureAspect, this.gameCamera.targetTexture);
                 resizeCanvas = true;
             }
@@ -265,19 +301,19 @@ namespace PixelPerfectURP
             // 若是透视相机，跳过以下「正交专用」逻辑
             if (this.UsePerspective)
             {
-                // 仅更新位置和旋转
                 UpdateTransformOnly();
-                return; 
+                return;
             }
 
             // ============= 以下为正交模式下的逻辑 =============
 
             // 2. 处理游戏相机的缩放 (Orthographic Size)
-            var orthographicSizeChanged = this.gameCamera.orthographicSize != this.GameCameraZoom;
+            var orthographicSizeChanged = 
+                !Mathf.Approximately(this.gameCamera.orthographicSize, this.GameCameraZoom);
 
             if (!this.ControlGameZoom)
             {
-                // 若不由本脚本控制，则同步实际相机尺寸到 GameCameraZoom
+                // 若不由本脚本控制，则用实际相机尺寸回写到 GameCameraZoom
                 this.GameCameraZoom = this.gameCamera.orthographicSize;
                 resizeCanvas = true;
             }
@@ -290,9 +326,10 @@ namespace PixelPerfectURP
             }
 
             // 3. 处理视图相机的缩放
-            if (this.viewCamera)
+            if (this.viewCamera != null)
             {
-                if (orthographicSizeChanged || pixelResolutionChanged || this.ViewCameraZoom != this.viewCamera.Zoom)
+                if (orthographicSizeChanged || pixelResolutionChanged ||
+                    !Mathf.Approximately(this.ViewCameraZoom, this.viewCamera.Zoom))
                 {
                     // 防止分辨率极小导致越界
                     var canvasOnScreenLimit = 1 - (2f / this.GameResolution.y);
@@ -310,11 +347,12 @@ namespace PixelPerfectURP
                     // 设置视图相机缩放
                     this.viewCamera.SetZoom(
                         this.ViewCameraZoom * canvasOnScreenLimit,
-                        this.GameCameraZoom);
+                        this.GameCameraZoom
+                    );
                 }
             }
 
-            // 4. 如需，重新调整画布大小
+            // 4. 如果需要，重新调整画布大小
             if (resizeCanvas)
             {
                 var gameResolutionAspect = (float)this.GameResolution.x / this.GameResolution.y;
@@ -325,12 +363,15 @@ namespace PixelPerfectURP
             UpdateTransformOnly();
 
             // 6. 亚像素校正
-            if (this.SubpixelAdjustments && this.viewCamera)
+            if (this.SubpixelAdjustments && this.viewCamera != null)
             {
-                var targetViewPosition = this.gameCamera.WorldToViewportPoint(this.FollowedTransform.position);
+                var targetViewPosition = 
+                    this.gameCamera.WorldToViewportPoint(this.FollowedTransform.position);
+                
                 this.viewCamera.AdjustSubPixelPosition(
                     targetViewPosition,
-                    this.upscaledCanvas.transform.localScale);
+                    this.upscaledCanvas.transform.localScale
+                );
             }
         }
 
@@ -345,10 +386,9 @@ namespace PixelPerfectURP
                 this.transform.rotation = this.FollowedTransform.rotation;
             }
 
-            // 若是透视或正交，都可做同样的跟随判断
+            // 透视模式下忽略 VoxelGridMovement
             if (this.UsePerspective)
             {
-                // 对透视相机忽略 VoxelGridMovement
                 this.transform.position = this.FollowedTransform.position;
             }
             else
@@ -363,6 +403,23 @@ namespace PixelPerfectURP
                     this.transform.position = this.FollowedTransform.position;
                 }
             }
+        }
+
+        /// <summary>
+        /// 公用方法：切换相机模式（正交或透视），并重新初始化
+        /// </summary>
+        /// <param name="usePerspective">true = 启用透视; false = 启用正交</param>
+        public void SwitchCameraMode(bool usePerspective)
+        {
+            this.UsePerspective = usePerspective;
+            // 切换后，需要更新相机属性并重新执行初始化/同步
+            if (this.gameCamera != null)
+            {
+                this.gameCamera.orthographic = !this.UsePerspective;
+            }
+
+            // 重新执行初始化
+            this.Initialize();
         }
     }
 }
