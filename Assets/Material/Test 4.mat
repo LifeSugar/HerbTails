@@ -46,6 +46,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ColorRamp_2c0c67e540c14b068252639770378ca9_ColorRamp_3516000486_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ColorRamp_f6038b330abf42528646e62b0a4f7767_ColorRamp_3516000486_Texture2D:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -122,7 +126,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DepthEdgeStrength: 1
-    - _DepthThreshold: 0.0001
+    - _DepthThreshold: 0.001
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -160,7 +164,7 @@ Material:
     - _DiffuseColor: {r: 1, g: 0.7012578, b: 0.7012578, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NormalEdgeBias: {r: 1, g: 1, b: 1, a: 0}
-    - _OutlineColor: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 0}
+    - _OutlineColor: {r: 0.76729554, g: 0.76729554, b: 0.76729554, a: 0}
     - _ShadowColor: {r: 0.6855345, g: 0.29534027, b: 0.29534027, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

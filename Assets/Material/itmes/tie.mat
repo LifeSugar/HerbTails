@@ -59,6 +59,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ColorRamp_2c0c67e540c14b068252639770378ca9_ColorRamp_3516000486_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ColorRamp_f6038b330abf42528646e62b0a4f7767_ColorRamp_3516000486_Texture2D:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -117,8 +121,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AdditionalLightLevels: 4
-    - _AddtionalLightAtten: 0.12
+    - _AdditionalLightLevels: 1
+    - _AddtionalLightAtten: 0.03
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -145,8 +149,8 @@ Material:
     - _MainLightLevels: 4.06
     - _Metallic: 0
     - _MiniDarkness: 0.34
-    - _NormalEdgeStrength: -0.29
-    - _NormalThreshold: 2.57
+    - _NormalEdgeStrength: -3.28
+    - _NormalThreshold: 1.8
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0

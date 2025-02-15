@@ -46,6 +46,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ColorRamp_2c0c67e540c14b068252639770378ca9_ColorRamp_3516000486_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ColorRamp_f6038b330abf42528646e62b0a4f7767_ColorRamp_3516000486_Texture2D:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -108,7 +112,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AdditionalLightLevels: 4
+    - _AdditionalLightLevels: 2
     - _AddtionalLightAtten: 0.02
     - _AlphaClip: 0
     - _AlphaToMask: 0
@@ -121,7 +125,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DepthEdgeStrength: 0.68
+    - _DepthEdgeStrength: 1
     - _DepthThreshold: 0.001
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
@@ -133,11 +137,11 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _MainLightLevels: 4
+    - _MainLightLevels: 7
     - _Metallic: 0
-    - _MiniDarkness: -0.03
-    - _NormalEdgeStrength: -0.51
-    - _NormalThreshold: 0.98
+    - _MiniDarkness: -0.24
+    - _NormalEdgeStrength: 1.06
+    - _NormalThreshold: 0.47
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -157,11 +161,11 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
-    - _DiffuseColor: {r: 0.47798735, g: 0.42838484, b: 0.45052883, a: 0}
+    - _DiffuseColor: {r: 0.7484276, g: 0.5776373, b: 0.44952726, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NormalEdgeBias: {r: 1, g: 1, b: 1, a: 0}
-    - _OutlineColor: {r: 0.49685526, g: 0.49685526, b: 0.49685526, a: 0}
-    - _ShadowColor: {r: 0.24705882, g: 0.16078432, b: 0.20454597, a: 0}
+    - _NormalEdgeBias: {r: 13.76, g: -5.7, b: -0.05, a: 0}
+    - _OutlineColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+    - _ShadowColor: {r: 0.36477977, g: 0.16230397, b: 0.10438659, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8381120847091161012

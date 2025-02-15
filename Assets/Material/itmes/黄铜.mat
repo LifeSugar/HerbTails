@@ -59,6 +59,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ColorRamp_2c0c67e540c14b068252639770378ca9_ColorRamp_3516000486_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ColorRamp_f6038b330abf42528646e62b0a4f7767_ColorRamp_3516000486_Texture2D:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -130,7 +134,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DepthEdgeStrength: 0.76
+    - _DepthEdgeStrength: 1
     - _DepthThreshold: 0.001
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
@@ -145,7 +149,7 @@ Material:
     - _MainLightLevels: 4.06
     - _Metallic: 0
     - _MiniDarkness: 0.34
-    - _NormalEdgeStrength: 0.74
+    - _NormalEdgeStrength: 1
     - _NormalThreshold: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -168,8 +172,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 0.6792453, g: 0.4901472, b: 0.22000702, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NormalEdgeBias: {r: 1, g: 1, b: 1, a: 0}
-    - _OutlineColor: {r: 0.51572317, g: 0.29420707, b: 0.13460696, a: 0}
+    - _NormalEdgeBias: {r: 0.9, g: 1, b: 1, a: 0}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 0}
     - _ShadowColor: {r: 0.0754717, g: 0.07523437, b: 0.07523437, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
