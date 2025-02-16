@@ -113,7 +113,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AdditionalLightLevels: 2
-    - _AddtionalLightAtten: 0.02
+    - _AddtionalLightAtten: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0

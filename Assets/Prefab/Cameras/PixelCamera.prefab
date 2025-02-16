@@ -29,13 +29,13 @@ Transform:
   m_GameObject: {fileID: 800611724677149887}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0070134704, y: -0.003616155, z: -0.002632408}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5310943678100195088}
   m_Father: {fileID: 8472950254653947644}
-  m_LocalEulerAnglesHint: {x: 18.3, y: -32.85, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.213, z: -0.058}
 --- !u!20 &316833787011875737
 Camera:
   m_ObjectHideFlags: 0
@@ -69,9 +69,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 44
-  orthographic: 1
-  orthographic size: 1.99
+  field of view: 33.6
+  orthographic: 0
+  orthographic size: 2.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -151,14 +151,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7b1d6698cbac3439f0edbd9f11ac03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UsePerspective: 1
   FollowedTransform: {fileID: 1043499079673924623}
   VoxelGridMovement: 1
   SubpixelAdjustments: 1
   FollowRotation: 1
   resolutionSynchronizationMode: 0
-  GameResolution: {x: 355, y: 200}
+  GameResolution: {x: 1707, y: 960}
   ControlGameZoom: 1
-  GameCameraZoom: 1.99
+  GameCameraZoom: 0.39
   ViewCameraZoom: 1
 --- !u!1 &4153574922965335643
 GameObject:
@@ -170,7 +171,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3213134442708497925}
   - component: {fileID: 7762808448518115693}
-  - component: {fileID: 3969303906714976870}
   - component: {fileID: 5084792516415236060}
   - component: {fileID: 7499881068836393806}
   m_Layer: 0
@@ -189,7 +189,7 @@ Transform:
   m_GameObject: {fileID: 4153574922965335643}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0070143007, y: 0.0036160434, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -226,11 +226,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0
-  far clip plane: 1001
+  near clip plane: 0.3
+  far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.9701
+  orthographic size: 0.38891667
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -246,14 +246,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3969303906714976870
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4153574922965335643}
-  m_Enabled: 1
 --- !u!114 &5084792516415236060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,7 +364,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.0645, y: 3.98, z: 1}
+  m_LocalScale: {x: 1.3866667, y: 0.78, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5310943678100195088}
@@ -393,7 +385,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6162455080227405077}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
