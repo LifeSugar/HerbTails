@@ -42,10 +42,11 @@ namespace Herbs
 
                 if (Physics.Raycast(ray, out hit, mask))
                 {
-                    shanziTransform.gameObject.SetActive(true);
                     shanziCollider.gameObject.transform.parent.gameObject.SetActive(false);
                     posHelper.gameObject.SetActive(true);
+                    shanziTransform.position = new Vector3(hit.point.x, shanziHeight, hit.point.z);
                     JianYaoHandler.instance.shanziInHand = true;
+                    shanziTransform.gameObject.SetActive(true);
                 }
             }
             else if (JianYaoHandler.instance.shanziInHand)
@@ -57,7 +58,7 @@ namespace Herbs
                 {
                     shanziTransform.position = new Vector3(hit.point.x, shanziHeight, hit.point.z);
                     shanziTransform.LookAt(shanziTarget);
-                    shanziTransform.Rotate(0, 180f, 90);
+                    shanziTransform.Rotate(0f, 180f, 90);
                 }
 
                 if (Input.GetMouseButtonDown(1) && JianYaoHandler.instance.shanziInHand)
@@ -72,23 +73,27 @@ namespace Herbs
             
         }
 
-        public void Wave(float currency)
+        public void Wave(float clickFrequenccy)
         {
-            if (currency > 40)
+            if (clickFrequenccy > 75)
             {
-                animator.SetFloat("speed", 3f);
+                animator.SetFloat("speed", 3.2f);
             }
-            else if (currency > 20)
+            else if (clickFrequenccy > 40)
             {
-                animator.SetFloat("speed", 2f);
+                animator.SetFloat("speed", 2.4f);
             }
-            else if (currency > 10)
+            else if (clickFrequenccy > 20)
+            {
+                animator.SetFloat("speed", 1.5f);
+            }
+            else if (clickFrequenccy > 10)
             {
                 animator.SetFloat("speed", 1f);
             }
-            else
+            else if (clickFrequenccy < 10)
             {
-                animator.SetFloat("speed", 0f);
+                animator.SetFloat("speed", 0.3f);
             }
             
             
