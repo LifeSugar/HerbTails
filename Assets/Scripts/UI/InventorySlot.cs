@@ -9,7 +9,7 @@ namespace Herbs
 {
     public class InventorySlot : MonoBehaviour
     {
-        public GridTypes gridType;
+        public GridTypes slotGridType;
         [FormerlySerializedAs("item")] public Item slotItem;
         public TextMeshProUGUI count;
         public bool isEmpty;
@@ -47,12 +47,14 @@ namespace Herbs
                 //     UpdateSlot();
                 //     return;
                 // }
+                return;
             }
             else
             {
                 if (CursorSlot.instance.isEmpty)
                 {
-                    GlobalFunctions.DeepCopyItem(slotItem, CursorSlot.instance.cursorItem, false);
+                    // GlobalFunctions.DeepCopyItem(slotItem, CursorSlot.instance.cursorItem, false);
+                    CursorSlot.instance.cursorItem = GlobalFunctions.ChangeItemType(slotItem, slotGridType, false);
                     slotItem.Count -= 1;
                     CursorSlot.instance.previousInventorySlot = this;
                     CursorSlot.instance.UpdateCursorSlot();
@@ -61,7 +63,10 @@ namespace Herbs
                 }
                 else
                 {
-                    if (CursorSlot.instance.cursorItem.Name == slotItem.Name)
+                    bool match = CheckCursorItemType(slotGridType, CursorSlot.instance.cursorItem);
+
+
+                    if (CursorSlot.instance.cursorItem.Name == slotItem.Name && match)
                     {
                         CursorSlot.instance.cursorItem.Count += 1;
                         slotItem.Count -= 1;
@@ -73,7 +78,8 @@ namespace Herbs
                     else
                     {
                         CursorSlot.instance.ReturnItems();
-                        GlobalFunctions.DeepCopyItem(slotItem, CursorSlot.instance.cursorItem, false);
+                        // GlobalFunctions.DeepCopyItem(slotItem, CursorSlot.instance.cursorItem, false);
+                        CursorSlot.instance.cursorItem = GlobalFunctions.ChangeItemType(slotItem, slotGridType, false);
                         slotItem.Count -= 1;
                         CursorSlot.instance.previousInventorySlot = this;
                         CursorSlot.instance.UpdateCursorSlot();
@@ -84,8 +90,29 @@ namespace Herbs
             }
         }
 
+        bool CheckCursorItemType(GridTypes gridType, Item cursorItem)
+        {
+            switch (gridType)
+            {
+                case GridTypes.HERBS:
+                    return (cursorItem is Herb);
+                case GridTypes.GRINDEDHERBS:
+                    return (cursorItem is GrindedHerb);
+                case GridTypes.MEDICINES:
+                    return (cursorItem is Medicine);
+                case GridTypes.HERBSINVENTORY:
+                    return (cursorItem is Herb);
+                default:
+                    return false;
+                
+            }
+        }
+
+        
+
         void OnEnable()
         {
+            slotItem = GlobalFunctions.ChangeItemType(slotItem, slotGridType);
             slotButton = GetComponent<Button>();
             count = GetComponentInChildren<TextMeshProUGUI>();
             UpdateSlot();

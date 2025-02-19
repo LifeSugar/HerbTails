@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CursorSlot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CursorSlot.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/itmes/铁钩.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/itmes/铁钩.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/JianYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/JianYaoHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ZhuaYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ZhuaYaoHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PieChart.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PieChart.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISprite/prototype.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/prototype.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISprite/prototype_1.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/prototype_1.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GlobalFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalFunctions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CursorSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CursorSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +47,7 @@
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "XThreadsFramesViewSplitterKey": "0.6494465",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
@@ -123,7 +117,7 @@
       <workItem from="1739630731416" duration="28181000" />
       <workItem from="1739711151162" duration="16604000" />
       <workItem from="1739887760982" duration="10632000" />
-      <workItem from="1739906812730" duration="22515000" />
+      <workItem from="1739906812730" duration="29293000" />
     </task>
     <servers />
   </component>
@@ -139,24 +133,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs</url>
-          <line>38</line>
-          <properties documentPath="D:\UnityProjects\HerbTails\Assets\Scripts\UI\InventorySlot.cs" containingFunctionPresentation="Method 'OnClickSlot'">
-            <startOffsets>
-              <option value="1082" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1083" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

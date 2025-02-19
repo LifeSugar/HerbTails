@@ -61,8 +61,16 @@ namespace Herbs
                 if (clickedUI != null && clickedUI.GetComponent<InventorySlot>())
                 {
                     var slot = clickedUI.GetComponent<InventorySlot>();
-                    if(slot.slotItem.Name == cursorItem.Name || slot.isEmpty)
+                    if (slot.slotItem.Name == cursorItem.Name)
+                    {
                         ReturnOneItem(slot);
+                    }
+
+                    if (slot.slotItem.GetType() == cursorItem.GetType() && slot.isEmpty)
+                    {
+                        ReturnOneItem(slot);
+                    }
+                        
                 }
                 else
                 {
@@ -76,7 +84,15 @@ namespace Herbs
         {
             if (cursorItem.Count <= 0)
             {
-                cursorItem.Name = "_Empty";
+                // 重置为一个新的基类 Item
+                cursorItem = new Item 
+                {
+                    Name        = "_Empty",
+                    Icon        = null,
+                    Description = "",
+                    Count       = 0
+                };
+    
                 cursorImage.gameObject.SetActive(false);
                 cursorCount.gameObject.SetActive(false);
                 isEmpty = true;
@@ -146,5 +162,26 @@ namespace Herbs
 
             return null;
         }
+        
+        /*
+         符合要求的slot
+         鼠标上没有物品，左键点击一个非空的 Slot
+        从该格子拿 1 个物品到鼠标上（Slot数量减 1，鼠标数量增 1），并将该格子记录为“previousInventorySlot”。
+        
+        鼠标上有物品，左键点击一个非空的 Slot
+        如果与鼠标上物品同种，叠加拿 1 个（Slot 数量减 1，鼠标数量加 1）。
+        如果不同种，则先把鼠标上的物品还给“previousInventorySlot”，再从这个新点击的格子中拿 1 个到鼠标。
+        
+        鼠标上有物品，左键点击一个空的 Slot
+        默认啥也不做。
+        
+        鼠标上有物品，右键点击
+        如果点击到的 UI 是一个 InventorySlot，并且这个格子是空或相同物品，则只放入 1 个（或整堆，取决于逻辑）；
+        如果没点到合适的格子或点到其它地方，就把整堆都还回“previousInventorySlot”。
+        
+        鼠标上没有物品，右键点击
+        不会进入上述逻辑
+        。
+         */
     }
 }
