@@ -5,19 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CursorSlot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CursorSlot.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/itmes/铁钩.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/itmes/铁钩.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemsData/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemsData/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/BoilPot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/BoilPot.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/JianYaoHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/JianYaoHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/ShanZi.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/ShanZi.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PieChart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PieChart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/JianYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/JianYaoHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ZhuaYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ZhuaYaoHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PieChart.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PieChart.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UISprite/prototype.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/prototype.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISprite/prototype.aseprite.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/prototype.aseprite.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UISprite/prototype_1.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/prototype_1.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -62,6 +61,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Unity",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -100,10 +100,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="35280">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="35280" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -123,7 +123,7 @@
       <workItem from="1739630731416" duration="28181000" />
       <workItem from="1739711151162" duration="16604000" />
       <workItem from="1739887760982" duration="10632000" />
-      <workItem from="1739906812730" duration="10288000" />
+      <workItem from="1739906812730" duration="22515000" />
     </task>
     <servers />
   </component>
@@ -139,5 +139,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs</url>
+          <line>38</line>
+          <properties documentPath="D:\UnityProjects\HerbTails\Assets\Scripts\UI\InventorySlot.cs" containingFunctionPresentation="Method 'OnClickSlot'">
+            <startOffsets>
+              <option value="1082" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1083" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

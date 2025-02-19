@@ -93,7 +93,7 @@ namespace Herbs
             if (gameState == GameState.JIANYAO)
             {
                 float duration = InputHandler.instance.transitionDuration;
-                // 如果是从 TOPDOWN 切换过来，把UI收起
+                // 如果是从 TOPDOWN 切换过来，打开制作UI
                 if (previousGameState == GameState.TOPDOWN)
                 {
                     RectTransform craftUI = InputHandler.instance.craftUICanvas;
@@ -382,10 +382,22 @@ namespace Herbs
             }
 
             // 清除已有的子对象
-            foreach (Transform child in targetRect)
+
+            if (Application.isPlaying)
             {
-                DestroyImmediate(child.gameObject);
+                foreach (Transform child in targetRect)
+                {
+                    Destroy(child.gameObject);
+                }
             }
+            else
+            {
+                foreach (Transform child in targetRect)
+                {
+                    DestroyImmediate(child.gameObject);
+                }
+            }
+            
 
             // 计算每个区域的宽度
             float[] widths = new float[4];
