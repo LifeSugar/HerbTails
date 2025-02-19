@@ -9,17 +9,20 @@ namespace Herbs
     [System.Serializable]
     public class Item
     {
-        [field: SerializeField] public string Name { get; set; }
-        [field: SerializeField] public Sprite Icon { get; set; }
+        [field: SerializeField] public string Name { get; set; } = "Empty";
+        [field: SerializeField] public Sprite Icon { get; set; } = null;
         [field: TextArea(3, 5)]
-        [field: SerializeField] public string Description { get; set; }
-        [field: SerializeField] public int Count { get; set; }
+        [field: SerializeField] public string Description { get; set; } = "No Description";
+
+        [field: SerializeField] public int Count { get; set; } = 0;
+        
+        [field: SerializeField] public string ModelPath { get; set; } = null;
     }
 
     [System.Serializable]
     public class CraftMaterial : Item
     {
-        // 可以在此扩展 CraftMaterial 特有的字段或方法
+        [field: SerializeField] public float Weight { get; set; } = 0;
     }
 
     // Herb 类，每个 Herb 可以创建两个不同的 GrindedHerb

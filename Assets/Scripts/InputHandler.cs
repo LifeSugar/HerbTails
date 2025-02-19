@@ -62,6 +62,11 @@ namespace Herbs
                 {
                     SwitchGameState(GameState.TOPDOWN);
                 }
+
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    SwitchGameState(GameState.ZHUAYAO);
+                }
                 
                 GameStateHandler();
             }
@@ -74,6 +79,9 @@ namespace Herbs
             {
                 case GameState.JIANYAO:
                     JianYaoHandler.instance.Tick();
+                    break;
+                case GameState.ZHUAYAO: 
+                    ZhuaYaoHandler.instance.Tick();
                     break;
                 default:
                     break;

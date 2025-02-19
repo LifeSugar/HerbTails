@@ -16,7 +16,7 @@ namespace Herbs
         public Vector2 offset = new Vector2(10f, -10f);
         public bool isEmpty = false;
         public InventorySlot previousInventorySlot; //上次点击的slot
-        public static CursorSlot instance{get; private set;}
+        public static CursorSlot instance { get; private set; }
 
         void Awake()
         {
@@ -37,7 +37,7 @@ namespace Herbs
             cursorCount = GetComponentInChildren<TextMeshProUGUI>();
             UpdateCursorSlot();
         }
-        
+
         void Update()
         {
             cursorRect.SetAsLastSibling(); // 确保在最上层
@@ -48,7 +48,7 @@ namespace Herbs
                 null, // Screen Space - Overlay 模式传 null,否则传入摄像机
                 out mousePosition
             );
-            
+
             // 限制在屏幕范围内
             mousePosition.x = Mathf.Clamp(mousePosition.x, -Screen.width / 2f, Screen.width / 2f);
             mousePosition.y = Mathf.Clamp(mousePosition.y, -Screen.height / 2f, Screen.height / 2f);
@@ -70,13 +70,11 @@ namespace Herbs
                     {
                         ReturnOneItem(slot);
                     }
-                        
                 }
                 else
                 {
                     ReturnItems();
                 }
-                
             }
         }
 
@@ -85,14 +83,14 @@ namespace Herbs
             if (cursorItem.Count <= 0)
             {
                 // 重置为一个新的基类 Item
-                cursorItem = new Item 
+                cursorItem = new Item
                 {
-                    Name        = "_Empty",
-                    Icon        = null,
+                    Name = "_Empty",
+                    Icon = null,
                     Description = "",
-                    Count       = 0
+                    Count = 0
                 };
-    
+
                 cursorImage.gameObject.SetActive(false);
                 cursorCount.gameObject.SetActive(false);
                 isEmpty = true;
@@ -121,6 +119,7 @@ namespace Herbs
                     GlobalFunctions.DeepCopyItem(cursorItem, previousInventorySlot.slotItem);
                     previousInventorySlot.UpdateSlot();
                 }
+
                 cursorItem.Count = 0;
                 UpdateCursorSlot();
             }
@@ -142,9 +141,8 @@ namespace Herbs
                 slot.UpdateSlot();
                 UpdateCursorSlot();
             }
-            
         }
-        
+
         GameObject GetClickedUI()
         {
             PointerEventData eventData = new PointerEventData(EventSystem.current)
@@ -162,23 +160,23 @@ namespace Herbs
 
             return null;
         }
-        
+
         /*
          符合要求的slot
          鼠标上没有物品，左键点击一个非空的 Slot
         从该格子拿 1 个物品到鼠标上（Slot数量减 1，鼠标数量增 1），并将该格子记录为“previousInventorySlot”。
-        
+
         鼠标上有物品，左键点击一个非空的 Slot
         如果与鼠标上物品同种，叠加拿 1 个（Slot 数量减 1，鼠标数量加 1）。
         如果不同种，则先把鼠标上的物品还给“previousInventorySlot”，再从这个新点击的格子中拿 1 个到鼠标。
-        
+
         鼠标上有物品，左键点击一个空的 Slot
         默认啥也不做。
-        
+
         鼠标上有物品，右键点击
         如果点击到的 UI 是一个 InventorySlot，并且这个格子是空或相同物品，则只放入 1 个（或整堆，取决于逻辑）；
         如果没点到合适的格子或点到其它地方，就把整堆都还回“previousInventorySlot”。
-        
+
         鼠标上没有物品，右键点击
         不会进入上述逻辑
         。
