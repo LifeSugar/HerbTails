@@ -1,18 +1,17 @@
-using System.Xml.Schema;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using Herbs;
 public class PieChart : MonoBehaviour
 {
-    public float[] values;      // 输入的数据值
-    public Color[] colors;      // 各扇区的颜色
+    public List<float> values;      // 输入的数据值
+    public List<Color> colors;      // 各扇区的颜色
     public Sprite sliceSprite;  // 扇区使用的Sprite（建议使用纯白色）
     public Image maskSprite;
     public Color maskColor;
     public float duration;
     
-    [Header("test")] public Medicine testMedicine;
 
     void Start()
     {
@@ -49,7 +48,7 @@ public class PieChart : MonoBehaviour
     {
         float currentAngle = 0f;
 
-        for (int i = 0; i < values.Length; i++)
+        for (int i = 0; i < values.Count; i++)
         {
             float normalizedValue = values[i] / total;
             GameObject slice = CreateSliceObject(i);
@@ -73,7 +72,7 @@ public class PieChart : MonoBehaviour
         image.type = Image.Type.Filled;
         image.fillMethod = Image.FillMethod.Radial360;
         image.fillOrigin = 2; // 从顶部开始填充
-        image.color = colors[index % colors.Length];
+        image.color = colors[index % colors.Count];
     }
 
     void SetupSliceTransform(GameObject slice, ref float currentAngle, float normalizedValue)

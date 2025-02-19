@@ -57,12 +57,13 @@ namespace Herbs
 
     // BoilMatch 处理 CraftMaterial 的组合，并根据组合生成 Medicine
     [System.Serializable]
-    public class BoilMatch
+    public class Prescription
     {
         [field: SerializeField] public List<CraftMaterial> CraftMaterials { get; set; }
         [field: SerializeField] public Medicine ResultMedicine { get; set; }
+        [field: SerializeField] public List<FirePeriod> FirePeriods { get; set; }
 
-        public BoilMatch(List<CraftMaterial> craftMaterials, Medicine resultMedicine)
+        public Prescription(List<CraftMaterial> craftMaterials, Medicine resultMedicine)
         {
             // 注意使用 this 区分形参与字段
             this.CraftMaterials = craftMaterials;
@@ -72,7 +73,7 @@ namespace Herbs
         // 用于匹配配方
         public static Medicine GetMedicineFromMaterials(
             List<CraftMaterial> materials,
-            List<BoilMatch> knownRecipes)
+            List<Prescription> knownRecipes)
         {
             foreach (var recipe in knownRecipes)
             {
@@ -85,6 +86,7 @@ namespace Herbs
             }
             return null; // 未找到匹配配方
         }
+
     }
 
     public struct FirePeriod

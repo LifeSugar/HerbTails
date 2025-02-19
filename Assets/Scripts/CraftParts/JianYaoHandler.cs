@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Herbs
 {
@@ -14,11 +15,18 @@ namespace Herbs
         [Header("锅")] public BoilPot pot;
 
         [Header("UI")] public RectTransform JianYaoPanel;
+        public RectTransform fireBar;
         public RectTransform marker;
         public float speedControl = 1f; //整体修正
         public GameObject smallFireIcon;
         public GameObject middleFireIcon;
         public GameObject largeFireIcon;
+
+        public Color noFireColor;
+        public Color smallFireColor;
+        public Color middleFireColor;
+        public Color largeFireColor;
+        public PieChart timer;
 
         // Marker活动范围
         public float minX = 30f;
@@ -33,6 +41,7 @@ namespace Herbs
         public float middleFireRange;
 
         [Header("火力")] public FirePower currentFirePower;
+
         // 是否开始煮药（只要出现过点击就开始）
         public bool boiling = false;
 
@@ -45,6 +54,9 @@ namespace Herbs
         public float maxFreq = 10f;
         public float maxValue = 150f;
         
+        //============测试==================
+        [Header("测试用药方")] public Prescription testPrescription;
+
         // ========== 点击频率计算 ==========
         private List<float> clickTimes = new List<float>();
         private float smoothedFreq = 0f;
@@ -63,6 +75,7 @@ namespace Herbs
             instance = this;
         }
 
+        
         void Start()
         {
             pot = this.gameObject.GetComponentInChildren<BoilPot>();
@@ -80,7 +93,7 @@ namespace Herbs
             if (gameState == GameState.JIANYAO)
             {
                 float duration = InputHandler.instance.transitionDuration;
-                // 如果是从 TOPDOWN 切换过来，把炼金UI收起
+                // 如果是从 TOPDOWN 切换过来，把UI收起
                 if (previousGameState == GameState.TOPDOWN)
                 {
                     RectTransform craftUI = InputHandler.instance.craftUICanvas;
@@ -99,7 +112,7 @@ namespace Herbs
                 // 把煎药面板挪到屏幕外
                 Vector2 targetPos_FireBar = new Vector2(-283.5f, -1600f);
                 JianYaoPanel.DOAnchorPos(targetPos_FireBar, duration).SetEase(Ease.OutQuad)
-                    .OnComplete(() => { JianYaoPanel.localPosition = new Vector2(-283.5f, 600f); });
+                    .OnComplete(() => { JianYaoPanel.localPosition = new Vector2(-283.5f, 800f); });
             }
         }
 
@@ -119,13 +132,13 @@ namespace Herbs
             {
                 clickFrequency = 0;
             }
-            
+
             if (boiling)
             {
                 UpdateFirePower(); // 根据 marker 的 x 判断当前火力
                 UpdateFireIcon(currentFirePower);
                 pot.SetAnimationParameter(currentFirePower);
-                MarkerMove(markerSpeed,MarkerSpeedOffset(clickFrequency));
+                MarkerMove(markerSpeed, MarkerSpeedOffset(clickFrequency));
             }
         }
 
@@ -205,7 +218,8 @@ namespace Herbs
             }
 
             // 计算目标位置
-            float targetX = currentPos.x + (selfSpeed * factor + offsetSpeed) * Time.deltaTime * speedControl; ;
+            float targetX = currentPos.x + (selfSpeed * factor + offsetSpeed) * Time.deltaTime * speedControl;
+            ;
 
             // 使用 SmoothDamp 来平滑过渡到目标位置
             float newX = Mathf.SmoothDamp(currentPos.x, targetX, ref markerVelocityX, smoothTime);
@@ -283,6 +297,8 @@ namespace Herbs
             }
         }
 
+
+        //更新火焰图标
         private void UpdateFireIcon(FirePower firePower)
         {
             switch (firePower)
@@ -311,8 +327,7 @@ namespace Herbs
                     break;
             }
         }
-        
-        
+
 
         /// <summary>
         /// 根据点击频率currentValue，额外增加的marker移动速度
@@ -343,6 +358,98 @@ namespace Herbs
             }
 
             return offset;
+        }
+
+        //自定义火候条的方法
+        public void SplitRect(RectTransform targetRect, float split1, float split2, float split3,
+            Color col1, Color col2, Color col3, Color col4)
+        {
+            if (targetRect == null)
+            {
+                Debug.LogError("目标 RectTransform 为空！");
+                return;
+            }
+
+            float totalWidth = targetRect.rect.width;
+
+            // 检查划分值是否在有效范围内
+            if (split1 < 0 || split1 > totalWidth ||
+                split2 < 0 || split2 > totalWidth ||
+                split3 < 0 || split3 > totalWidth)
+            {
+                Debug.LogError("划分值必须在0和总宽度之间！");
+                return;
+            }
+
+            // 清除已有的子对象
+            foreach (Transform child in targetRect)
+            {
+                DestroyImmediate(child.gameObject);
+            }
+
+            // 计算每个区域的宽度
+            float[] widths = new float[4];
+            widths[0] = split1; // 区域1：从0到split1
+            widths[1] = split2 - split1; // 区域2：从split1到split2
+            widths[2] = split3 - split2; // 区域3：从split2到split3
+            widths[3] = totalWidth - split3; // 区域4：从split3到总宽度
+
+            Color[] colors = new Color[] { col1, col2, col3, col4 };
+
+            float leftOffset = 0f;
+            for (int i = 0; i < 4; i++)
+            {
+                // 创建子对象并命名
+                GameObject regionObj = new GameObject("Region" + (i + 1), typeof(RectTransform));
+                // 设置父对象（第二个参数 false 保证保持本地坐标不变）
+                regionObj.transform.SetParent(targetRect, false);
+
+                // 添加 Image 组件，并设置对应的颜色
+                Image img = regionObj.AddComponent<Image>();
+                img.color = colors[i];
+
+                // 获取 RectTransform 并设置属性
+                RectTransform rt = regionObj.GetComponent<RectTransform>();
+                // 固定水平布局（锚点都设置在左侧）
+                rt.anchorMin = new Vector2(0, 0);
+                rt.anchorMax = new Vector2(0, 1);
+                rt.pivot = new Vector2(0, 0.5f);
+
+                // 利用 SetInsetAndSizeFromParentEdge 方法设置左边距和宽度
+                rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, leftOffset, widths[i]);
+                // rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 0, 50f);
+
+                // 更新左侧偏移量，供下一个区域使用
+                leftOffset += widths[i];
+            }
+        }
+        
+        void SetTimer(Prescription yaofang)
+        {
+            float totalTime = 0;
+            foreach (var period in yaofang.FirePeriods)
+            {
+                timer.values.Add(period.Duration);
+                switch (period.FirePower)
+                {
+                    case FirePower.NONE:
+                        timer.colors.Add(noFireColor);
+                        break;
+                    case FirePower.SMALL:
+                        timer.colors.Add(smallFireColor);
+                        break;
+                    case FirePower.MIDDLE:
+                        timer.colors.Add(middleFireColor);
+                        break;
+                    case FirePower.LARGE:
+                        timer.colors.Add(largeFireColor);
+                        break;
+                    default:
+                        break;
+                }
+
+                totalTime += period.Duration;
+            }
         }
     }
 
