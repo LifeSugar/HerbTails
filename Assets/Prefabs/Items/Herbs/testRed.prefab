@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3398857415867100779}
   - component: {fileID: 9140602779051215957}
   - component: {fileID: 1747658345188941268}
+  - component: {fileID: 4636063297903029517}
   m_Layer: 0
   m_Name: testRed
   m_TagString: Untagged
@@ -133,3 +134,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4636063297903029517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258903064843303872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdeb762cedd34444a9ad8284861206b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  herb:
+    <Name>k__BackingField: Empty
+    <Icon>k__BackingField: {fileID: 0}
+    <Description>k__BackingField: No Description
+    <Count>k__BackingField: 0
+    <ModelPath>k__BackingField: 
+    <Weight>k__BackingField: 0
+    <CoarseGrinded>k__BackingField: 
+    <FineGrinded>k__BackingField: 
+    <Prefab>k__BackingField: {fileID: 0}

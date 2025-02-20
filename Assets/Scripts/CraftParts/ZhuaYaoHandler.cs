@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
@@ -28,6 +29,7 @@ namespace HT
         
         public bool isMeasuring = false;
 
+        [SerializeField] private List<RuntimeHerb> herbsIn = new List<RuntimeHerb>();
         private void Start()
         {
             faMa = GetComponentInChildren<FaMa>();
@@ -50,9 +52,10 @@ namespace HT
             }
             else
             {
-                GetMeasureItem();
+                
                 balance.UpdateBalance();
             }
+            GetMeasureItem();
         }
         /// <summary>
         /// 切换到/退出“抓药”界面的UI动画
@@ -117,14 +120,66 @@ namespace HT
                             Debug.Log("HerbsGot");
                             var herbGot = new Herb();
                             herbGot = ResourceManager.instance.GetHerb(cursorItem.Name);
-                            Instantiate(herbGot.Prefab, spawnPoint.position, Quaternion.identity);
+                            var pos = new Vector3(hit.point.x, spawnPoint.position.y, spawnPoint.position.z);
+                            GameObject herbPrefab = Instantiate(herbGot.Prefab, pos, Quaternion.identity);
+                            herbPrefab.transform.parent = this.transform;
+                            var rtHerb = herbPrefab.GetComponent<RuntimeHerb>();
+                            GlobalFunctions.DeepCopyHerb(herbGot, rtHerb.herb, false);
+                            herbsIn.Add(rtHerb);
                             cursorItem.Count -= 1;
                             CursorSlot.instance.UpdateCursorSlot();
                             balance.weightLeft += herbGot.Weight;
                         }
                     }
                 }
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (CursorSlot.instance.isEmpty && herbsIn.Count > 0)
+                {
+                    if (Physics.Raycast(ray, out RaycastHit hit))
+                    {
+                        Debug.Log(hit.collider.gameObject.name);
+                        if (hit.collider == chengPan)
+                        {
+                            CursorSlot.instance.cursorItem= new UISlot()
+                            {
+                                GridType = GridTypes.HERBS,
+                                Name = herbsIn[herbsIn.Count - 1].herb.Name,
+                                Count = 1,
+                                Icon = herbsIn[herbsIn.Count - 1].herb.Icon
+                            };
+                            balance.weightLeft -= herbsIn[herbsIn.Count - 1].herb.Weight;
+                            Destroy( herbsIn[herbsIn.Count - 1].gameObject);
+                            herbsIn.RemoveAt(herbsIn.Count - 1);
+                            
+                            CursorSlot.instance.UpdateCursorSlot();
+                        }
+                    }
+                }
                 
+                if (!CursorSlot.instance.isEmpty && herbsIn.Count > 0)
+                {
+                    if (Physics.Raycast(ray, out RaycastHit hit))
+                    {
+                        Debug.Log(hit.collider.gameObject.name);
+                        if (hit.collider == chengPan)
+                        {
+                            var cursorItem = CursorSlot.instance.cursorItem;
+                            var matchRTHerb = herbsIn.LastOrDefault(rtherb => rtherb.herb.Name == cursorItem.Name);
+                            if (matchRTHerb != null)
+                            {
+                                cursorItem.Count += 1;
+                                balance.weightLeft -= matchRTHerb.herb.Weight;
+                                Destroy(matchRTHerb.gameObject);
+                                herbsIn.Remove(matchRTHerb);
+                                CursorSlot.instance.UpdateCursorSlot();
+                            }
+
+                            
+                        }
+                    }
+                }
             }
         }
         

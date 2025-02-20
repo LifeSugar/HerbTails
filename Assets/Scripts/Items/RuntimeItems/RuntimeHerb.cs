@@ -8,6 +8,5 @@ namespace HT
     public class RuntimeHerb : MonoBehaviour
     {
         public Herb herb;
-        public GameObject herbModel;
     }
 }

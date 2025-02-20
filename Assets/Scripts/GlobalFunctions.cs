@@ -14,6 +14,19 @@ namespace HT
             outItem.Icon = inItem.Icon;
             outItem.Count = overwriteCount? inItem.Count : 1;
         }
+
+        public static void DeepCopyHerb(Herb inItem, Herb outItem, bool overwriteCount = true)
+        {
+            outItem.Name = inItem.Name;
+            outItem.Description = inItem.Description;
+            outItem.Icon = inItem.Icon;
+            outItem.Count = overwriteCount? inItem.Count : 1;
+            outItem.Weight = inItem.Weight;
+            outItem.CoarseGrinded = inItem.CoarseGrinded;
+            outItem.FineGrinded = inItem.FineGrinded;
+            outItem.Prefab = inItem.Prefab;
+            
+        }
         
         public static Item ChangeItemType(Item item, GridTypes gridType, bool overwriteCount = true)
         {

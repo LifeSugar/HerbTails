@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   herbs:
   - <Name>k__BackingField: TestGreen
-    <Icon>k__BackingField: {fileID: 0}
+    <Icon>k__BackingField: {fileID: -312848566653600154, guid: 372e876bd0a532349abce93efbdeb1ce,
+      type: 3}
     <Description>k__BackingField: "\u8FD9\u662F\u4E00\u4E2A\u6D4B\u8BD5\u7528\u7684\u7EFF\u8272\u8349\u836F"
     <Count>k__BackingField: 1
     <ModelPath>k__BackingField: 
-    <Weight>k__BackingField: 5
+    <Weight>k__BackingField: 15
     <CoarseGrinded>k__BackingField: 
     <FineGrinded>k__BackingField: 
     <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 56e6b8cf0b558eb4a89d59ec0b583ce4,

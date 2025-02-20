@@ -54,21 +54,37 @@ namespace HT
             mousePosition.y = Mathf.Clamp(mousePosition.y, -Screen.height / 2f, Screen.height / 2f);
             cursorRect.anchoredPosition = mousePosition + offset;
 
-            if (Input.GetMouseButtonDown(1) && !isEmpty)
+            if (Input.GetMouseButtonDown(1))
             {
-                GameObject clickedUI = GetClickedUI();
-                if (clickedUI != null && clickedUI.GetComponent<InventorySlot>())
+                if (InputHandler.instance.gameStateNow == GameState.ZHUAYAO)
                 {
-                    var slot = clickedUI.GetComponent<InventorySlot>();
-                    if ((cursorItem.GridType == slot.slotItem.GridType) && (slot.isEmpty || slot.slotItem.Name == cursorItem.Name))
+                    Vector2 mPosition = Input.mousePosition;
+                    Ray ray = GlobalFunctions.GetRayFromRealCamScreenPos(mPosition);
+                    if (Physics.Raycast(ray, out RaycastHit hit))
                     {
-                        ReturnOneItem(slot);
+                        if (hit.collider == ZhuaYaoHandler.instance.chengPan)
+                        {
+                            return;
+                        }
                     }
                 }
-                else
+                if (!isEmpty)
                 {
-                    ReturnItems();
+                    GameObject clickedUI = GetClickedUI();
+                    if (clickedUI != null && clickedUI.GetComponent<InventorySlot>())
+                    {
+                        var slot = clickedUI.GetComponent<InventorySlot>();
+                        if ((cursorItem.GridType == slot.slotItem.GridType) && (slot.isEmpty || slot.slotItem.Name == cursorItem.Name))
+                        {
+                            ReturnOneItem(slot);
+                        }
+                    }
+                    else
+                    {
+                        ReturnItems();
+                    }
                 }
+                
             }
         }
 
