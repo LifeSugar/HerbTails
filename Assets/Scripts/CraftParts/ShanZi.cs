@@ -4,7 +4,7 @@ using PixelPerfectURP;
 using UnityEngine;
 using DG.Tweening;
 
-namespace Herbs
+namespace HT
 {
     public class ShanZi : MonoBehaviour
     {

@@ -1,16 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace Herbs
+namespace HT
 {
     public class InventorySlot : MonoBehaviour
     {
-        public GridTypes slotGridType;
-        [FormerlySerializedAs("item")] public Item slotItem;
+        // 移除了原来的 GridTypes slotGridType 字段
+        public UISlot slotItem;
         public TextMeshProUGUI count;
         public bool isEmpty;
         public Button slotButton;
@@ -39,22 +37,25 @@ namespace Herbs
         {
             if (isEmpty)
             {
-                // if (!CursorSlot.instance.isEmpty)
-                // {
-                //     GlobalFunctions.DeepCopyItem(CursorSlot.instance.cursorItem, slotItem, false);
-                //     CursorSlot.instance.cursorItem.Count -= 1;
-                //     CursorSlot.instance.UpdateCursorSlot();
-                //     UpdateSlot();
-                //     return;
-                // }
-                return;
+                if (CursorSlot.instance.isEmpty)
+                {
+                    return;
+                }
+                else if (CursorSlot.instance.cursorItem.GridType == slotItem.GridType)
+                {
+                    GlobalFunctions.DeepCopyUISlot(CursorSlot.instance.cursorItem, slotItem, true ,false);
+                    CursorSlot.instance.cursorItem.Count = 0;
+                    CursorSlot.instance.UpdateCursorSlot();
+                    UpdateSlot();
+                    return;
+                }
             }
             else
             {
                 if (CursorSlot.instance.isEmpty)
                 {
-                    // GlobalFunctions.DeepCopyItem(slotItem, CursorSlot.instance.cursorItem, false);
-                    CursorSlot.instance.cursorItem = GlobalFunctions.ChangeItemType(slotItem, slotGridType, false);
+                    // 使用新的深拷贝方法 DeepCopyUISlot 复制当前 slotItem 到鼠标上
+                    CursorSlot.instance.cursorItem = GlobalFunctions.DeepCopyUISlot(slotItem, false);
                     slotItem.Count -= 1;
                     CursorSlot.instance.previousInventorySlot = this;
                     CursorSlot.instance.UpdateCursorSlot();
@@ -63,8 +64,8 @@ namespace Herbs
                 }
                 else
                 {
-                    bool match = CheckCursorItemType(slotGridType, CursorSlot.instance.cursorItem);
-
+                    // 通过比较 UISlot 内的 GridType 判断两者是否匹配
+                    bool match = CheckCursorItemType(CursorSlot.instance.cursorItem);
 
                     if (CursorSlot.instance.cursorItem.Name == slotItem.Name && match)
                     {
@@ -78,8 +79,7 @@ namespace Herbs
                     else
                     {
                         CursorSlot.instance.ReturnItems();
-                        // GlobalFunctions.DeepCopyItem(slotItem, CursorSlot.instance.cursorItem, false);
-                        CursorSlot.instance.cursorItem = GlobalFunctions.ChangeItemType(slotItem, slotGridType, false);
+                        CursorSlot.instance.cursorItem = GlobalFunctions.DeepCopyUISlot(slotItem, false);
                         slotItem.Count -= 1;
                         CursorSlot.instance.previousInventorySlot = this;
                         CursorSlot.instance.UpdateCursorSlot();
@@ -90,37 +90,29 @@ namespace Herbs
             }
         }
 
-        bool CheckCursorItemType(GridTypes gridType, Item cursorItem)
+        // 优化后的类型匹配：直接比较 cursorItem.GridType 与 slotItem.GridType 是否一致
+        bool CheckCursorItemType(UISlot cursorItem)
         {
-            switch (gridType)
-            {
-                case GridTypes.HERBS:
-                    return (cursorItem is Herb);
-                case GridTypes.GRINDEDHERBS:
-                    return (cursorItem is GrindedHerb);
-                case GridTypes.MEDICINES:
-                    return (cursorItem is Medicine);
-                case GridTypes.HERBSINVENTORY:
-                    return (cursorItem is Herb);
-                default:
-                    return false;
-                
-            }
+            return cursorItem.GridType == slotItem.GridType;
         }
-
-        
 
         void OnEnable()
         {
-            slotItem = GlobalFunctions.ChangeItemType(slotItem, slotGridType);
             slotButton = GetComponent<Button>();
             count = GetComponentInChildren<TextMeshProUGUI>();
             UpdateSlot();
             slotButton.onClick.AddListener(() => OnClickSlot());
         }
-        
-        
+    }
 
+    // UISlot 类只保留了 Name、Icon、Count 及 GridType 四个属性
+    [System.Serializable]
+    public class UISlot
+    {
+        [field: SerializeField] public string Name { get; set; }
+        [field: SerializeField] public Sprite Icon { get; set; }
+        [field: SerializeField] public int Count { get; set; }
+        [field: SerializeField] public GridTypes GridType { get; set; }
     }
 
     public enum GridTypes
@@ -130,5 +122,4 @@ namespace Herbs
         MEDICINES = 2,
         HERBSINVENTORY = 3
     }
-
 }

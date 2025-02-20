@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Herbs
+namespace HT
 {
     public static class GlobalFunctions
     {
@@ -53,8 +53,35 @@ namespace Herbs
                 default:
                     return item; // 如果不需要转换就返回原对象
             }
+            
+           
         }
-
+        /// <summary>
+        /// 返回一个新的 UISlot 对象，其属性复制自 source
+        /// </summary>
+        public static UISlot DeepCopyUISlot(UISlot source, bool overwriteCount = true)
+        {
+            return new UISlot
+            {
+                Name = source.Name,
+                Icon = source.Icon,
+                Count =overwriteCount? source.Count : 1,
+                GridType = source.GridType
+            };
+        }
+    
+        /// <summary>
+        /// 将 source 的所有属性深拷贝到 target 中
+        /// </summary>
+        public static void DeepCopyUISlot(UISlot source, UISlot target, bool overwriteCount = true , bool overwriteType = false)
+        {
+            target.Name = source.Name;
+            target.Icon = source.Icon;
+            target.Count =overwriteCount? source.Count : 1;
+            target.GridType =overwriteType? source.GridType : target.GridType;
+        }
+        
+      
     }
     
     

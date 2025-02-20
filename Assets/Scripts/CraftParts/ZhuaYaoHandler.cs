@@ -4,28 +4,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
-namespace Herbs
+namespace HT
 {
     public class ZhuaYaoHandler : MonoBehaviour
     {
         [Header("UI")]
         public RectTransform ZhuaYaoPanel;
 
+        public TextMeshProUGUI weightText;
+
+        public float weightTextPosLeft;
+        public float weightTextPosRight;
+        
+        public FaMa faMa;
+        private Balance balance;
+        
+        public bool isMeasuring = false;
+
         private void Start()
         {
+            faMa = GetComponentInChildren<FaMa>();
+            balance = GetComponentInChildren<Balance>();
             InputHandler.instance.OnStateChange += SwitchZhuaYao;
         }
 
 
         public void Tick()
         {
-            
+            if (!isMeasuring)
+            {
+                faMa.Tick();
+                weightText.text = CalculateMeasureWeight().ToString();
+                Vector2 Textpos = weightText.rectTransform.anchoredPosition;
+                Textpos.x = weightTextPosLeft + faMa.currentRatio * (weightTextPosRight - weightTextPosLeft);
+                weightText.rectTransform.anchoredPosition = Textpos;
+                
+            }
+            else
+            {
+                balance.UpdateBalance();
+            }
         }
         /// <summary>
         /// 切换到/退出“抓药”界面的UI动画
         /// </summary>
-        public void SwitchZhuaYao(GameState gameState, GameState previousGameState)
+        private void SwitchZhuaYao(GameState gameState, GameState previousGameState)
         {
             Debug.Log($"从{previousGameState} 切换到 {gameState}");
 
@@ -52,6 +77,12 @@ namespace Herbs
                 ZhuaYaoPanel.DOAnchorPos(targetPos_zhuaYaoPanel, duration).SetEase(Ease.OutQuad)
                     .OnComplete(() => {ZhuaYaoPanel.localPosition = new Vector2(0, 720f); });
             }
+        }
+
+        public float CalculateMeasureWeight()
+        {
+            var weight =Mathf.Floor( faMa.currentRatio * (balance.maxWeight - balance.minWeight));
+            return weight;
         }
         
         public static ZhuaYaoHandler instance { get; private set; }

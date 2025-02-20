@@ -5,7 +5,7 @@ using DG.Tweening;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace Herbs
+namespace HT
 {
     public class JianYaoHandler : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-using Herbs;
+using HT;
 public class PieChart : MonoBehaviour
 {
     public List<float> values;      // 输入的数据值

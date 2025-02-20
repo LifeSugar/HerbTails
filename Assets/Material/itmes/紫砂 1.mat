@@ -161,11 +161,11 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
-    - _DiffuseColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 0}
+    - _DiffuseColor: {r: 0.18867922, g: 0.15129936, b: 0.18305525, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NormalEdgeBias: {r: 13.76, g: -5.7, b: -0.05, a: 0}
     - _OutlineColor: {r: 0.59119487, g: 0.59119487, b: 0.59119487, a: 1}
-    - _ShadowColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 0}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8381120847091161012

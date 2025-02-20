@@ -3,19 +3,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using DG.Tweening;
 
-
-namespace Herbs
+namespace HT
 {
     public class CursorSlot : MonoBehaviour
     {
-        public Item cursorItem;
+        public UISlot cursorItem;
         private RectTransform cursorRect;
         private Image cursorImage;
         private TextMeshProUGUI cursorCount;
         public Vector2 offset = new Vector2(10f, -10f);
         public bool isEmpty = false;
-        public InventorySlot previousInventorySlot; //上次点击的slot
+        public InventorySlot previousInventorySlot; // 记录上次点击的 InventorySlot
         public static CursorSlot instance { get; private set; }
 
         void Awake()
@@ -40,19 +40,18 @@ namespace Herbs
 
         void Update()
         {
-            cursorRect.SetAsLastSibling(); // 确保在最上层
+            // 始终保持在最上层显示
+            cursorRect.SetAsLastSibling();
             Vector2 mousePosition;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                transform.parent as RectTransform, // canvas
+                transform.parent as RectTransform,
                 Input.mousePosition,
-                null, // Screen Space - Overlay 模式传 null,否则传入摄像机
+                null,
                 out mousePosition
             );
 
-            // 限制在屏幕范围内
             mousePosition.x = Mathf.Clamp(mousePosition.x, -Screen.width / 2f, Screen.width / 2f);
             mousePosition.y = Mathf.Clamp(mousePosition.y, -Screen.height / 2f, Screen.height / 2f);
-
             cursorRect.anchoredPosition = mousePosition + offset;
 
             if (Input.GetMouseButtonDown(1) && !isEmpty)
@@ -61,12 +60,7 @@ namespace Herbs
                 if (clickedUI != null && clickedUI.GetComponent<InventorySlot>())
                 {
                     var slot = clickedUI.GetComponent<InventorySlot>();
-                    if (slot.slotItem.Name == cursorItem.Name)
-                    {
-                        ReturnOneItem(slot);
-                    }
-
-                    if (slot.slotItem.GetType() == cursorItem.GetType() && slot.isEmpty)
+                    if ((cursorItem.GridType == slot.slotItem.GridType) && (slot.isEmpty || slot.slotItem.Name == cursorItem.Name))
                     {
                         ReturnOneItem(slot);
                     }
@@ -82,13 +76,12 @@ namespace Herbs
         {
             if (cursorItem.Count <= 0)
             {
-                // 重置为一个新的基类 Item
-                cursorItem = new Item
+                cursorItem = new UISlot
                 {
                     Name = "_Empty",
                     Icon = null,
-                    Description = "",
-                    Count = 0
+                    Count = 0,
+                    GridType = GridTypes.HERBS // 默认值
                 };
 
                 cursorImage.gameObject.SetActive(false);
@@ -109,6 +102,7 @@ namespace Herbs
         {
             if (!isEmpty)
             {
+                ReturnItemsVisual();
                 if (!previousInventorySlot.isEmpty)
                 {
                     previousInventorySlot.slotItem.Count += cursorItem.Count;
@@ -116,10 +110,9 @@ namespace Herbs
                 }
                 else
                 {
-                    GlobalFunctions.DeepCopyItem(cursorItem, previousInventorySlot.slotItem);
+                    GlobalFunctions.DeepCopyUISlot(cursorItem, previousInventorySlot.slotItem, true, false);
                     previousInventorySlot.UpdateSlot();
                 }
-
                 cursorItem.Count = 0;
                 UpdateCursorSlot();
             }
@@ -129,7 +122,7 @@ namespace Herbs
         {
             if (slot.isEmpty)
             {
-                GlobalFunctions.DeepCopyItem(cursorItem, slot.slotItem);
+                GlobalFunctions.DeepCopyUISlot(cursorItem, slot.slotItem, true, false);
                 cursorItem.Count = 0;
                 slot.UpdateSlot();
                 UpdateCursorSlot();
@@ -141,6 +134,44 @@ namespace Herbs
                 slot.UpdateSlot();
                 UpdateCursorSlot();
             }
+        }
+
+        void ReturnItemsVisual()
+        {
+            GameObject visual = new GameObject("returnicon");
+
+            // 设置为当前物体的子级，保持局部坐标不变
+            visual.transform.SetParent(transform, false);
+
+            // 添加 RectTransform 组件，并获取当前物体的 RectTransform
+            RectTransform newRect = visual.AddComponent<RectTransform>();
+            RectTransform selfRect = GetComponent<RectTransform>();
+
+            // 同步一些布局属性，但不直接复制 anchoredPosition
+            // newRect.anchorMin = selfRect.anchorMin;
+            // newRect.anchorMax = selfRect.anchorMax;
+            // newRect.sizeDelta = selfRect.sizeDelta;
+            // newRect.pivot = selfRect.pivot;
+
+            // 直接将局部位置设为零，确保新物体起始位置与父物体重合
+            newRect.localPosition = Vector3.zero;
+
+            Image image = visual.AddComponent<Image>();
+            image.sprite = cursorItem.Icon;
+            image.preserveAspect = true;
+            image = cursorImage;
+
+            // 目标 UI 元素的转换：从世界坐标转换为 newRect 所在父级的局部坐标
+            RectTransform targetRect = previousInventorySlot.GetComponent<RectTransform>();
+            Vector3 targetWorldPos = targetRect.position;
+            Vector3 targetLocalPos3D = newRect.parent.InverseTransformPoint(targetWorldPos);
+            Vector2 targetLocalPos = new Vector2(targetLocalPos3D.x, targetLocalPos3D.y);
+
+            // 执行动画：将 anchoredPosition 从初始 0 动画到目标位置
+            newRect.DOAnchorPos(targetLocalPos, 0.1f)
+                .SetEase(Ease.Linear)
+                .OnComplete(() => Destroy(visual));
+            
         }
 
         GameObject GetClickedUI()
@@ -155,12 +186,10 @@ namespace Herbs
 
             if (results.Count > 0)
             {
-                return results[0].gameObject; // 返回最上层的 UI
+                return results[0].gameObject;
             }
-
             return null;
         }
-
         /*
          符合要求的slot
          鼠标上没有物品，左键点击一个非空的 Slot
@@ -183,3 +212,5 @@ namespace Herbs
          */
     }
 }
+
+

@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Herbs
+namespace HT
 {
     [System.Serializable]
     public class Item
@@ -29,8 +29,9 @@ namespace Herbs
     [System.Serializable]
     public class Herb : CraftMaterial
     {
-        [field: SerializeField] public GrindedHerb CoarseGrinded { get; set; }
-        [field: SerializeField] public GrindedHerb FineGrinded { get; set; }
+        [field: SerializeField] public string CoarseGrinded { get; set; }
+        [field: SerializeField] public string FineGrinded { get; set; }
+        [field: SerializeField] public GameObject Prefab { get; set; } = null;
     }
 
     // GrindedHerb 只能由特定的 Herb 生成
@@ -39,14 +40,8 @@ namespace Herbs
     {
         // 如果需要在 Inspector 上可视化 SourceHerb，就用 [field: SerializeField]
         // 如果只需要脚本内逻辑，可以去掉或改成 private
-        [field: SerializeField] public Herb SourceHerb { get; private set; }
-
-        // 如果你想在脚本里指定 SourceHerb，可加一个方法或构造来设置
-        public GrindedHerb(Herb sourceHerb)
-        {
-            SourceHerb = sourceHerb;
-        }
-
+        [field: SerializeField] public string SourceHerb { get; private set; }
+        
         // 无参构造函数留给 Unity 序列化用
         public GrindedHerb() { }
     }
@@ -96,5 +91,14 @@ namespace Herbs
     {
         public FirePower FirePower;
         public float Duration;
+    }
+
+    public enum Quality
+    {
+        Shit = 0,
+        Low = 1,
+        Middle = 2,
+        Good = 3,
+        Excellent = 4
     }
 }

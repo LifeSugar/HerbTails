@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Herbs
+namespace HT
 {
     public class RuntimeHerb : MonoBehaviour
     {
         public Herb herb;
+        public GameObject herbModel;
     }
 }

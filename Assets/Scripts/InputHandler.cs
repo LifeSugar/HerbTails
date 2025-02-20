@@ -6,7 +6,7 @@ using Debug = UnityEngine.Debug;
 using DG.Tweening;
 using UnityEngine.Serialization;
 
-namespace Herbs
+namespace HT
 {
     public class InputHandler : MonoBehaviour
     {

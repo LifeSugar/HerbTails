@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712d5454914443339e1150b179a129d7, type: 3}
+  m_Name: HT.HerbScriptableObject
+  m_EditorClassIdentifier: 
+  herbs:
+  - <Name>k__BackingField: TestGreen
+    <Icon>k__BackingField: {fileID: 0}
+    <Description>k__BackingField: "\u8FD9\u662F\u4E00\u4E2A\u6D4B\u8BD5\u7528\u7684\u7EFF\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <ModelPath>k__BackingField: 
+    <Weight>k__BackingField: 25
+    <CoarseGrinded>k__BackingField: 
+    <FineGrinded>k__BackingField: 
+    <Prefab>k__BackingField: {fileID: 0}
+  - <Name>k__BackingField: TestRed
+    <Icon>k__BackingField: {fileID: 0}
+    <Description>k__BackingField: "\u8FD9\u662F\u4E00\u4E2A\u6D4B\u8BD5\u7528\u7684\u7EA2\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <ModelPath>k__BackingField: 
+    <Weight>k__BackingField: 0
+    <CoarseGrinded>k__BackingField: 
+    <FineGrinded>k__BackingField: 
+    <Prefab>k__BackingField: {fileID: 0}
+  - <Name>k__BackingField: 
+    <Icon>k__BackingField: {fileID: 0}
+    <Description>k__BackingField: 
+    <Count>k__BackingField: 0
+    <ModelPath>k__BackingField: 
+    <Weight>k__BackingField: 0
+    <CoarseGrinded>k__BackingField: 
+    <FineGrinded>k__BackingField: 
+    <Prefab>k__BackingField: {fileID: 0}
