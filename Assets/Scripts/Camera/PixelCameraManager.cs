@@ -84,7 +84,7 @@ namespace PixelPerfectURP
         // 内部引用
         Camera gameCamera;
         public CanvasViewCamera viewCamera { get; private set; }
-        UpscaledCanvas upscaledCanvas;
+        public UpscaledCanvas upscaledCanvas;
 
         float renderTextureAspect;
 

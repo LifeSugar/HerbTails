@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using PixelPerfectURP;
 using TMPro;
 
 namespace HT
@@ -14,12 +15,16 @@ namespace HT
         public RectTransform ZhuaYaoPanel;
 
         public TextMeshProUGUI weightText;
+        public Button measureButton;
 
         public float weightTextPosLeft;
         public float weightTextPosRight;
+
         
         public FaMa faMa;
         private Balance balance;
+        public Collider chengPan;
+        public Transform spawnPoint;
         
         public bool isMeasuring = false;
 
@@ -28,6 +33,7 @@ namespace HT
             faMa = GetComponentInChildren<FaMa>();
             balance = GetComponentInChildren<Balance>();
             InputHandler.instance.OnStateChange += SwitchZhuaYao;
+            measureButton.onClick.AddListener(() => StatMeasuring());
         }
 
 
@@ -44,6 +50,7 @@ namespace HT
             }
             else
             {
+                GetMeasureItem();
                 balance.UpdateBalance();
             }
         }
@@ -79,10 +86,46 @@ namespace HT
             }
         }
 
-        public float CalculateMeasureWeight()
+        float CalculateMeasureWeight()
         {
-            var weight =Mathf.Floor( faMa.currentRatio * (balance.maxWeight - balance.minWeight));
+            var weight = Mathf.Clamp(Mathf.Floor( faMa.currentRatio * (balance.maxWeight - balance.minWeight)), balance.minWeight, balance.maxWeight); ;
             return weight;
+        }
+
+        private void StatMeasuring()
+        {
+            isMeasuring = true;
+            balance.weightRight = CalculateMeasureWeight();
+        }
+
+        private void GetMeasureItem()
+        {
+            Vector2 mousePos = Input.mousePosition;
+            Ray ray = GlobalFunctions.GetRayFromRealCamScreenPos(mousePos);
+            Debug.DrawRay(ray.origin, ray.direction * 10, Color.red);
+            if (Input.GetMouseButtonDown(0) && !CursorSlot.instance.isEmpty)
+            {
+                var cursorItem = CursorSlot.instance.cursorItem;
+                if (cursorItem.GridType == GridTypes.HERBS)
+                {
+                    
+                    if (Physics.Raycast(ray, out RaycastHit hit))
+                    {
+                        Debug.Log(hit.collider.gameObject.name);
+                        if (hit.collider == chengPan)
+                        {
+                            Debug.Log("HerbsGot");
+                            var herbGot = new Herb();
+                            herbGot = ResourceManager.instance.GetHerb(cursorItem.Name);
+                            Instantiate(herbGot.Prefab, spawnPoint.position, Quaternion.identity);
+                            cursorItem.Count -= 1;
+                            CursorSlot.instance.UpdateCursorSlot();
+                            balance.weightLeft += herbGot.Weight;
+                        }
+                    }
+                }
+                
+            }
         }
         
         public static ZhuaYaoHandler instance { get; private set; }

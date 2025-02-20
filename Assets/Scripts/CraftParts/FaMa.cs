@@ -134,9 +134,7 @@ namespace HT
                 hinge.connectedBody = savedHingeData.connectedBody;
                 hinge.anchor = savedHingeData.anchor;
                 hinge.axis = savedHingeData.axis;
-                // 如有其它属性需要恢复，可在此补充
             }
-
             
         }
 

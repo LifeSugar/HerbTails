@@ -31,6 +31,13 @@ namespace HT
         }
         
         // 创建 HerbScriptableObject
+        [MenuItem("Assets/Inventory/Create Item List")]
+        public static void CreateItems()
+        {
+            ScriptableObjectManager.CreateAsset<ItemScriptableObject>();
+        }
+        
+        // 创建 HerbScriptableObject
         [MenuItem("Assets/Inventory/Create Herb List")]
         public static void CreateHerbs()
         {

@@ -34,7 +34,7 @@ namespace HT
         /// </summary>
         void LoadItems()
         {
-            ItemScriptableObject obj = Resources.Load("Herbs.ItemScriptableObject") as ItemScriptableObject;
+            ItemScriptableObject obj = Resources.Load("HT.ItemScriptableObject") as ItemScriptableObject;
             if (obj == null)
             {
                 Debug.Log("Herbs.ItemScriptableObject could not be loaded!");
@@ -62,7 +62,7 @@ namespace HT
         public Item GetItem(string name)
         {
             // 从 Resources 中重新加载资源
-            ItemScriptableObject obj = Resources.Load("Herbs.ItemScriptableObject") as ItemScriptableObject;
+            ItemScriptableObject obj = Resources.Load("HT.ItemScriptableObject") as ItemScriptableObject;
             if (obj == null)
             {
                 Debug.Log("Herbs.ItemScriptableObject could not be loaded!");
@@ -101,7 +101,7 @@ namespace HT
         /// </summary>
         void LoadHerbs()
         {
-            HerbScriptableObject obj = Resources.Load("Herbs.HerbScriptableObject") as HerbScriptableObject;
+            HerbScriptableObject obj = Resources.Load("HT.HerbScriptableObject") as HerbScriptableObject;
             if (obj == null)
             {
                 Debug.Log("Herbs.HerbScriptableObject could not be loaded!");
@@ -126,7 +126,7 @@ namespace HT
         /// </summary>
         public Herb GetHerb(string name)
         {
-            HerbScriptableObject obj = Resources.Load("Herbs.HerbScriptableObject") as HerbScriptableObject;
+            HerbScriptableObject obj = Resources.Load("HT.HerbScriptableObject") as HerbScriptableObject;
             if (obj == null)
             {
                 Debug.Log("Herbs.HerbScriptableObject could not be loaded!");
@@ -162,7 +162,7 @@ namespace HT
         /// </summary>
         void LoadGrindedHerbs()
         {
-            GrindedHerbScriptableObject obj = Resources.Load("Herbs.GrindedHerbScriptableObject") as GrindedHerbScriptableObject;
+            GrindedHerbScriptableObject obj = Resources.Load("HT.GrindedHerbScriptableObject") as GrindedHerbScriptableObject;
             if (obj == null)
             {
                 Debug.Log("Herbs.GrindedHerbScriptableObject could not be loaded!");
@@ -187,7 +187,7 @@ namespace HT
         /// </summary>
         public GrindedHerb GetGrindedHerb(string name)
         {
-            GrindedHerbScriptableObject obj = Resources.Load("Herbs.GrindedHerbScriptableObject") as GrindedHerbScriptableObject;
+            GrindedHerbScriptableObject obj = Resources.Load("HT.GrindedHerbScriptableObject") as GrindedHerbScriptableObject;
             if (obj == null)
             {
                 Debug.Log("Herbs.GrindedHerbScriptableObject could not be loaded!");
@@ -223,7 +223,7 @@ namespace HT
         /// </summary>
         void LoadCraftMaterials()
         {
-            CraftMaterialScriptableObject obj = Resources.Load("Herbs.CraftMaterialScriptableObject") as CraftMaterialScriptableObject;
+            CraftMaterialScriptableObject obj = Resources.Load("HT.CraftMaterialScriptableObject") as CraftMaterialScriptableObject;
             if (obj == null)
             {
                 Debug.Log("Herbs.CraftMaterialScriptableObject could not be loaded!");
@@ -248,7 +248,7 @@ namespace HT
         /// </summary>
         public CraftMaterial GetCraftMaterial(string name)
         {
-            CraftMaterialScriptableObject obj = Resources.Load("Herbs.CraftMaterialScriptableObject") as CraftMaterialScriptableObject;
+            CraftMaterialScriptableObject obj = Resources.Load("HT.CraftMaterialScriptableObject") as CraftMaterialScriptableObject;
             if (obj == null)
             {
                 Debug.Log("Herbs.CraftMaterialScriptableObject could not be loaded!");
@@ -284,7 +284,7 @@ namespace HT
         /// </summary>
         void LoadMedicines()
         {
-            MedicineScriptableObject obj = Resources.Load("Herbs.MedicineScriptableObject") as MedicineScriptableObject;
+            MedicineScriptableObject obj = Resources.Load("HT.MedicineScriptableObject") as MedicineScriptableObject;
             if (obj == null)
             {
                 Debug.Log("Herbs.MedicineScriptableObject could not be loaded!");
@@ -309,7 +309,7 @@ namespace HT
         /// </summary>
         public Medicine GetMedicine(string name)
         {
-            MedicineScriptableObject obj = Resources.Load("Herbs.MedicineScriptableObject") as MedicineScriptableObject;
+            MedicineScriptableObject obj = Resources.Load("HT.MedicineScriptableObject") as MedicineScriptableObject;
             if (obj == null)
             {
                 Debug.Log("Herbs.MedicineScriptableObject could not be loaded!");

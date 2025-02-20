@@ -18,19 +18,22 @@ MonoBehaviour:
     <Description>k__BackingField: "\u8FD9\u662F\u4E00\u4E2A\u6D4B\u8BD5\u7528\u7684\u7EFF\u8272\u8349\u836F"
     <Count>k__BackingField: 1
     <ModelPath>k__BackingField: 
-    <Weight>k__BackingField: 25
+    <Weight>k__BackingField: 5
     <CoarseGrinded>k__BackingField: 
     <FineGrinded>k__BackingField: 
-    <Prefab>k__BackingField: {fileID: 0}
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 56e6b8cf0b558eb4a89d59ec0b583ce4,
+      type: 3}
   - <Name>k__BackingField: TestRed
-    <Icon>k__BackingField: {fileID: 0}
+    <Icon>k__BackingField: {fileID: 4188600321446614096, guid: 2a045b0fb70c169498920273182c6cb4,
+      type: 3}
     <Description>k__BackingField: "\u8FD9\u662F\u4E00\u4E2A\u6D4B\u8BD5\u7528\u7684\u7EA2\u8272\u8349\u836F"
     <Count>k__BackingField: 1
     <ModelPath>k__BackingField: 
-    <Weight>k__BackingField: 0
+    <Weight>k__BackingField: 10
     <CoarseGrinded>k__BackingField: 
     <FineGrinded>k__BackingField: 
-    <Prefab>k__BackingField: {fileID: 0}
+    <Prefab>k__BackingField: {fileID: 258903064843303872, guid: 8687ef58b20715d4aa913c857e99a3c7,
+      type: 3}
   - <Name>k__BackingField: 
     <Icon>k__BackingField: {fileID: 0}
     <Description>k__BackingField: 
