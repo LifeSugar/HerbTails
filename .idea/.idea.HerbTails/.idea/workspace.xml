@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Test 6.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Test 6.mat.meta" beforeDir="false" />
-    </list>
+    <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,7 +134,7 @@
       <workItem from="1740007786615" duration="18948000" />
       <workItem from="1740049170160" duration="43000" />
       <workItem from="1740049218864" duration="8591000" />
-      <workItem from="1740060348701" duration="8752000" />
+      <workItem from="1740060348701" duration="9971000" />
     </task>
     <servers />
   </component>
@@ -153,5 +150,9 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
