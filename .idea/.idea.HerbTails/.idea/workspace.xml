@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +134,7 @@
       <workItem from="1740049218864" duration="8591000" />
       <workItem from="1740060348701" duration="9971000" />
       <workItem from="1740618789793" duration="4274000" />
-      <workItem from="1740665533685" duration="322000" />
+      <workItem from="1740665533685" duration="450000" />
     </task>
     <servers />
   </component>
