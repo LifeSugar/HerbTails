@@ -22,8 +22,8 @@ namespace HT
             outItem.Icon = inItem.Icon;
             outItem.Count = overwriteCount? inItem.Count : 1;
             outItem.Weight = inItem.Weight;
-            outItem.CoarseGrinded = inItem.CoarseGrinded;
-            outItem.FineGrinded = inItem.FineGrinded;
+            // outItem.CoarseGrinded = inItem.CoarseGrinded;
+            // outItem.FineGrinded = inItem.FineGrinded;
             outItem.Prefab = inItem.Prefab;
             
         }

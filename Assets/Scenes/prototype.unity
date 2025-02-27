@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 9205260128809249512, guid: 2a045b0fb70c169498920273182c6cb4,
+  m_Sprite: {fileID: 8187268917299787882, guid: 372e876bd0a532349abce93efbdeb1ce,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -1537,7 +1537,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2069547691, guid: a48741b4813010b4ebff2142f2492bdb, type: 3}
+  m_Sprite: {fileID: 4810571627630017768, guid: 2a045b0fb70c169498920273182c6cb4,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4700,44 +4701,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 247229406aee9ac4781d3d62ccebf218, type: 3}
---- !u!84 &475230739
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1280
-  m_Height: 720
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 0
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &476583695
 GameObject:
   m_ObjectHideFlags: 0
@@ -6464,7 +6427,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7001149937315356289, guid: 372e876bd0a532349abce93efbdeb1ce,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7443,7 +7407,6 @@ MonoBehaviour:
       <Icon>k__BackingField: {fileID: 0}
       <Description>k__BackingField: 
       <Count>k__BackingField: 0
-      <ModelPath>k__BackingField: 
   clickFrequency: 0
   smoothTime: 0.03
 --- !u!1 &718839068
@@ -7728,7 +7691,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4405233058058285253, guid: 2a045b0fb70c169498920273182c6cb4,
+  m_Sprite: {fileID: 6246798127776654195, guid: 2a045b0fb70c169498920273182c6cb4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -9250,7 +9213,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1004458272, guid: ab001caa87635ab4092c467992461c05, type: 3}
+  m_Sprite: {fileID: 1290749253970261500, guid: 2a045b0fb70c169498920273182c6cb4,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -9681,6 +9645,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899241512}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &914780329
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1280
+  m_Height: 720
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 0
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &917231646
 GameObject:
   m_ObjectHideFlags: 0
@@ -13490,7 +13492,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1610421110, guid: 8749ccb1fd2ea6e499b28688bd0925b9, type: 3}
+  m_Sprite: {fileID: 5646886958914159165, guid: 2a045b0fb70c169498920273182c6cb4,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -14444,7 +14447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6027907680509499959, guid: 2a045b0fb70c169498920273182c6cb4,
+  m_Sprite: {fileID: -3249168840294881300, guid: 2a045b0fb70c169498920273182c6cb4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -15932,7 +15935,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 475230739}
+      objectReference: {fileID: 914780329}
     - target: {fileID: 4510557104871343963, guid: 7e5065e91bcc9b3468cb164d5c3d0529,
         type: 3}
       propertyPath: upscaledCanvas
@@ -17359,7 +17362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6244908654782835309, guid: 2a045b0fb70c169498920273182c6cb4,
+  m_Sprite: {fileID: 7760373280967293990, guid: 372e876bd0a532349abce93efbdeb1ce,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -19457,7 +19460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8308688793160881313, guid: 2a045b0fb70c169498920273182c6cb4,
+  m_Sprite: {fileID: 8338922539020245584, guid: 372e876bd0a532349abce93efbdeb1ce,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -19635,7 +19638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6260236784761066713, guid: 2a045b0fb70c169498920273182c6cb4,
+  m_Sprite: {fileID: -2668065797648264613, guid: 2a045b0fb70c169498920273182c6cb4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 1

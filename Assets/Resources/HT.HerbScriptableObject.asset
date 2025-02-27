@@ -13,34 +13,43 @@ MonoBehaviour:
   m_Name: HT.HerbScriptableObject
   m_EditorClassIdentifier: 
   herbs:
-  - <Name>k__BackingField: TestGreen
-    <Icon>k__BackingField: {fileID: -312848566653600154, guid: 372e876bd0a532349abce93efbdeb1ce,
+  - <Name>k__BackingField: testherb1
+    <Icon>k__BackingField: {fileID: 5284596829614838628, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
-    <Description>k__BackingField: "\u8FD9\u662F\u4E00\u4E2A\u6D4B\u8BD5\u7528\u7684\u7EFF\u8272\u8349\u836F"
+    <Description>k__BackingField: this is a testherb
     <Count>k__BackingField: 1
-    <ModelPath>k__BackingField: 
     <Weight>k__BackingField: 15
-    <CoarseGrinded>k__BackingField: 
-    <FineGrinded>k__BackingField: 
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 56e6b8cf0b558eb4a89d59ec0b583ce4,
+      type: 3}
+  - <Name>k__BackingField: testherb2
+    <Icon>k__BackingField: {fileID: 5737710698041289318, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: this is a testherb2
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 10
+    <Prefab>k__BackingField: {fileID: 258903064843303872, guid: 8687ef58b20715d4aa913c857e99a3c7,
+      type: 3}
+  - <Name>k__BackingField: TestGreen
+    <Icon>k__BackingField: {fileID: 6294194357801579896, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: thi is test Green one
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
     <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 56e6b8cf0b558eb4a89d59ec0b583ce4,
       type: 3}
   - <Name>k__BackingField: TestRed
-    <Icon>k__BackingField: {fileID: 4188600321446614096, guid: 2a045b0fb70c169498920273182c6cb4,
+    <Icon>k__BackingField: {fileID: -6107325948083477697, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
-    <Description>k__BackingField: "\u8FD9\u662F\u4E00\u4E2A\u6D4B\u8BD5\u7528\u7684\u7EA2\u8272\u8349\u836F"
+    <Description>k__BackingField: this is a testRed one
     <Count>k__BackingField: 1
-    <ModelPath>k__BackingField: 
     <Weight>k__BackingField: 10
-    <CoarseGrinded>k__BackingField: 
-    <FineGrinded>k__BackingField: 
     <Prefab>k__BackingField: {fileID: 258903064843303872, guid: 8687ef58b20715d4aa913c857e99a3c7,
       type: 3}
-  - <Name>k__BackingField: 
-    <Icon>k__BackingField: {fileID: 0}
-    <Description>k__BackingField: 
-    <Count>k__BackingField: 0
-    <ModelPath>k__BackingField: 
-    <Weight>k__BackingField: 0
-    <CoarseGrinded>k__BackingField: 
-    <FineGrinded>k__BackingField: 
-    <Prefab>k__BackingField: {fileID: 0}
+  - <Name>k__BackingField: Element 2
+    <Icon>k__BackingField: {fileID: -7261159648996326750, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: this is a testRed one
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 10
+    <Prefab>k__BackingField: {fileID: 258903064843303872, guid: 8687ef58b20715d4aa913c857e99a3c7,
+      type: 3}

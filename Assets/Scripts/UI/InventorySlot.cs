@@ -7,6 +7,7 @@ namespace HT
 {
     public class InventorySlot : MonoBehaviour
     {
+        
         // 移除了原来的 GridTypes slotGridType 字段
         public UISlot slotItem;
         public TextMeshProUGUI count;
@@ -98,10 +99,22 @@ namespace HT
 
         void OnEnable()
         {
+           
             slotButton = GetComponent<Button>();
             count = GetComponentInChildren<TextMeshProUGUI>();
             UpdateSlot();
             slotButton.onClick.AddListener(() => OnClickSlot());
+        }
+
+        void Start()
+        {
+            var item = ResourceManager.instance.GetItem(slotItem.Name);
+            if (item != null)
+            {
+                slotItem.Name = item.Name;
+                slotItem.Icon = item.Icon;
+            }
+            UpdateSlot();
         }
     }
 
