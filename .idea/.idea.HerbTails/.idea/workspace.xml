@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Herbs/testRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Herbs/testRed.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.HerbScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.HerbScriptableObject.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/AssetUpadater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/AssetUpadater.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/JianYaoHandlerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/JianYaoHandlerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GlobalFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalFunctions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISprite/prototype_1.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISprite/prototype_1.aseprite.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,15 +99,13 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="5490">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="5490" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -150,6 +138,8 @@
       <workItem from="1740060348701" duration="9971000" />
       <workItem from="1740618789793" duration="4274000" />
       <workItem from="1740665533685" duration="450000" />
+      <workItem from="1742780664591" duration="752000" />
+      <workItem from="1742989398871" duration="837000" />
     </task>
     <servers />
   </component>
