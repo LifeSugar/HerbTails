@@ -63,7 +63,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../build/build218.app/Contents/MacOS/TailsOfHerbs" />
+      <option name="EXE_PATH" value="$USER_HOME$/OneDrive/草药物语/build/2.16.19\TailsOfHerbs.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Administrator\OneDrive\草药物语\build\2.16.19" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -71,7 +71,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.34f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\UnityProjects\HerbTails -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\UnityProjects\HerbTails" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -79,7 +79,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.34f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\UnityProjects\HerbTails -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\UnityProjects\HerbTails" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -140,6 +140,7 @@
       <workItem from="1740665533685" duration="450000" />
       <workItem from="1742780664591" duration="752000" />
       <workItem from="1742989398871" duration="837000" />
+      <workItem from="1744719645185" duration="297000" />
     </task>
     <servers />
   </component>

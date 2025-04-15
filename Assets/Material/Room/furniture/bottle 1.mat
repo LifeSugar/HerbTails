@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: wall_white
+  m_Name: bottle 1
   m_Shader: {fileID: -6465566751694194690, guid: 844b26c2e872da84db5246fd8487b56b,
     type: 3}
   m_Parent: {fileID: 0}
@@ -111,8 +111,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AdditionalLightLevels: 35.22
-    - _AddtionalLightAtten: 0
+    - _AdditionalLightLevels: 2
+    - _AddtionalLightAtten: 0.19
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -125,7 +125,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DepthEdgeStrength: 1
-    - _DepthThreshold: 0.001
+    - _DepthThreshold: 0.0001
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -136,11 +136,11 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _MainLightLevels: 1.82
+    - _MainLightLevels: 6
     - _Metallic: 0
-    - _MiniDarkness: -0.63
+    - _MiniDarkness: 0
     - _NormalEdgeStrength: 1
-    - _NormalThreshold: 1
+    - _NormalThreshold: 0.12
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -160,11 +160,11 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
-    - _DiffuseColor: {r: 0.990566, g: 0.990566, b: 0.990566, a: 0}
+    - _DiffuseColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NormalEdgeBias: {r: 1, g: 1, b: 1, a: 0}
-    - _OutlineColor: {r: 1, g: 1, b: 1, a: 0}
-    - _ShadowColor: {r: 0.9056604, g: 0.8019235, b: 0.6578853, a: 0}
+    - _NormalEdgeBias: {r: 1.59, g: 1, b: 1, a: 0}
+    - _OutlineColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 0}
+    - _ShadowColor: {r: 0.03773582, g: 0.032240987, b: 0.029013861, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8381120847091161012
