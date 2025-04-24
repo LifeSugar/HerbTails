@@ -44,7 +44,7 @@ namespace HT
                 }
                 else if (CursorSlot.instance.cursorItem.GridType == slotItem.GridType)
                 {
-                    GlobalFunctions.DeepCopyUISlot(CursorSlot.instance.cursorItem, slotItem, true ,false);
+                    Utility.DeepCopyUISlot(CursorSlot.instance.cursorItem, slotItem, true ,false);
                     CursorSlot.instance.cursorItem.Count = 0;
                     CursorSlot.instance.UpdateCursorSlot();
                     UpdateSlot();
@@ -56,7 +56,7 @@ namespace HT
                 if (CursorSlot.instance.isEmpty)
                 {
                     // 使用新的深拷贝方法 DeepCopyUISlot 复制当前 slotItem 到鼠标上
-                    CursorSlot.instance.cursorItem = GlobalFunctions.DeepCopyUISlot(slotItem, false);
+                    CursorSlot.instance.cursorItem = Utility.DeepCopyUISlot(slotItem, false);
                     slotItem.Count -= 1;
                     CursorSlot.instance.previousInventorySlot = this;
                     CursorSlot.instance.UpdateCursorSlot();
@@ -80,7 +80,7 @@ namespace HT
                     else
                     {
                         CursorSlot.instance.ReturnItems();
-                        CursorSlot.instance.cursorItem = GlobalFunctions.DeepCopyUISlot(slotItem, false);
+                        CursorSlot.instance.cursorItem = Utility.DeepCopyUISlot(slotItem, false);
                         slotItem.Count -= 1;
                         CursorSlot.instance.previousInventorySlot = this;
                         CursorSlot.instance.UpdateCursorSlot();

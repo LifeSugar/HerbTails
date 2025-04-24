@@ -59,7 +59,7 @@ namespace HT
                 if (InputHandler.instance.gameStateNow == GameState.ZHUAYAO)
                 {
                     Vector2 mPosition = Input.mousePosition;
-                    Ray ray = GlobalFunctions.GetRayFromRealCamScreenPos(mPosition);
+                    Ray ray = Utility.GetRayFromRealCamScreenPos(mPosition);
                     if (Physics.Raycast(ray, out RaycastHit hit))
                     {
                         if (hit.collider == ZhuaYaoHandler.instance.chengPan)
@@ -126,7 +126,7 @@ namespace HT
                 }
                 else
                 {
-                    GlobalFunctions.DeepCopyUISlot(cursorItem, previousInventorySlot.slotItem, true, false);
+                    Utility.DeepCopyUISlot(cursorItem, previousInventorySlot.slotItem, true, false);
                     previousInventorySlot.UpdateSlot();
                 }
                 cursorItem.Count = 0;
@@ -138,7 +138,7 @@ namespace HT
         {
             if (slot.isEmpty)
             {
-                GlobalFunctions.DeepCopyUISlot(cursorItem, slot.slotItem, true, false);
+                Utility.DeepCopyUISlot(cursorItem, slot.slotItem, true, false);
                 cursorItem.Count = 0;
                 slot.UpdateSlot();
                 UpdateCursorSlot();

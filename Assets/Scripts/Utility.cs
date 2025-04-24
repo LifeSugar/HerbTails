@@ -5,7 +5,7 @@ using PixelPerfectURP;
 
 namespace HT
 {
-    public static class GlobalFunctions
+    public static class Utility
     {
         public static void DeepCopyItem(Item inItem, Item outItem , bool overwriteCount = true)
         {

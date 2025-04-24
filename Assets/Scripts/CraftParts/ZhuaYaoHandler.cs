@@ -35,7 +35,7 @@ namespace HT
             faMa = GetComponentInChildren<FaMa>();
             balance = GetComponentInChildren<Balance>();
             InputHandler.instance.OnStateChange += SwitchZhuaYao;
-            measureButton.onClick.AddListener(() => StatMeasuring());
+            measureButton.onClick.AddListener(() => StartMeasuring());
         }
 
 
@@ -68,7 +68,7 @@ namespace HT
             {
                 float duration = InputHandler.instance.transitionDuration;
                 // 如果是从 TOPDOWN 切换过来，打开制作UI
-                if (previousGameState == GameState.TOPDOWN)
+                if (previousGameState == GameState.INSCENE)
                 {
                     RectTransform craftUI = InputHandler.instance.craftUICanvas;
                     Vector2 targetPos = new Vector2(706, 37);
@@ -95,7 +95,7 @@ namespace HT
             return weight;
         }
 
-        private void StatMeasuring()
+        private void StartMeasuring()
         {
             isMeasuring = true;
             balance.weightRight = CalculateMeasureWeight();
@@ -104,7 +104,7 @@ namespace HT
         private void GetMeasureItem()
         {
             Vector2 mousePos = Input.mousePosition;
-            Ray ray = GlobalFunctions.GetRayFromRealCamScreenPos(mousePos);
+            Ray ray = Utility.GetRayFromRealCamScreenPos(mousePos);
             Debug.DrawRay(ray.origin, ray.direction * 10, Color.red);
             if (Input.GetMouseButtonDown(0) && !CursorSlot.instance.isEmpty)
             {
@@ -120,11 +120,11 @@ namespace HT
                             Debug.Log("HerbsGot");
                             var herbGot = new Herb();
                             herbGot = ResourceManager.instance.GetHerb(cursorItem.Name);
-                            var pos = new Vector3(hit.point.x, spawnPoint.position.y, spawnPoint.position.z);
+                            var pos = new Vector3(spawnPoint.position.x, spawnPoint.position.y, hit.point.z);
                             GameObject herbPrefab = Instantiate(herbGot.Prefab, pos, Quaternion.identity);
                             herbPrefab.transform.parent = this.transform;
                             var rtHerb = herbPrefab.GetComponent<RuntimeHerb>();
-                            GlobalFunctions.DeepCopyHerb(herbGot, rtHerb.herb, false);
+                            Utility.DeepCopyHerb(herbGot, rtHerb.herb, false);
                             herbsIn.Add(rtHerb);
                             cursorItem.Count -= 1;
                             CursorSlot.instance.UpdateCursorSlot();

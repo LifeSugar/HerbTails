@@ -60,7 +60,7 @@ namespace HT
 
                 if (Input.GetKeyDown(KeyCode.T))
                 {
-                    SwitchGameState(GameState.TOPDOWN);
+                    SwitchGameState(GameState.INSCENE);
                 }
 
                 if (Input.GetKeyDown(KeyCode.Z))
@@ -92,9 +92,9 @@ namespace HT
         {
             switch (gameState)
             {
-                case GameState.TOPDOWN:
+                case GameState.INSCENE:
                     InitalizeTopDownGameView();
-                    SetGameView(previousGameView, GameState.TOPDOWN); 
+                    SetGameView(previousGameView, GameState.INSCENE); 
                     break;
                 case GameState.ZHUAYAO:
                     SetGameView(ZhuaYao, GameState.ZHUAYAO);
@@ -114,7 +114,7 @@ namespace HT
         {
             //触发场景变换事件
             OnStateChange?.Invoke(gameState, gameStateNow );
-            if (gameStateNow == GameState.TOPDOWN)
+            if (gameStateNow == GameState.INSCENE)
             {
                 previousGameView.SetGameView(PixelCameraManager.Instance.transform, PixelCameraManager.Instance.GameResolution.y, PixelCameraManager.Instance.UsePerspective);
             }
@@ -203,7 +203,7 @@ namespace HT
     [Serializable]
     public enum GameState
     {
-        TOPDOWN = 0,
+        INSCENE = 0,
         ZHUAYAO = 1,
         MOYAO = 2,
         JIANYAO = 3

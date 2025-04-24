@@ -94,7 +94,7 @@ namespace HT
             {
                 float duration = InputHandler.instance.transitionDuration;
                 // 如果是从 TOPDOWN 切换过来，打开制作UI
-                if (previousGameState == GameState.TOPDOWN)
+                if (previousGameState == GameState.INSCENE)
                 {
                     RectTransform craftUI = InputHandler.instance.craftUICanvas;
                     Vector2 targetPos = new Vector2(706, 37);
