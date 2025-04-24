@@ -15,7 +15,7 @@ namespace HT
 
         // 用于存储 HingeJoint 的部分配置
         private HingeJointData savedHingeData;
-        private bool isDragging = false;
+        [SerializeField] private bool isDragging = false;
 
         void Start()
         {
@@ -34,10 +34,11 @@ namespace HT
             // 鼠标按下（模拟 OnMouseDown）
             if (Input.GetMouseButtonDown(0))
             {
-                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                Ray ray = Utility.GetRayFromRealCamScreenPos(Input.mousePosition);
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {
+                    Debug.Log(hit.collider.name);
                     // 判断射线碰撞到的对象是否为当前对象
                     if (hit.collider.gameObject == gameObject)
                     {
@@ -87,7 +88,7 @@ namespace HT
         private void CustomOnMouseDrag()
         {
             Camera cam = PixelCameraManager.Instance.viewCamera.GetComponent<Camera>();
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Utility.GetRayFromRealCamScreenPos(Input.mousePosition);
             Debug.DrawRay(ray.origin, ray.direction * 10, Color.green);
 
             // 注意：此处平面法向采用的是父物体的 right（即允许变化的方向），若没有父物体则使用世界坐标的 Vector3.forward

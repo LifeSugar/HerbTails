@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace HT
 {
-    public class ScriptableObjectManager : MonoBehaviour
+    public static class ScriptableObjectManager
     {
         //创建指定的资源
         public static void CreateAsset<T>() where T : ScriptableObject

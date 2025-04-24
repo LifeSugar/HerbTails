@@ -16,7 +16,6 @@ namespace HT
 
         [field: SerializeField] public int Count { get; set; } = 0;
         
-        [field: SerializeField] public string ModelPath { get; set; } = null;
     }
 
     [System.Serializable]
@@ -29,8 +28,8 @@ namespace HT
     [System.Serializable]
     public class Herb : CraftMaterial
     {
-        [field: SerializeField] public string CoarseGrinded { get; set; }
-        [field: SerializeField] public string FineGrinded { get; set; }
+        // [field: SerializeField] public string CoarseGrinded { get; set; }
+        // [field: SerializeField] public string FineGrinded { get; set; }
         [field: SerializeField] public GameObject Prefab { get; set; } = null;
     }
 
