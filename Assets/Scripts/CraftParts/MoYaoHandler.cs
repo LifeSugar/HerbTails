@@ -7,10 +7,29 @@ namespace HT
     {
 
         public RectTransform MoYaoPanel;
+        public bool Ready = false;
+        public Chu chu;
+        public Collider selectCollider;
+        
+        
 
         void Start()
         {
             InputHandler.instance.OnStateChange += SwitchMoYao;
+            chu.enabled = false;
+        }
+
+        void Tick()
+        {
+            if (!Ready)
+            {
+                selectCollider.gameObject.SetActive(true);
+            }
+            else
+            {
+                selectCollider.gameObject.SetActive(false);
+                chu.enabled = true;
+            }
         }
 
         public void SwitchMoYao(GameState gameState, GameState previousGameState)
