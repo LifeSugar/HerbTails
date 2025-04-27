@@ -49,11 +49,11 @@ namespace HT
         private void Start()
         {
             InitializeCamera();
+            InitializeButtons();
         }
 
         private void InitializeCamera()
         {
-            Debug.Log("djkfjdkdkfjdkfjkdjfkdjfkidjfkdj");
             PixelCameraManager.Instance.transform.parent.transform.position = rightSceneView.transform.position;
             PixelCameraManager.Instance.transform.parent.transform.rotation = rightSceneView.transform.rotation;
         }
@@ -220,6 +220,35 @@ namespace HT
                 ClickInteractions.instance.Tick();
             
         }
+
+
+        #region UI
+
+        public Button jianyaoButton;
+        public Button zhuaYaoButton;
+        public Button moyaoButton;
+        public Button qieYaoButton;
+
+        void InitializeButtons()
+        {
+            jianyaoButton.onClick.AddListener(() =>
+            {
+                if (!isTransitioning)
+                    SwitchGameState(GameState.JIANYAO);
+            });
+            zhuaYaoButton.onClick.AddListener(() =>
+            {
+                if (!isTransitioning)
+                    SwitchGameState(GameState.ZHUAYAO);
+            });
+            moyaoButton.onClick.AddListener(() =>
+            {
+                if (!isTransitioning)
+                    SwitchGameState(GameState.MOYAO);
+            });
+        }
+
+        #endregion
         
         
     }

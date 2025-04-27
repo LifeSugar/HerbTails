@@ -5,23 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DialogueManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DialogueManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StarterInteraction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StarterInteraction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/Chu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/Chu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/MoYaoHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/MoYaoHandler.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Test 5.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Test 5.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/asset.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DataExcels/asset.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/chu.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/chu.fbx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.GrindedHerbScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.GrindedHerbScriptableObject.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.HerbScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.HerbScriptableObject.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/AssetUpadater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/AssetUpadater.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/ScriptableObjectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ScriptableObjectManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemScriptableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemScriptableObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ResourceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ResourceManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UISprite/font/HYXiaoXueYouYaTi-75U SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/font/HYXiaoXueYouYaTi-75U SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +153,8 @@
       <workItem from="1745620699887" duration="20859000" />
       <workItem from="1745703898715" duration="53000" />
       <workItem from="1745703972202" duration="11202000" />
+      <workItem from="1745720160929" duration="151000" />
+      <workItem from="1745760317553" duration="6640000" />
     </task>
     <servers />
   </component>
