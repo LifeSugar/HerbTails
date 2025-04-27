@@ -6,16 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
       <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/~$asset.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/~$asset.xlsx.meta" beforeDir="false" />
->>>>>>> Stashed changes
-=======
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/~$asset.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/~$asset.xlsx.meta" beforeDir="false" />
->>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/MoYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/MoYaoHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
     </list>
