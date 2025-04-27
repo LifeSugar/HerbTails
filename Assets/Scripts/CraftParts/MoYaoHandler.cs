@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using DG.Tweening;
 
 namespace HT
@@ -11,10 +12,20 @@ namespace HT
         public Chu chu;
         public Collider selectCollider;
         
+<<<<<<< Updated upstream
         public InventorySlot origin;
         public InventorySlot grinded;
         
+=======
+        public List<Herb> herbsInBox = new List<Herb>();
+>>>>>>> Stashed changes
         
+        public static MoYaoHandler instance;
+
+        void Awake()
+        {
+            instance = this;
+        }
 
         void Start()
         {
@@ -22,11 +33,12 @@ namespace HT
             chu.enabled = false;
         }
 
-        void Tick()
+        public void Tick()
         {
             if (!Ready)
             {
                 selectCollider.gameObject.SetActive(true);
+                HandleSelectHerb();
             }
             else
             {
@@ -59,6 +71,28 @@ namespace HT
                 Vector2 targetPos_MoYaoPanel = new Vector2(-283.5f, -1600f);
                 MoYaoPanel.DOAnchorPos(targetPos_MoYaoPanel, duration).SetEase(Ease.OutQuad)
                     .OnComplete(() => {MoYaoPanel.localPosition = new Vector2(-283.5f, 800f); });
+            }
+        }
+
+        void HandleSelectHerb()
+        {
+            Ray ray = Utility.GetRayFromRealCamScreenPos(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (Input.GetMouseButtonDown(0)
+                    && !CursorSlot.instance.isEmpty 
+                    && hit.collider == selectCollider)
+                {
+                    var cursorItem = CursorSlot.instance.cursorItem;
+                    if (cursorItem.GridType == GridTypes.HERBS)
+                    {
+                        var herb = ResourceManager.instance.GetHerb(cursorItem.Name) as Herb;
+                        herbsInBox.Add(herb);
+                        cursorItem.Count -= 1;
+                        CursorSlot.instance.UpdateCursorSlot();
+                    }
+                }
             }
         }
     }
