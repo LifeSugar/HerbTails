@@ -13,6 +13,7 @@ namespace HT
         public Collider selectCollider;
         
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         public InventorySlot origin;
         public InventorySlot grinded;
         
@@ -20,6 +21,10 @@ namespace HT
         public List<Herb> herbsInBox = new List<Herb>();
 >>>>>>> Stashed changes
         
+=======
+        public List<Herb> herbsInBox = new List<Herb>();
+        
+>>>>>>> Stashed changes
         public static MoYaoHandler instance;
 
         void Awake()
