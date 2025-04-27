@@ -12,11 +12,14 @@ namespace HT
     {
         public static InputHandler instance;
         public GameState gameStateNow = 0;
+        public bool inDialogue = false;
 
         [Header("抓药的相机参数")] public GameView ZhuaYao;
         [Header("磨药的相机参数")] public GameView MoYao;
         [Header("煎药的相机参数")] public GameView JianYao;
         [Header("记录变换前的相机参数")] public GameView previousGameView;
+        [Header("右边的相机参数")] public GameView rightSceneView;
+        [Header("左边相机的参数")] public GameView leftSceneView;
         
         // 用来跟踪当前是否在插值过渡中
         private bool isTransitioning = false;
@@ -45,30 +48,44 @@ namespace HT
 
         private void Start()
         {
-            
+            InitializeCamera();
+        }
+
+        private void InitializeCamera()
+        {
+            Debug.Log("djkfjdkdkfjdkfjkdjfkdjfkidjfkdj");
+            PixelCameraManager.Instance.transform.parent.transform.position = rightSceneView.transform.position;
+            PixelCameraManager.Instance.transform.parent.transform.rotation = rightSceneView.transform.rotation;
         }
 
         void Update()
         {
-            if (!isTransitioning)
+            if (!inDialogue)
             {
-                //测试
-                if (Input.GetKeyDown(KeyCode.J))
+                if (!isTransitioning)
                 {
-                    SwitchGameState(GameState.JIANYAO);
-                }
+                    //测试
+                    if (Input.GetKeyDown(KeyCode.J))
+                    {
+                        SwitchGameState(GameState.JIANYAO);
+                    }
 
-                if (Input.GetKeyDown(KeyCode.T))
-                {
-                    SwitchGameState(GameState.INSCENE);
-                }
+                    if (Input.GetKeyDown(KeyCode.T))
+                    {
+                        SwitchGameState(GameState.INSCENE);
+                    }
 
-                if (Input.GetKeyDown(KeyCode.Z))
-                {
-                    SwitchGameState(GameState.ZHUAYAO);
-                }
+                    if (Input.GetKeyDown(KeyCode.Z))
+                    {
+                        // SwitchGameState(GameState.ZHUAYAO);
+                    }
                 
-                GameStateHandler();
+                    GameStateHandler();
+                }
+            }
+            else
+            {
+                DialogueManager.instance.Tick();
             }
             
         }
@@ -82,6 +99,9 @@ namespace HT
                     break;
                 case GameState.ZHUAYAO: 
                     ZhuaYaoHandler.instance.Tick();
+                    break;
+                case GameState.INSCENE:
+                    InSceneHandler();
                     break;
                 default:
                     break;
@@ -110,7 +130,7 @@ namespace HT
             }
         }
 
-        private void SetGameView(GameView gameView, GameState gameState)
+        public void SetGameView(GameView gameView, GameState gameState)
         {
             //触发场景变换事件
             OnStateChange?.Invoke(gameState, gameStateNow );
@@ -123,7 +143,6 @@ namespace HT
             
             // 1. 相机位置与旋转的插值
 
-            // 创建一个 DOTween 的序列 (Sequence) 可并行或串行地执行多个 tween
             Sequence seq = DOTween.Sequence();
             // 相机移动插值
             seq.Append(
@@ -179,6 +198,27 @@ namespace HT
                 {
                     craftUIOn = false;
                 });
+        }
+
+
+        private bool isLeft;
+        void InSceneHandler()
+        {
+            if (Input.GetKeyDown(KeyCode.A) && !isLeft)
+            {
+                isLeft = true;
+                SetGameView(leftSceneView, GameState.INSCENE);
+            }
+
+            if (Input.GetKeyDown(KeyCode.D) && isLeft)
+            {
+                isLeft = false;
+                SetGameView(rightSceneView, GameState.INSCENE);
+            }
+            
+            if (!isTransitioning)
+                ClickInteractions.instance.Tick();
+            
         }
         
         

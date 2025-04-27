@@ -108,13 +108,16 @@ namespace HT
 
         void Start()
         {
-            var item = ResourceManager.instance.GetItem(slotItem.Name);
-            if (item != null)
+            if (slotItem.Count > 0)
             {
-                slotItem.Name = item.Name;
-                slotItem.Icon = item.Icon;
+                var item = ResourceManager.instance.GetItem(slotItem.Name);
+                if (item != null)
+                {
+                    slotItem.Name = item.Name;
+                    slotItem.Icon = item.Icon;
+                }
+                UpdateSlot();
             }
-            UpdateSlot();
         }
     }
 
