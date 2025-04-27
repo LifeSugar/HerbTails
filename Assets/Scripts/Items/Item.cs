@@ -16,6 +16,7 @@ namespace HT
 
         [field: SerializeField] public int Count { get; set; } = 0;
         
+        
     }
 
     [System.Serializable]
@@ -28,21 +29,27 @@ namespace HT
     [System.Serializable]
     public class Herb : CraftMaterial
     {
-        // [field: SerializeField] public string CoarseGrinded { get; set; }
-        // [field: SerializeField] public string FineGrinded { get; set; }
+
         [field: SerializeField] public GameObject Prefab { get; set; } = null;
+        [field: SerializeField] public Color Color { get; set; } = Color.white; //color tint
+        [field: SerializeField] public String GrindedHerb { get; set; } = null;
+        [field: SerializeField] public String SlicedHerb { get; set; } = null;
     }
 
     // GrindedHerb 只能由特定的 Herb 生成
     [System.Serializable]
     public class GrindedHerb : CraftMaterial
     {
-        // 如果需要在 Inspector 上可视化 SourceHerb，就用 [field: SerializeField]
-        // 如果只需要脚本内逻辑，可以去掉或改成 private
-        [field: SerializeField] public string SourceHerb { get; private set; }
+        
         
         // 无参构造函数留给 Unity 序列化用
         public GrindedHerb() { }
+    }
+
+    [System.Serializable]
+    public class SlicedHerb : CraftMaterial
+    {
+        
     }
 
     // 药品

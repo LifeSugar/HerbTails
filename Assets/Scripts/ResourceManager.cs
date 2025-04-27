@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace HT
@@ -9,6 +10,7 @@ namespace HT
         Dictionary<string, int> item_ids = new Dictionary<string, int>();
         Dictionary<string, int> herb_ids = new Dictionary<string, int>();
         Dictionary<string, int> grindedHerb_ids = new Dictionary<string, int>();
+        Dictionary<String, int> slicedHerb_ids = new Dictionary<String, int>();
         Dictionary<string, int> craftMaterial_ids = new Dictionary<string, int>();
         Dictionary<string, int> medicine_ids = new Dictionary<string, int>();
 
@@ -215,6 +217,61 @@ namespace HT
             }
             return -1;
         }
+        #endregion
+        
+        #region SlicedHerbs
+        
+        void LoadSlicedHerbs()
+        {
+            SlicedHerbScriptableObject obj = Resources.Load("HT.SlicedHerbScriptableObject") as SlicedHerbScriptableObject;
+            if (obj == null)
+            {
+                Debug.Log("Herbs.GrindedHerbScriptableObject could not be loaded!");
+                return;
+            }
+
+            for (int i = 0; i < obj.slicedHerbs.Count; i++)
+            {
+                if (grindedHerb_ids.ContainsKey(obj.slicedHerbs[i].Name))
+                {
+                    Debug.Log("Grinded Herb is a duplicate: " + obj.slicedHerbs[i].Name);
+                }
+                else
+                {
+                    grindedHerb_ids.Add(obj.slicedHerbs[i].Name, i);
+                }
+            }
+        }
+        
+        public SlicedHerb GetSlicedHerb(string name)
+        {
+            SlicedHerbScriptableObject obj = Resources.Load("HT.GrindedHerbScriptableObject") as SlicedHerbScriptableObject;
+            if (obj == null)
+            {
+                Debug.Log("Herbs.SlicedHerbScriptableObject could not be loaded!");
+                return null;
+            }
+
+            int index = GetSlicedHerbIdFromString(name);
+            if (index == -1)
+            {
+                Debug.Log("Grinded Herb not found: " + name);
+                return null;
+            }
+            return obj.slicedHerbs[index];
+        }
+        
+        int GetSlicedHerbIdFromString(string name)
+        {
+            int index = -1;
+            if (grindedHerb_ids.TryGetValue(name, out index))
+            {
+                return index;
+            }
+            return -1;
+        }
+        
+        
         #endregion
 
         #region Craft Materials

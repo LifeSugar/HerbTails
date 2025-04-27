@@ -7,4 +7,9 @@ namespace HT
     {
         public List<Item> items = new List<Item>();
     }
+
+    public class SlicedHerbScriptableObject : ScriptableObject
+    {
+        public List<SlicedHerb> slicedHerbs = new List<SlicedHerb>();
+    }
 }

@@ -14,37 +14,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   herbs:
   - <Name>k__BackingField: testherb1
-    <Icon>k__BackingField: {fileID: 5284596829614838628, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: 3818981388294342849, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testherb
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 15
     <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 56e6b8cf0b558eb4a89d59ec0b583ce4,
       type: 3}
+    <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+    <GrindedHerb>k__BackingField: Grindedtestherb1
+    <SlicedHerb>k__BackingField: Slicedtestherb1
   - <Name>k__BackingField: testherb2
-    <Icon>k__BackingField: {fileID: 5737710698041289318, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: -6717651570376631539, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testherb2
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 10
     <Prefab>k__BackingField: {fileID: 258903064843303872, guid: 8687ef58b20715d4aa913c857e99a3c7,
       type: 3}
+    <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+    <GrindedHerb>k__BackingField: Grindedtestherb2
+    <SlicedHerb>k__BackingField: Slicedtestherb2
   - <Name>k__BackingField: TestGreen
-    <Icon>k__BackingField: {fileID: 6294194357801579896, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: -6158133412387137683, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: thi is test Green one
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 15
     <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 56e6b8cf0b558eb4a89d59ec0b583ce4,
       type: 3}
+    <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+    <GrindedHerb>k__BackingField: GrindedTestGreen
+    <SlicedHerb>k__BackingField: SlicedTestGreen
   - <Name>k__BackingField: TestRed
-    <Icon>k__BackingField: {fileID: -6107325948083477697, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: 1974655671064983108, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testRed one
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 10
     <Prefab>k__BackingField: {fileID: 258903064843303872, guid: 8687ef58b20715d4aa913c857e99a3c7,
       type: 3}
+    <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+    <GrindedHerb>k__BackingField: GrindedTestRed
+    <SlicedHerb>k__BackingField: SlicedTestRed
   - <Name>k__BackingField: Element 2
     <Icon>k__BackingField: {fileID: -7261159648996326750, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
@@ -53,3 +65,39 @@ MonoBehaviour:
     <Weight>k__BackingField: 10
     <Prefab>k__BackingField: {fileID: 258903064843303872, guid: 8687ef58b20715d4aa913c857e99a3c7,
       type: 3}
+    <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+    <GrindedHerb>k__BackingField: GrindedElement 2
+    <SlicedHerb>k__BackingField: SlicedElement 2
+  - <Name>k__BackingField: "\u7EA2\u8272\u8349\u836F"
+    <Icon>k__BackingField: {fileID: 6855053106848714499, guid: 0424875c37027cd4cacc39661326f640,
+      type: 3}
+    <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EA2\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 10
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 1, g: 0, b: 0, a: 1}
+    <GrindedHerb>k__BackingField: "Grinded\u7EA2\u8272\u8349\u836F"
+    <SlicedHerb>k__BackingField: "Sliced\u7EA2\u8272\u8349\u836F"
+  - <Name>k__BackingField: "\u7EFF\u8272\u8349\u836F"
+    <Icon>k__BackingField: {fileID: -908541043714362580, guid: 0424875c37027cd4cacc39661326f640,
+      type: 3}
+    <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EFF\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.30588236, g: 0.654902, b: 0.18039216, a: 1}
+    <GrindedHerb>k__BackingField: "Grinded\u7EFF\u8272\u8349\u836F"
+    <SlicedHerb>k__BackingField: "Sliced\u7EFF\u8272\u8349\u836F"
+  - <Name>k__BackingField: "\u84DD\u8272\u8349\u836F"
+    <Icon>k__BackingField: {fileID: 859688861467451566, guid: 0424875c37027cd4cacc39661326f640,
+      type: 3}
+    <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u84DD\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.05490196, g: 0.15686275, b: 0.25490198, a: 1}
+    <GrindedHerb>k__BackingField: "Grinded\u84DD\u8272\u8349\u836F"
+    <SlicedHerb>k__BackingField: "Sliced\u84DD\u8272\u8349\u836F"

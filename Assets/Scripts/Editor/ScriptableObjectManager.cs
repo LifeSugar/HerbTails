@@ -50,6 +50,14 @@ namespace HT
         {
             ScriptableObjectManager.CreateAsset<GrindedHerbScriptableObject>();
         }
+        
+        // 创建 SlicedHerb
+
+        [MenuItem("Assets/Inventory/Create Sliced Herb List")]
+        public static void CreateSlicedHerbs()
+        {
+            ScriptableObjectManager.CreateAsset<SlicedHerbScriptableObject>();
+        }
 
         // 创建 CraftMaterialScriptableObject
         [MenuItem("Assets/Inventory/Create Craft Material List")]
