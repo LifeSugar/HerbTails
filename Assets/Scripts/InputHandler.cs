@@ -100,6 +100,9 @@ namespace HT
                 case GameState.ZHUAYAO: 
                     ZhuaYaoHandler.instance.Tick();
                     break;
+                case GameState.MOYAO:
+                    MoYaoHandler.instance.Tick();
+                    break;
                 case GameState.INSCENE:
                     InSceneHandler();
                     break;
