@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/~$asset.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/~$asset.xlsx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/MoYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/MoYaoHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
-    </list>
+    <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +29,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CraftParts/ShanZi.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/JianYaoHandlerEditor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -150,6 +145,7 @@
       <workItem from="1745720160929" duration="151000" />
       <workItem from="1745760317553" duration="6640000" />
       <workItem from="1745769479615" duration="3097000" />
+      <workItem from="1745775053057" duration="14000" />
     </task>
     <servers />
   </component>
