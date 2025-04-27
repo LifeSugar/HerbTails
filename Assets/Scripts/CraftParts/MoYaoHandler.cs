@@ -11,6 +11,9 @@ namespace HT
         public Chu chu;
         public Collider selectCollider;
         
+        public InventorySlot origin;
+        public InventorySlot grinded;
+        
         
 
         void Start()
