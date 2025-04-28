@@ -34,7 +34,7 @@ namespace HT
         {
             
             RaycastHit hit;
-            if (Input.GetMouseButtonDown(0) && !JianYaoHandler.instance.shanziInHand)
+            if (Input.GetMouseButtonDown(0) && !JianYaoHandler.instance.shanziInHand && CursorSlot.instance.isEmpty)
             {
                 Ray ray = PixelCameraManager.Instance.viewCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
                 Debug.DrawRay(ray.origin, ray.direction * 999f, Color.red);

@@ -40,7 +40,7 @@ namespace HT
     [System.Serializable]
     public class GrindedHerb : CraftMaterial
     {
-        
+        [field: SerializeField] public string OringingHerb { get; set; } = null;
         
         // 无参构造函数留给 Unity 序列化用
         public GrindedHerb() { }
@@ -56,7 +56,7 @@ namespace HT
     [System.Serializable]
     public class Medicine : Item
     {
-        // 在这里可加上任何药品特有的字段
+        [field: SerializeField] public Quality Quality { get; set; }
     }
 
     // BoilMatch 处理 CraftMaterial 的组合，并根据组合生成 Medicine
@@ -64,6 +64,7 @@ namespace HT
     public class Prescription
     {
         [field: SerializeField] public List<CraftMaterial> CraftMaterials { get; set; }
+        [field: SerializeField] public List<int> Weights { get; set; } = new List<int>();
         [field: SerializeField] public Medicine ResultMedicine { get; set; }
         [field: SerializeField] public List<FirePeriod> FirePeriods { get; set; }
 

@@ -34,6 +34,7 @@ namespace HT
             }
         }
 
+        public bool readOnly = false;
         public void OnClickSlot()
         {
             if (isEmpty)
@@ -42,7 +43,7 @@ namespace HT
                 {
                     return;
                 }
-                else if (CursorSlot.instance.cursorItem.GridType == slotItem.GridType)
+                else if (CursorSlot.instance.cursorItem.GridType == slotItem.GridType && !readOnly)
                 {
                     Utility.DeepCopyUISlot(CursorSlot.instance.cursorItem, slotItem, true ,false);
                     CursorSlot.instance.cursorItem.Count = 0;
@@ -63,7 +64,7 @@ namespace HT
                     UpdateSlot();
                     return;
                 }
-                else
+                else if (!readOnly)
                 {
                     // 通过比较 UISlot 内的 GridType 判断两者是否匹配
                     bool match = CheckCursorItemType(CursorSlot.instance.cursorItem);
@@ -99,11 +100,14 @@ namespace HT
 
         void OnEnable()
         {
-           
-            slotButton = GetComponent<Button>();
-            count = GetComponentInChildren<TextMeshProUGUI>();
-            UpdateSlot();
-            slotButton.onClick.AddListener(() => OnClickSlot());
+
+            if (!readOnly)
+            {
+                slotButton = GetComponent<Button>();
+                count = GetComponentInChildren<TextMeshProUGUI>();
+                UpdateSlot();
+                slotButton.onClick.AddListener(() => OnClickSlot());
+            }
         }
 
         void Start()

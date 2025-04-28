@@ -54,6 +54,11 @@ namespace HT
         public float maxFreq = 10f;
         public float maxValue = 150f;
         
+        
+        [Header("放药物")]
+        public HerbsInPort herbsInPort;
+        public Collider selectCollider;
+        
         //============测试==================
         [Header("测试用药方")] public Prescription testPrescription;
 
@@ -131,6 +136,7 @@ namespace HT
             else
             {
                 clickFrequency = 0;
+                HandleDropIn();
             }
 
             if (boiling)
@@ -326,6 +332,37 @@ namespace HT
                 default:
                     break;
             }
+        }
+        
+        //点击的方法
+        public void HandleDropIn()
+        {
+           Ray ray = Utility.GetRayFromRealCamScreenPos(Input.mousePosition);
+           RaycastHit hit;
+           LayerMask mask = 1 << 11;
+           if (Input.GetMouseButtonDown(0)
+               && !herbsInPort.GetSlotFullState()
+               && !CursorSlot.instance.isEmpty)
+           {
+               if (CursorSlot.instance.cursorItem.GridType == GridTypes.HERBS ||
+                   CursorSlot.instance.cursorItem.GridType == GridTypes.GRINDEDHERBS)
+               {
+                   var slot = herbsInPort.GetFirstEmptySlot();
+                   var cursorItem = CursorSlot.instance.cursorItem;
+                   slot.slotItem = new UISlot()
+                   {
+                       GridType = cursorItem.GridType,
+                       Name = cursorItem.Name,
+                       Count = cursorItem.Count,
+                       Icon = cursorItem.Icon,
+                   };
+                   slot.UpdateSlot();
+                   cursorItem.Count = 0;
+                   CursorSlot.instance.UpdateCursorSlot();
+
+               }
+           }
+           
         }
 
 

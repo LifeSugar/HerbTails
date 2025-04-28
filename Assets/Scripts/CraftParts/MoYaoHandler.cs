@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Serialization;
 
 namespace HT
 {
@@ -11,8 +12,9 @@ namespace HT
         public bool Ready = false;
         public Chu chu;
         public Collider selectCollider;
-        
-        public List<Herb> herbsInBox = new List<Herb>();
+
+        [FormerlySerializedAs("herbsIn")] public InventorySlot herbsInSlot;
+        [FormerlySerializedAs("GrindedOut")] public InventorySlot GrindedOutSlot;
         
         public static MoYaoHandler instance;
 
@@ -24,21 +26,18 @@ namespace HT
         void Start()
         {
             InputHandler.instance.OnStateChange += SwitchMoYao;
-            chu.enabled = false;
         }
 
         public void Tick()
         {
-            if (!Ready)
-            {
-                selectCollider.gameObject.SetActive(true);
+            if (herbsInSlot.isEmpty) 
                 HandleSelectHerb();
-            }
             else
             {
-                selectCollider.gameObject.SetActive(false);
-                chu.enabled = true;
+                UpdateMarkerPosition();
             }
+            
+            
         }
 
         public void SwitchMoYao(GameState gameState, GameState previousGameState)
@@ -72,22 +71,68 @@ namespace HT
         {
             Ray ray = Utility.GetRayFromRealCamScreenPos(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            LayerMask mask = 1 << 11;
+            if (Physics.Raycast(ray, out hit, mask))
             {
                 if (Input.GetMouseButtonDown(0)
                     && !CursorSlot.instance.isEmpty 
-                    && hit.collider == selectCollider)
+                    && hit.collider == selectCollider
+                    && herbsInSlot.isEmpty && GrindedOutSlot.isEmpty)
                 {
                     var cursorItem = CursorSlot.instance.cursorItem;
                     if (cursorItem.GridType == GridTypes.HERBS)
                     {
-                        var herb = ResourceManager.instance.GetHerb(cursorItem.Name) as Herb;
-                        herbsInBox.Add(herb);
-                        cursorItem.Count -= 1;
+                        chu.ResetPound();
+                        Utility.DeepCopyUISlot(CursorSlot.instance.cursorItem, herbsInSlot.slotItem, true ,false);
+                        CursorSlot.instance.cursorItem.Count = 0;
                         CursorSlot.instance.UpdateCursorSlot();
+                        herbsInSlot.UpdateSlot();
+                        return;
                     }
                 }
             }
         }
+
+
+        // Marker活动范围
+        public float minX = 30f;
+        public float maxX = 300f;
+        public RectTransform Marker;
+        public int targetCount = 12;
+        void UpdateMarkerPosition()
+        {
+            if (Marker == null || chu == null)
+                return;
+
+            float clampedPound = Mathf.Clamp(chu.PoundCount, 0f, targetCount);
+            float targetX = Mathf.Lerp(minX, maxX, clampedPound / targetCount);
+
+            // 平滑移动
+            Vector2 anchoredPos = Marker.anchoredPosition;
+            anchoredPos.x = Mathf.Lerp(anchoredPos.x, targetX, Time.deltaTime * 10f); 
+            Marker.anchoredPosition = anchoredPos;
+            if (chu.PoundCount == targetCount)
+            {
+                var herbin = ResourceManager.instance.GetHerb(herbsInSlot.slotItem.Name);
+                var grindedherbs = ResourceManager.instance.GetGrindedHerb(herbin.GrindedHerb);
+
+                GrindedOutSlot.slotItem = new UISlot()
+                {
+                    GridType = GridTypes.GRINDEDHERBS,
+                    Name = grindedherbs.Name,
+                    Count = herbsInSlot.slotItem.Count,
+                    Icon = grindedherbs.Icon,
+                };
+                
+                GrindedOutSlot.UpdateSlot();
+                herbsInSlot.slotItem.Count = 0;
+                herbsInSlot.UpdateSlot();
+                herbsInSlot.isEmpty = true;
+                
+                
+
+            }
+        }
+
     }
 }

@@ -17,7 +17,7 @@ public class PieChart : MonoBehaviour
     {
         SetUpMaskVisual(maskSprite);
         GenerateChart();
-        CountDown(maskSprite, duration);
+        // CountDown(maskSprite, duration);
     }
 
     public void GenerateChart()
