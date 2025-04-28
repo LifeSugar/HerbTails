@@ -341,26 +341,33 @@ namespace HT
            RaycastHit hit;
            LayerMask mask = 1 << 11;
            if (Input.GetMouseButtonDown(0)
-               && !herbsInPort.GetSlotFullState()
+               && herbsInPort.GetSlotEmptyState()
                && !CursorSlot.instance.isEmpty)
            {
-               if (CursorSlot.instance.cursorItem.GridType == GridTypes.HERBS ||
-                   CursorSlot.instance.cursorItem.GridType == GridTypes.GRINDEDHERBS)
+               if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
                {
-                   var slot = herbsInPort.GetFirstEmptySlot();
-                   var cursorItem = CursorSlot.instance.cursorItem;
-                   slot.slotItem = new UISlot()
+                   if (hit.collider == selectCollider)
                    {
-                       GridType = cursorItem.GridType,
-                       Name = cursorItem.Name,
-                       Count = cursorItem.Count,
-                       Icon = cursorItem.Icon,
-                   };
-                   slot.UpdateSlot();
-                   cursorItem.Count = 0;
-                   CursorSlot.instance.UpdateCursorSlot();
+                       if (CursorSlot.instance.cursorItem.GridType == GridTypes.HERBS ||
+                           CursorSlot.instance.cursorItem.GridType == GridTypes.GRINDEDHERBS)
+                       {
+                           var slot = herbsInPort.GetFirstEmptySlot();
+                           var cursorItem = CursorSlot.instance.cursorItem;
+                           slot.slotItem = new UISlot()
+                           {
+                               GridType = cursorItem.GridType,
+                               Name = cursorItem.Name,
+                               Count = cursorItem.Count,
+                               Icon = cursorItem.Icon,
+                           };
+                           slot.UpdateSlot();
+                           cursorItem.Count = 0;
+                           CursorSlot.instance.UpdateCursorSlot();
 
+                       }
+                   }
                }
+               
            }
            
         }

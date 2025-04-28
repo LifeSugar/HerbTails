@@ -6,19 +6,50 @@
   <component name="ChangeListManager">
     <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/asset.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DataExcels/asset.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2-2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2-3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2-4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2-5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2-6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3-1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3-2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3-3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3-4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4-7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Group 24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Group 24.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HerbsInPort.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HerbsInPort.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IMG_2503.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IMG_2503.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IMG_2504.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IMG_2504.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/~$asset.xlsx.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.GrindedHerbScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.GrindedHerbScriptableObject.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.HerbScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.HerbScriptableObject.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/Chu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/Chu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/JianYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/JianYaoHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/MoYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/MoYaoHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ShanZi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ShanZi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PieChart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PieChart.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UISprite/font/HYXiaoXueYouYaTi-75U SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/font/HYXiaoXueYouYaTi-75U SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,26 +87,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "XThreadsFramesViewSplitterKey": "0.6494465",
-    "git-widget-placeholder": "0427",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.6494465&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;0427&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../build/build218.app/Contents/MacOS/TailsOfHerbs" />
+      <option name="EXE_PATH" value="$USER_HOME$/OneDrive/草药物语/build/2.16.19\TailsOfHerbs.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Administrator\OneDrive\草药物语\build\2.16.19" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -83,7 +114,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.34f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\UnityProjects\HerbTails -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\UnityProjects\HerbTails" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -91,7 +122,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.34f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\UnityProjects\HerbTails -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\UnityProjects\HerbTails" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -111,13 +142,15 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8128">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="8128" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -163,6 +196,7 @@
       <workItem from="1745769479615" duration="3097000" />
       <workItem from="1745775053057" duration="14000" />
       <workItem from="1745779100382" duration="16115000" />
+      <workItem from="1745802780954" duration="4136000" />
     </task>
     <servers />
   </component>
