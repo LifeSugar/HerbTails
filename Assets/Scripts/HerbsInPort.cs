@@ -41,10 +41,10 @@ namespace HT
         {
             foreach (var slot in slots)
             {
-                if (!slot.isEmpty)
-                    return false;
+                if (slot.isEmpty)
+                    return true;
             }
-            return true;
+            return false;
         }
 
         public InventorySlot GetFirstEmptySlot()
@@ -55,6 +55,24 @@ namespace HT
                     return slot;
             }
             return null;
+        }
+
+        
+        public List<CraftMaterial> materialsIn = new List<CraftMaterial>();
+        public void ReFreshMaterialsInPort()
+        {
+            materialsIn.Clear();
+            foreach (var slot in slots)
+            {
+                
+                if (slot.isEmpty)
+                    continue;
+                var slotItem = slot.slotItem;
+                var cm = ResourceManager.instance.GetCraftMaterial(slotItem.Name);
+                cm.Count = slotItem.Count;
+                materialsIn.Add(cm);
+
+            }
         }
         
     }

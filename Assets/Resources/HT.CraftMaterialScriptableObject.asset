@@ -12,4 +12,88 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed441bb17ca44bdbac40c8ed5a5e5210, type: 3}
   m_Name: HT.CraftMaterialScriptableObject
   m_EditorClassIdentifier: 
-  craftMaterials: []
+  craftMaterials:
+  - <Name>k__BackingField: testherb1
+    <Icon>k__BackingField: {fileID: -6107325948083477697, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: this is a testherb
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
+  - <Name>k__BackingField: testherb2
+    <Icon>k__BackingField: {fileID: -3930106559833483389, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: this is a testherb2
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 10
+  - <Name>k__BackingField: TestGreen
+    <Icon>k__BackingField: {fileID: -6521309742446134679, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: thi is test Green one
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
+  - <Name>k__BackingField: TestRed
+    <Icon>k__BackingField: {fileID: 2167560117471129271, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: this is a testRed one
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 10
+  - <Name>k__BackingField: Element 2
+    <Icon>k__BackingField: {fileID: -7765231214244175895, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: this is a testRed one
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 10
+  - <Name>k__BackingField: "\u7EA2\u8272\u8349\u836F"
+    <Icon>k__BackingField: {fileID: 6855053106848714499, guid: 0424875c37027cd4cacc39661326f640,
+      type: 3}
+    <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EA2\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 10
+  - <Name>k__BackingField: "\u7EFF\u8272\u8349\u836F"
+    <Icon>k__BackingField: {fileID: -908541043714362580, guid: 0424875c37027cd4cacc39661326f640,
+      type: 3}
+    <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EFF\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
+  - <Name>k__BackingField: "\u84DD\u8272\u8349\u836F"
+    <Icon>k__BackingField: {fileID: 859688861467451566, guid: 0424875c37027cd4cacc39661326f640,
+      type: 3}
+    <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u84DD\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
+  - <Name>k__BackingField: "\u78E8\u788E\u7684\u7EA2\u8272\u8349\u836F"
+    <Icon>k__BackingField: {fileID: -3533076754595367027, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
+      type: 3}
+    <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EA2\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 10
+  - <Name>k__BackingField: "\u78E8\u788E\u7684\u7EFF\u8272\u8349\u836F"
+    <Icon>k__BackingField: {fileID: -5462209628964838299, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
+      type: 3}
+    <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EFF\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
+  - <Name>k__BackingField: "\u78E8\u788E\u7684\u84DD\u8272\u8349\u836F"
+    <Icon>k__BackingField: {fileID: -5462209628964838299, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
+      type: 3}
+    <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u84DD\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
+  - <Name>k__BackingField: dfadf
+    <Icon>k__BackingField: {fileID: -3533076754595367027, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
+      type: 3}
+    <Description>k__BackingField: dsfadsfasdgdfsg
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
+  - <Name>k__BackingField: dfasdf
+    <Icon>k__BackingField: {fileID: -5462209628964838299, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
+      type: 3}
+    <Description>k__BackingField: agdgfasf
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
+  - <Name>k__BackingField: dfdfdf
+    <Icon>k__BackingField: {fileID: -5462209628964838299, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
+      type: 3}
+    <Description>k__BackingField: asdfasdg
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15

@@ -4794,6 +4794,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361635583}
   m_Mesh: {fileID: 8973489685445335770, guid: 049169371199b2441a97f55561d42ea6, type: 3}
+--- !u!84 &364535385
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1138
+  m_Height: 640
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 0
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!224 &373967748 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2251470084085880237, guid: d6b151ddd60d2f249a504d00a19b4b2c,
@@ -5602,7 +5640,7 @@ PrefabInstance:
     - target: {fileID: 7293845157832451726, guid: d6b151ddd60d2f249a504d00a19b4b2c,
         type: 3}
       propertyPath: readOnly
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7293845157832451726, guid: d6b151ddd60d2f249a504d00a19b4b2c,
         type: 3}
@@ -12235,7 +12273,7 @@ PrefabInstance:
     - target: {fileID: 7293845157832451726, guid: d6b151ddd60d2f249a504d00a19b4b2c,
         type: 3}
       propertyPath: readOnly
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7293845157832451726, guid: d6b151ddd60d2f249a504d00a19b4b2c,
         type: 3}
@@ -12446,7 +12484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &821505523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16073,7 +16111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1075485470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19949,6 +19987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slots: []
+  materialsIn: []
 --- !u!1 &1262918593
 GameObject:
   m_ObjectHideFlags: 0
@@ -22475,7 +22514,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 1655197938}
+      objectReference: {fileID: 364535385}
     - target: {fileID: 4510557104871343963, guid: 7e5065e91bcc9b3468cb164d5c3d0529,
         type: 3}
       propertyPath: upscaledCanvas
@@ -24551,7 +24590,7 @@ PrefabInstance:
     - target: {fileID: 7293845157832451726, guid: d6b151ddd60d2f249a504d00a19b4b2c,
         type: 3}
       propertyPath: readOnly
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7293845157832451726, guid: d6b151ddd60d2f249a504d00a19b4b2c,
         type: 3}
@@ -25237,44 +25276,6 @@ Transform:
   - {fileID: 749760854}
   m_Father: {fileID: 2089122283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1655197938
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1138
-  m_Height: 640
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 0
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &1673498657
 GameObject:
   m_ObjectHideFlags: 0
@@ -29658,7 +29659,7 @@ PrefabInstance:
     - target: {fileID: 7293845157832451726, guid: d6b151ddd60d2f249a504d00a19b4b2c,
         type: 3}
       propertyPath: readOnly
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7293845157832451726, guid: d6b151ddd60d2f249a504d00a19b4b2c,
         type: 3}

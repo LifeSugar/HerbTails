@@ -17,6 +17,7 @@ public class AssetUpadater : EditorWindow
     // Excel 文件路径
     static string excelPath = "Assets/Resources/DataExcels/asset.xlsx";
     static string itemPath = "Assets/Resources/HT.ItemScriptableObject.asset";
+    static string craftMaterialPath = "Assets/Resources/HT.CraftMaterialScriptableObject.asset";
     // 已经存在的 Herbs路径
     static string herbsPath = "Assets/Resources/HT.HerbScriptableObject.asset";
     static string grindedHerbsPath = "Assets/Resources/HT.GrindedHerbScriptableObject.asset";
@@ -162,7 +163,8 @@ public class AssetUpadater : EditorWindow
     }
 
     EditorUtility.SetDirty(herbSO);
-    UpadateItems(herbSO.herbs);
+    UpadateItems<Herb>(herbSO.herbs);
+    UpdateCraftMaterials<Herb>(herbSO.herbs);
     AssetDatabase.SaveAssets();
     Debug.Log("Herbs 已从 Excel 更新完成！");
     
@@ -232,6 +234,7 @@ public class AssetUpadater : EditorWindow
 
     EditorUtility.SetDirty(grindedHerbSO);
     UpadateItems(grindedHerbSO.grindedHerbs);
+    UpdateCraftMaterials<GrindedHerb>(grindedHerbSO.grindedHerbs);
     AssetDatabase.SaveAssets();
     Debug.Log("Grinded Herbs 已从 Excel 更新完成！");
 }
@@ -308,6 +311,9 @@ public class AssetUpadater : EditorWindow
     {
         ItemScriptableObject itemSO = AssetDatabase.LoadAssetAtPath<ItemScriptableObject>(itemPath);
         var items = itemSO.items;
+        EditorUtility.SetDirty(itemSO);
+        AssetDatabase.SaveAssets();
+        Debug.Log($"ItemScriptableObject 已更新，共 {inputsitems.Count} 条");
         for (int i = 0; i < inputsitems.Count; i++)
         {
             Item existingItem = items.Find(item => item.Name.Equals(inputsitems[i].Name));
@@ -325,6 +331,39 @@ public class AssetUpadater : EditorWindow
                     Name = inputsitems[i].Name,
                     Description = inputsitems[i].Description,
                     Icon = inputsitems[i].Icon,
+                    Count = inputsitems[i].Count
+                };
+                items.Add(newItem);
+            }
+        }
+    }
+
+    public static void UpdateCraftMaterials<T>(List<T> inputsitems) where T : CraftMaterial
+    {
+        CraftMaterialScriptableObject craftSO = AssetDatabase.LoadAssetAtPath<CraftMaterialScriptableObject>(craftMaterialPath);
+        var items = craftSO.craftMaterials;
+        EditorUtility.SetDirty(craftSO);
+        AssetDatabase.SaveAssets();
+        Debug.Log($"CraftMaterialScriptableObject 已更新，共 {inputsitems.Count} 条");
+        for (int i = 0; i < inputsitems.Count; i++)
+        {
+            CraftMaterial existingItem = items.Find(item => item.Name.Equals(inputsitems[i].Name));
+            if (existingItem != null)
+            {
+                existingItem.Name = inputsitems[i].Name;
+                existingItem.Description = inputsitems[i].Description;
+                existingItem.Count = inputsitems[i].Count;
+                existingItem.Icon = inputsitems[i].Icon;
+                existingItem.Weight = inputsitems[i].Weight;
+            }
+            else
+            {
+                CraftMaterial newItem = new CraftMaterial()
+                {
+                    Name = inputsitems[i].Name,
+                    Description = inputsitems[i].Description,
+                    Icon = inputsitems[i].Icon,
+                    Weight = inputsitems[i].Weight,
                     Count = inputsitems[i].Count
                 };
                 items.Add(newItem);

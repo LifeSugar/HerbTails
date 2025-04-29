@@ -363,6 +363,7 @@ namespace HT
                            slot.UpdateSlot();
                            cursorItem.Count = 0;
                            CursorSlot.instance.UpdateCursorSlot();
+                           herbsInPort.ReFreshMaterialsInPort();
 
                        }
                    }
