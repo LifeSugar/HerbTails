@@ -16,24 +16,24 @@ MonoBehaviour:
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u8FD9\u91CC\u662F\u836F\u67DC"
+    dialogueText: This is the medicine cabinet.
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u70B9\u51FB\u836F\u67DC\uFF0C\u53EF\u4EE5\u67E5\u770B\u6211\u4EEC\u6240\u6709\u7684\u5E93\u5B58"
+    dialogueText: You can view all the herbs we have in stock.
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u9009\u4E2D\u60F3\u8981\u7684\u836F\u6750\uFF0C\u53EF\u4EE5\u62D6\u52A8\u5230\u79E4\u76D8\u4E0A"
+    dialogueText: Select the herb you need, then drag it onto the scale.
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u62D6\u52A8\u8C03\u8282\u79E4\u7823\u5230\u9700\u8981\u7684\u91CD\u91CF"
+    dialogueText: Drag the weight slider to adjust the scale to the required amount.
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u70B9\u51FB\u5F00\u59CB\uFF0C\u89C2\u5BDF\u662F\u5426\u5E73\u8861"
+    dialogueText: Click 'Start' and check if the scale is balanced.
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u5B8C\u6210\u540E\uFF0C\u5C06\u836F\u6750\u62D6\u5230\u53F3\u4FA7\u80CC\u5305\u91CC"
+    dialogueText: Once you're done, drag the herb into the backpack on the right.

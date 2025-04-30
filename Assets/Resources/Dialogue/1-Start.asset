@@ -16,32 +16,37 @@ MonoBehaviour:
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u54CE\u5440\uFF0C\u4F60\u8D77\u5E8A\u4E86"
+    dialogueText: Oh, you're awake!
   - characterName: ShiFu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u4ECA\u5929\u662F\u6211\u6361\u5230\u4F60\u5462\u7B2C\u516D\u4E2A\u6708\uFF0C\u4F60\u8FD8\u7B97\u52E4\u52C9\uFF0C\u662F\u65F6\u5019\u6765\u6559\u4F60\u8FD9\u5BB6\u533B\u9986\u7684\u7ECF\u8425\u4E86\u3002"
+    dialogueText: "Today marks the sixth month since I found you. You've been fairly
+      diligent\u2014it's time I taught you how to run this clinic."
   - characterName: ShiFu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u5E0C\u671B\u4F60\u6210\u4E3A\u4E00\u4E2A\u5408\u683C\u7684\u52A9\u624B\uFF5E"
+    dialogueText: "Let\u2019s hope you\u2019ll make a good assistant~"
   - characterName: You
     characterPortrait: {fileID: 21300000, guid: 0bcd284ec31dd3e448a5f29fa49c50e0,
       type: 3}
-    dialogueText: "\u8001\u5E08\uFF5E\uFF5E\uFF5E\u4F60\u7EC8\u4E8E\u8981\u6559\u6211\u4E86\uFF08\u6251\uFF09"
+    dialogueText: "Master~~ You're finally going to teach me\uFF01"
   - characterName: ShiFu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\uFF08\u5236\u6B62\uFF09\u5148\u4ECE\u5236\u836F\u59D4\u6258\u5F00\u59CB\u3002\u9996\u5148\uFF0C\u70B9\u8FD9\u91CC\u67E5\u770B\u836F\u65B9\u5427\u3002"
+    dialogueText: Let's start with a medicine-making request first. Now, tap here
+      to check the prescription.
   - characterName: ShiFu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u6BCF\u4E00\u4E2A\u836F\u65B9\u4E0A\u90FD\u5199\u7740\u9700\u8981\u7684\u836F\u6750\u79CD\u7C7B\u3001\u91CD\u91CF\u4E0E\u5236\u6CD5\u3002"
+    dialogueText: Each prescription lists the required herbs, their weights, and
+      the preparation method.
   - characterName: ShiFu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u4F60\u7684\u4EFB\u52A1\u662F\u62FF\u4E0A\u8FD9\u4E9B\u836F\u65B9\uFF0C\u53BB\u5236\u836F\u533A\u6839\u636E\u5236\u4F5C\u51FA\u5BF9\u5E94\u7684\u836F"
+    dialogueText: Your task is to take these prescriptions and head to the preparation
+      area to craft the corresponding medicines.
   - characterName: ShiFu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u8BB0\u4F4F\u54E6\uFF0C\u4ED4\u7EC6\u770B\u6E05\u695A\u8981\u6C42\uFF0C\u6211\u4F1A\u7ED9\u4F60\u8BC4\u5206\u7684\u3002\u5982\u679C\u4E0D\u53CA\u683C\u7684\u8BDD\u53EF\u662F\u4E0D\u80FD\u4EA4\u7ED9\u60A3\u8005\u7684\u54E6\uFF01"
+    dialogueText: "Remember, read the requirements carefully. I'll be grading your
+      work \u2014 if it doesn't meet the standard, you can't give it to the patient!"

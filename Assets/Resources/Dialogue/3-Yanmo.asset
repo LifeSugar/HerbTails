@@ -16,16 +16,17 @@ MonoBehaviour:
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u8BA9\u6211\u4EEC\u62D6\u52A8\u836F\u6750\u628A\u836F\u6750\u653E\u8FDB\u836F\u94B5\uFF0C\u7528\u836F\u6775\u6363\u788E"
+    dialogueText: '"Now let''s drag the herb into the mortar and use the pestle to
+      grind it.'
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u62D6\u52A8\u836F\u6775\uFF0C\u4E0A\u4E0B\u79FB\u52A8\u8FDB\u884C\u7814\u78E8"
+    dialogueText: Drag the pestle and move it up and down to grind the herb.
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u522B\u5FD8\u4E86\u6CE8\u610F\u89C2\u5BDF\u7814\u78E8\u8FDB\u5EA6\u54E6"
+    dialogueText: "Don\u2019t forget to keep an eye on the grinding progress!"
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u6363\u597D\u836F\u540E\uFF0C\u5C06\u836F\u6536\u56DE\u5305\u91CC"
+    dialogueText: Once the herb is fully ground, put it back into your backpack.
