@@ -16,28 +16,31 @@ MonoBehaviour:
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u836F\u6750\u9F50\u4E86\uFF0C\u4E0B\u4E00\u6B65\u2014\u2014\u71AC\u836F\n"
+    dialogueText: "Now that we have all the herbs, it's time for the next step \u2014
+      decoction."
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u4ECE\u5305\u91CC\u53D6\u836F\u653E\u5165\u9505\u4E2D"
+    dialogueText: Take the herbs from your backpack and put them into the pot.
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u653E\u5165\u5BF9\u5E94\u836F\u6750\u540E\u5339\u914D\u6210\u529F\uFF0C\u8BA1\u65F6\u8BBE\u5B9A\u5B8C\u6210"
+    dialogueText: Perfect match! The herbs are in place, and the timer has been set.
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u7528\u6247\u5B50\u6247\u706B"
+    dialogueText: Fan the flames to keep the fire going.
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u71AC\u836F\u8BB2\u7A76\u706B\u5019\uFF0C\u706B\u592A\u5927\u836F\u5473\u51B2\uFF0C\u706B\u592A\u5C0F\u836F\u529B\u4E0D\u8DB3"
+    dialogueText: Decoction requires careful control of the heat.
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u770B\u51C6\u706B\u52BF\u8BA1\u65F6\uFF0C\u63A7\u5236\u597D\u65F6\u95F4\u54E6 "
+    dialogueText: "Watch the flame closely and time it right \u2014 controlling the
+      duration is key!"
   - characterName: Shifu
     characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
       type: 3}
-    dialogueText: "\u836F\u71AC\u597D\u4E86\uFF0C\u653E\u8FDB\u80CC\u5305\u54B1\u4EEC\u5C31\u80FD\u628A\u836F\u4EA4\u7ED9\u60A3\u8005\u4E86\uFF01"
+    dialogueText: The medicine is ready! Put it into your backpack, and we can deliver
+      it to the patient!
