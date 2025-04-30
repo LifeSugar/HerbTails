@@ -267,8 +267,9 @@ GameObject:
   - component: {fileID: 304859095}
   - component: {fileID: 304859094}
   - component: {fileID: 304859096}
+  - component: {fileID: 304859097}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -398,6 +399,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmClip: {fileID: 8300000, guid: cc03e022a2b36f04abe7889cdcbac67c, type: 3}
+--- !u!114 &304859097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304859093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0938eaeb4e4b5b4e963a9eeeb1ad991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 283b22e01f654704cbbf9c3e2ecf3117, type: 3}
+  volume: 0.8
 --- !u!1 &381680545
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +620,7 @@ GameObject:
   - component: {fileID: 603529897}
   - component: {fileID: 603529896}
   m_Layer: 0
-  m_Name: manager
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1047,7 +1062,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 991548583}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 304859097}
+        m_TargetAssemblyTypeName: ButtonAudio, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &991548583
 MonoBehaviour:
   m_ObjectHideFlags: 0
