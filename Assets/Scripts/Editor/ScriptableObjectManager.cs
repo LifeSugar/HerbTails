@@ -73,5 +73,12 @@ namespace HT
             ScriptableObjectManager.CreateAsset<MedicineScriptableObject>();
         }
         
+        // 创建 prescriptionSO
+        [MenuItem("Assets/Inventory/Create Presccription List")]
+        public static void CreatePrescriptions()
+        {
+            ScriptableObjectManager.CreateAsset<PrescriptionScriptableObject>();
+        }
+        
     }
 }

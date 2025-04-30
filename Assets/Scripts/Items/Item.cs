@@ -49,7 +49,7 @@ namespace HT
     [System.Serializable]
     public class SlicedHerb : CraftMaterial
     {
-        
+        //
     }
 
     // 药品
@@ -63,16 +63,15 @@ namespace HT
     [System.Serializable]
     public class Prescription
     {
+        [field: SerializeField] public String Name { get; set; } = null;
         [field: SerializeField] public List<CraftMaterial> CraftMaterials { get; set; }
         [field: SerializeField] public List<int> Weights { get; set; } = new List<int>();
         [field: SerializeField] public Medicine ResultMedicine { get; set; }
         [field: SerializeField] public List<FirePeriod> FirePeriods { get; set; }
 
-        public Prescription(List<CraftMaterial> craftMaterials, Medicine resultMedicine)
+        public Prescription()
         {
-            // 注意使用 this 区分形参与字段
-            this.CraftMaterials = craftMaterials;
-            this.ResultMedicine = resultMedicine;
+            
         }
 
         // 用于匹配配方
@@ -94,6 +93,7 @@ namespace HT
 
     }
 
+    [System.Serializable]
     public struct FirePeriod
     {
         public FirePower FirePower;

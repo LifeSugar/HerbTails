@@ -12,4 +12,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4030e78f999043ce82a3b4e4c7eaec04, type: 3}
   m_Name: HT.MedicineScriptableObject
   m_EditorClassIdentifier: 
-  medicines: []
+  medicines:
+  - <Name>k__BackingField: Example_Medicine
+    <Icon>k__BackingField: {fileID: 859688861467451566, guid: 0424875c37027cd4cacc39661326f640,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: Example_Medicine1
+    <Icon>k__BackingField: {fileID: -7261159648996326750, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: Example_Medicine2
+    <Icon>k__BackingField: {fileID: -6717651570376631539, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: Example_Medicine3
+    <Icon>k__BackingField: {fileID: -3778226297182608806, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: Example_Medicine4
+    <Icon>k__BackingField: {fileID: 3195923855255894214, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: Example_Medicine5
+    <Icon>k__BackingField: {fileID: -6107325948083477697, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: Example_Medicine6
+    <Icon>k__BackingField: {fileID: 6855053106848714499, guid: 0424875c37027cd4cacc39661326f640,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: Example_Medicine7
+    <Icon>k__BackingField: {fileID: -908541043714362580, guid: 0424875c37027cd4cacc39661326f640,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: Example_Medicine8
+    <Icon>k__BackingField: {fileID: 859688861467451566, guid: 0424875c37027cd4cacc39661326f640,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
