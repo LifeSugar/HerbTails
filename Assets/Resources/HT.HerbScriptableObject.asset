@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   herbs:
   - <Name>k__BackingField: testherb1
-    <Icon>k__BackingField: {fileID: -6107325948083477697, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: -7261159648996326750, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testherb
     <Count>k__BackingField: 1
@@ -25,7 +25,7 @@ MonoBehaviour:
     <GrindedHerb>k__BackingField: Grindedtestherb1
     <SlicedHerb>k__BackingField: Slicedtestherb1
   - <Name>k__BackingField: testherb2
-    <Icon>k__BackingField: {fileID: -3930106559833483389, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: -6717651570376631539, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testherb2
     <Count>k__BackingField: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
     <GrindedHerb>k__BackingField: Grindedtestherb2
     <SlicedHerb>k__BackingField: Slicedtestherb2
   - <Name>k__BackingField: TestGreen
-    <Icon>k__BackingField: {fileID: -6521309742446134679, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: -3778226297182608806, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: thi is test Green one
     <Count>k__BackingField: 1
@@ -47,7 +47,7 @@ MonoBehaviour:
     <GrindedHerb>k__BackingField: GrindedTestGreen
     <SlicedHerb>k__BackingField: SlicedTestGreen
   - <Name>k__BackingField: TestRed
-    <Icon>k__BackingField: {fileID: 2167560117471129271, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: 3195923855255894214, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testRed one
     <Count>k__BackingField: 1
@@ -58,7 +58,7 @@ MonoBehaviour:
     <GrindedHerb>k__BackingField: GrindedTestRed
     <SlicedHerb>k__BackingField: SlicedTestRed
   - <Name>k__BackingField: Element 2
-    <Icon>k__BackingField: {fileID: -7765231214244175895, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: -6107325948083477697, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testRed one
     <Count>k__BackingField: 1
