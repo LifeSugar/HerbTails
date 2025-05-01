@@ -5,35 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/BackPack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/BackPack.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/Cangku.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/Cangku.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ResetZhuaYao.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ResetZhuaYao.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/CankuEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/CankuEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PrescriptionPanel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PrescriptionPanel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TodaysPrescription.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TodaysPrescription.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UIElements/EmptySlot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UIElements/EmptySlot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/asset.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DataExcels/asset.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/~$asset.xlsx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Dialogue/1-Start.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Dialogue/1-Start.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.CraftMaterialScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.CraftMaterialScriptableObject.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.GrindedHerbScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.GrindedHerbScriptableObject.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.HerbScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.HerbScriptableObject.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.ItemScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.ItemScriptableObject.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.MedicineScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.MedicineScriptableObject.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.PrescriptionScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.PrescriptionScriptableObject.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Home.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Home.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/prototype/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/prototype/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ClickInteractions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ClickInteractions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/Cangku.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/Cangku.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/JianYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/JianYaoHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ShanZi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ShanZi.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ZhuaYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ZhuaYaoHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/AssetUpadater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/AssetUpadater.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ResourceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ResourceManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISprite/excel.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/excel.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISprite/excel.aseprite.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/excel.aseprite.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISprite/font/HYXiaoXueYouYaTi-75U SDF 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/font/HYXiaoXueYouYaTi-75U SDF 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StarterInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StarterInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PieChart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PieChart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PrescriptionPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PrescriptionPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UISprite/font/HYXiaoXueYouYaTi-75U SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/font/HYXiaoXueYouYaTi-75U SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UISprite/testMedicine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UISprite/testMedicine.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,15 +130,13 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="35016">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="35016" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -184,7 +186,8 @@
       <workItem from="1745855500135" duration="4901000" />
       <workItem from="1746033290913" duration="11134000" />
       <workItem from="1746048786273" duration="16119000" />
-      <workItem from="1746067800904" duration="2972000" />
+      <workItem from="1746067800904" duration="20933000" />
+      <workItem from="1746089301189" duration="1156000" />
     </task>
     <servers />
   </component>

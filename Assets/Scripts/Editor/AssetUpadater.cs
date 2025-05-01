@@ -334,54 +334,53 @@ public class AssetUpadater : EditorWindow
         AssetDatabase.SaveAssets();
         Debug.Log("Medicines 已从 Excel 的 sheet2 更新完成！");
     }
+        
+    
+
 
 
     
     public static void GetIcon(IRow row,  int iconColumnIndex,  Item item)
     {
-        var iconData = row.GetCell(iconColumnIndex)?.StringCellValue?.Trim();
+        string iconData = row.GetCell(iconColumnIndex)?.StringCellValue?.Trim();
         if (string.IsNullOrEmpty(iconData))
         {
             Debug.LogWarning("Icon 数据为空");
             return;
         }
 
-        var parts = iconData.Split('|');
+        string[] parts = iconData.Split('|');
         if (parts.Length != 2)
         {
-            Debug.LogWarning("Icon 数据格式不正确，请确保格式为: SpriteSheetPath|SpriteIndexOrName");
+            Debug.LogWarning("Icon 数据格式应为: SpriteSheetPath|SpriteName");
             return;
         }
 
-        string sheetPath     = parts[0].Trim();    // e.g. "Assets/.../excel.aseprite" 或者 ".../icons.png"
-        string spriteKey     = parts[1].Trim();    // 要么是数字索引，要么是 Sprite 名称
+        string sheetPath  = parts[0].Trim();   // 图集路径
+        string spriteName = parts[1].Trim();   // 目标 Sprite 名
 
-        var allAssets = AssetDatabase.LoadAllAssetsAtPath(sheetPath);
-        var sprites   = allAssets.OfType<Sprite>().ToArray();
+        // 先把图集里的全部 Sprite 读出来并按名字排序（字典序）
+        Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(sheetPath)
+            .OfType<Sprite>()
+            .OrderBy(s => s.name, System.StringComparer.OrdinalIgnoreCase)
+            .ToArray();
         if (sprites.Length == 0)
         {
-            Debug.LogWarning($"在路径 {sheetPath} 没有加载到任何 Sprite");
+            Debug.LogWarning($"在 {sheetPath} 没有找到任何 Sprite");
             return;
         }
 
-        Sprite target = null;
+        // 直接按名称精确匹配
+        Sprite target = sprites.FirstOrDefault(
+            s => s.name.Equals(spriteName, System.StringComparison.OrdinalIgnoreCase));
 
-        if (int.TryParse(spriteKey, out int idx))
-        {
-            if (idx >= 0 && idx < sprites.Length)
-                target = sprites[idx];
-        }
-
-        if (target == null)
-            target = sprites.FirstOrDefault(s => s.name.Equals(spriteKey, StringComparison.OrdinalIgnoreCase));
-
+        // 如果没找到，再尝试 “图集文件名_片段名” 的组合写法（可选）
         if (target == null)
         {
-            
-            string withoutExt = Path.ChangeExtension(sheetPath, null);
-            string baseName   = Path.GetFileNameWithoutExtension(withoutExt);
-            string composite  = $"{baseName}_{spriteKey}";
-            target = sprites.FirstOrDefault(s => s.name.Equals(composite, StringComparison.OrdinalIgnoreCase));
+            string atlasBase = Path.GetFileNameWithoutExtension(sheetPath);  // example
+            string composite = $"{atlasBase}_{spriteName}";                  // example_example_0
+            target = sprites.FirstOrDefault(
+                s => s.name.Equals(composite, System.StringComparison.OrdinalIgnoreCase));
         }
 
         if (target != null)
@@ -390,7 +389,7 @@ public class AssetUpadater : EditorWindow
         }
         else
         {
-            Debug.LogWarning($"无法在 {sheetPath} 中找到 对应 “{spriteKey}” 的 Sprite");
+            Debug.LogWarning($"无法在 {sheetPath} 中找到名为 {spriteName} 的 Sprite");
         }
     }
     private static void TryParseColorFromText(ICell cell, ref Color color, int rowIndex)

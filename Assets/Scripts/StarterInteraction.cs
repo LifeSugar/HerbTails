@@ -23,7 +23,7 @@ namespace HT
 
         void FocusOndesk(int currentline)
         {
-            if (currentline != 3)
+            if (currentline != 5)
             {
                 return;
             }
@@ -36,7 +36,7 @@ namespace HT
 
         void MoveBack(int currentline)
         {
-            if (currentline != 4)
+            if (currentline != 6)
             {
                 return;
             }

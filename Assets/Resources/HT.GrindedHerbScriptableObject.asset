@@ -60,14 +60,14 @@ MonoBehaviour:
       type: 3}
     <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EA2\u8272\u8349\u836F"
     <Count>k__BackingField: 1
-    <Weight>k__BackingField: 3
+    <Weight>k__BackingField: 5
     <OringingHerb>k__BackingField: 
   - <Name>k__BackingField: GrindedGreenHerb
-    <Icon>k__BackingField: {fileID: -5462209628964838299, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
+    <Icon>k__BackingField: {fileID: -3533076754595367027, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
       type: 3}
     <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EFF\u8272\u8349\u836F"
     <Count>k__BackingField: 1
-    <Weight>k__BackingField: 4
+    <Weight>k__BackingField: 8
     <OringingHerb>k__BackingField: 
   - <Name>k__BackingField: GrindedBlueHerb
     <Icon>k__BackingField: {fileID: -5462209628964838299, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,

@@ -123,6 +123,8 @@ namespace HT
                             GameObject herbPrefab = Instantiate(herbGot.Prefab, pos, Quaternion.identity);
                             herbPrefab.transform.parent = this.transform;
                             var rtHerb = herbPrefab.GetComponent<RuntimeHerb>();
+                            var mat = herbPrefab.GetComponent<MeshRenderer>().material;
+                            mat.SetColor("_DiffuseColor", herbGot.Color);
                             Utility.DeepCopyHerb(herbGot, rtHerb.herb, false);
                             herbsIn.Add(rtHerb);
                             cursorItem.Count -= 1;
@@ -193,11 +195,17 @@ namespace HT
             else
             {
                 instance = this;
-                measureButton = ResetZhuaYao.Instance.StartZhuaYaoBtn;
-                ZhuaYaoPanel = ResetZhuaYao.Instance.ZhuaYaoPanel;
-                weightText = ResetZhuaYao.Instance.weightText;
+
+                if (ResetZhuaYao.Instance != null)
+                {
+                    measureButton = ResetZhuaYao.Instance.StartZhuaYaoBtn;
+                    ZhuaYaoPanel = ResetZhuaYao.Instance.ZhuaYaoPanel;
+                    weightText = ResetZhuaYao.Instance.weightText;
+                }
+                
                 faMa = GetComponentInChildren<FaMa>();
                 balance = GetComponentInChildren<Balance>();
+                
             }
         }
 

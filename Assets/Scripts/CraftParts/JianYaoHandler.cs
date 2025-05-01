@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
+using UnityEditor;
+using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -27,6 +30,11 @@ namespace HT
         public Color middleFireColor;
         public Color largeFireColor;
         public PieChart timer;
+
+        public RectTransform alarm;
+
+        public RectTransform Result;
+        public TextMeshProUGUI text;
 
         // Marker活动范围
         public float minX = 30f;
@@ -121,6 +129,8 @@ namespace HT
             }
         }
 
+        [SerializeField] private float wrongTime;
+
         /// <summary>
         /// 由 InputHandler 的 Update 调用
         /// </summary>
@@ -131,7 +141,7 @@ namespace HT
             if (shanziInHand)
             {
                 ControlFire(); // 计算 currentValue（基于点击频率）
-                shanzi.Wave(clickFrequency); // 扇子挥动动画或效果
+                shanzi.Wave(clickFrequency); // 扇子挥动动画
             }
             else
             {
@@ -141,12 +151,52 @@ namespace HT
 
             if (boiling)
             {
+                boilTime += Time.deltaTime;
+                FirePower correctFirePower = testPrescription.GetFirePowerByElapsedTime(boilTime);
+                if (currentFirePower != correctFirePower)
+                {
+                    wrongTime += Time.deltaTime;
+                    alarm.gameObject.SetActive(true);
+                }
+                else
+                {
+                    alarm.gameObject.SetActive(false);
+                }
                 UpdateFirePower(); // 根据 marker 的 x 判断当前火力
                 UpdateFireIcon(currentFirePower);
                 pot.SetAnimationParameter(currentFirePower);
                 MarkerMove(markerSpeed, MarkerSpeedOffset(clickFrequency));
+                totalTime -= Time.deltaTime;
+                if (totalTime < 0)
+                {
+                    alarm.gameObject.SetActive(false);
+                    boiling = false;
+                    currentFirePower = FirePower.NONE;
+                    pot.SetAnimationParameter(currentFirePower);
+                    shanzi.ReleaseShanzi();
+                    marker.anchoredPosition = new Vector2(minX, marker.anchoredPosition.y);
+                    UpdateFireIcon(currentFirePower);
+                    boilTime = 0;
+                    resultMedicine = GetFinalResult();
+                    Result.gameObject.SetActive(true);
+                    var islot = Result.GetComponentInChildren<InventorySlot>();
+                    islot.slotItem = new UISlot()
+                    {
+                        Name = resultMedicine.Name,
+                        Count = 1,
+                        Icon = resultMedicine.Icon,
+                        GridType = GridTypes.MEDICINES
+                    };
+                    islot.UpdateSlot();
+                    text.text = resultMedicine.Quality.ToString();
+                    InputHandler.instance.inDialogue = true;
+                }
             }
         }
+        
+        private float boilTime = 0f;
+        
+        
 
         /// <summary>
         /// 计算点击频率 --> currentValue
@@ -183,10 +233,11 @@ namespace HT
                 clickFrequency = t * maxValue;
             }
 
-            // 一旦有了非零火力值，我们就设 boiling = true
+            // 一旦有了非零火力值，我们就设 boiling = true,直接开始制药
             if (clickFrequency > 0 && !boiling)
             {
                 boiling = true;
+                timer.CountDown(timer.maskSprite, totalTime );
             }
         }
 
@@ -372,6 +423,123 @@ namespace HT
            }
            
         }
+        
+        [SerializeField] Medicine resultMedicine;
+        
+        //返回匹配原料重量的列表
+        
+        public List<int> weights = new List<int>();
+
+        void CalculateWeights()
+        {
+            foreach (var vm in herbsInPort.slots)
+            {
+                var cm = ResourceManager.instance.GetCraftMaterial(vm.slotItem.Name);
+                if (cm != null)
+                {
+                    var c = vm.slotItem.Count;
+                    var weight = cm.Weight * c;
+                    int result = Mathf.RoundToInt(weight);
+                    weights.Add(result);
+                }
+                
+            }
+        }
+
+        int CheckWeightBias()
+        {
+            
+            int res = testPrescription.GetWeightBias(weights);
+            Debug.Log(res);
+            return res;
+        }
+
+        float CheckTimeBias()
+        {
+            float totlal = testPrescription.GetTotalDuration();
+            return wrongTime / totlal;
+        }
+        
+        
+        public List<CraftMaterial> materials = new List<CraftMaterial>();
+        public Medicine CheckPrescriptionMatch()
+        {
+            
+            
+            foreach (var vm in herbsInPort.slots)
+            {
+                CraftMaterial cm = ResourceManager.instance.GetCraftMaterial(vm.slotItem.Name);
+                materials.Add(cm);
+            }
+
+            
+            var knownPresName = TodaysPrescription.instance.prescriptions;
+            var knownPres = new List<Prescription>();
+            for (int i = 0; i < knownPresName.Count; i++)
+            {
+                var presc = ResourceManager.instance.GetPrescription(knownPresName[i]);
+                knownPres.Add(presc);
+            }
+            var pres = Prescription.GetMedicineFromMaterials(materials, knownPres );
+            if (pres == null)
+            {
+                Debug.Log("no prescription found");
+                return ResourceManager.instance.GetMedicine("shit");
+            }
+            else
+            {
+                testPrescription.ReorderInputsByRecipeOrder(materials, weights);
+                Debug.Log(pres.Name);
+                return pres;
+            }
+            
+        }
+
+        // ─────────── 阈值 方便调参 ───────────
+        private const int   SHIT_WEIGHT_THRESHOLD  = 50;
+        private const float SHIT_TIME_THRESHOLD    = 0.80f;
+
+        private const int   LOW_WEIGHT_THRESHOLD   = 20;
+        private const float LOW_TIME_THRESHOLD     = 0.50f;
+
+        private const float EXCELLENT_TIME_MAX     = 0.20f;
+        // ────────────────────────────────────────────────
+
+        /// <summary>
+        /// 根据重量/时间偏差计算药品品质
+        /// weightBias : 绝对重量偏差
+        /// timeBias   : 0~1 之间的相对时间偏差
+        /// </summary>
+        Quality CalculateQuality()
+        {
+            int   weightBias = CheckWeightBias();  
+            float timeBias   = CheckTimeBias();    
+
+            // 1. 最差档：严重超标
+            if (weightBias > SHIT_WEIGHT_THRESHOLD || timeBias > SHIT_TIME_THRESHOLD)
+                return Quality.Shit;
+
+            // 2. 低档：明显偏差
+            if (weightBias > LOW_WEIGHT_THRESHOLD || timeBias > LOW_TIME_THRESHOLD)
+                return Quality.Low;
+
+            // 3. 顶档：重量完美 且 时间极佳
+            if (weightBias == 0 && timeBias <= EXCELLENT_TIME_MAX)
+                return Quality.Excellent;
+
+            // 4. 其余情况就是 Good
+            return Quality.Good;
+        }
+
+        Medicine GetFinalResult()
+        {
+            CalculateWeights();
+            Medicine result = CheckPrescriptionMatch();
+            result.Quality = CalculateQuality();
+            return result;
+        }
+        
+        
 
 
         /// <summary>
@@ -480,10 +648,13 @@ namespace HT
                 leftOffset += widths[i];
             }
         }
-        
-        void SetTimer(Prescription yaofang)
+
+
+        private float totalTime;
+        public void SetTimer(Prescription yaofang)
         {
-            float totalTime = 0;
+            totalTime = 0;
+            timer.clearChart();
             foreach (var period in yaofang.FirePeriods)
             {
                 timer.values.Add(period.Duration);
@@ -506,6 +677,9 @@ namespace HT
                 }
 
                 totalTime += period.Duration;
+                Debug.Log(totalTime);
+                timer.GenerateChart();
+                
             }
         }
     }

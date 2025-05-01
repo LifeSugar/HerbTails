@@ -17,11 +17,18 @@ namespace HT
         public List<Sprite> FirePeriodSprites;
 
         public GameObject iconText;
+        
+        public static PrescriptionPanel Instance;
+
+        void Awake()
+        {
+            Instance = this;
+        }
 
         void Start()
         {
-            var pres = ResourceManager.instance.GetPrescription("TestPrescription");
-            SetUpPrescriptionPanel(pres);
+            // var pres = ResourceManager.instance.GetPrescription("TestPrescription");
+            // SetUpPrescriptionPanel(pres);
             // var cr = ResourceManager.instance.GetCraftMaterial("GrindedRedHerb");
             // Debug.Log(cr.Name);
         }

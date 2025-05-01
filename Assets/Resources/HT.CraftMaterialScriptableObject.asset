@@ -14,205 +14,205 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftMaterials:
   - <Name>k__BackingField: testherb1
-    <Icon>k__BackingField: {fileID: -6521309742446134679, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: 5284596829614838628, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testherb
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 15
   - <Name>k__BackingField: testherb2
-    <Icon>k__BackingField: {fileID: -3778226297182608806, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: 5737710698041289318, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testherb2
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 10
   - <Name>k__BackingField: TestGreen
-    <Icon>k__BackingField: {fileID: -7765231214244175895, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: 6294194357801579896, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: thi is test Green one
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 15
   - <Name>k__BackingField: TestRed
-    <Icon>k__BackingField: {fileID: -2708507152687271426, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: -6107325948083477697, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testRed one
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 10
   - <Name>k__BackingField: Element 2
-    <Icon>k__BackingField: {fileID: 8652249692860192359, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: -7261159648996326750, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testRed one
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 10
   - <Name>k__BackingField: RedHerb
-    <Icon>k__BackingField: {fileID: -908541043714362580, guid: 0424875c37027cd4cacc39661326f640,
+    <Icon>k__BackingField: {fileID: 859688861467451566, guid: 0424875c37027cd4cacc39661326f640,
       type: 3}
     <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EA2\u8272\u8349\u836F"
     <Count>k__BackingField: 1
-    <Weight>k__BackingField: 3
+    <Weight>k__BackingField: 5
   - <Name>k__BackingField: GreenHerb
-    <Icon>k__BackingField: {fileID: 859688861467451566, guid: 0424875c37027cd4cacc39661326f640,
+    <Icon>k__BackingField: {fileID: 6855053106848714499, guid: 0424875c37027cd4cacc39661326f640,
       type: 3}
     <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EFF\u8272\u8349\u836F"
     <Count>k__BackingField: 1
-    <Weight>k__BackingField: 4
+    <Weight>k__BackingField: 8
   - <Name>k__BackingField: BlueHerb
-    <Icon>k__BackingField: {fileID: 6855053106848714499, guid: 0424875c37027cd4cacc39661326f640,
+    <Icon>k__BackingField: {fileID: -908541043714362580, guid: 0424875c37027cd4cacc39661326f640,
       type: 3}
     <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u84DD\u8272\u8349\u836F"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 5
   - <Name>k__BackingField: Atractylodes Macrocephala Rhizome
-    <Icon>k__BackingField: {fileID: 1555990274, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: 392048018, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u767D\u672F2 Atractylodes macrocephala"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 15
   - <Name>k__BackingField: Bupleurum Root
-    <Icon>k__BackingField: {fileID: -532744407, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: 1555990274, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u67F4\u80E12 Bupleurum chinense"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 15
   - <Name>k__BackingField: Chuanxiong Rhizome
-    <Icon>k__BackingField: {fileID: -136882815, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -260697245, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u5DDD\u828E2 Ligusticum chuanxiong"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 2
   - <Name>k__BackingField: Astragalus Root
-    <Icon>k__BackingField: {fileID: -1301820214, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -532744407, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u9EC4\u82AA2 Astragalus membranaceus"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 3
   - <Name>k__BackingField: Pinellia Rhizome
-    <Icon>k__BackingField: {fileID: -2138619268, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: 521979050, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u534A\u590F2 Pinellia ternata"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 3
   - <Name>k__BackingField: Polygala Root
-    <Icon>k__BackingField: {fileID: 1113566614, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -136882815, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u8FDC\u5FD72 Polygala tenuifolia"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 1
   - <Name>k__BackingField: Anemarrhena Rhizome
-    <Icon>k__BackingField: {fileID: 2097280894, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -1711690863, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u77E5\u6BCD2 Anemarrhena asphodeloides"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 6
   - <Name>k__BackingField: Longan Aril
-    <Icon>k__BackingField: {fileID: -1833125458, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -1301820214, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u9F99\u773C2 Dimocarpus longan"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 1
   - <Name>k__BackingField: Poria
-    <Icon>k__BackingField: {fileID: -2061229683, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: 122459925, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u832F\u82D32 Poria cocos"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 1
   - <Name>k__BackingField: Cornelian Cherry Fruit
-    <Icon>k__BackingField: {fileID: 1852305363, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -2138619268, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u5C71\u8331\u84382 Cornus officinalis"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 3
   - <Name>k__BackingField: Cimicifuga Rhizome
-    <Icon>k__BackingField: {fileID: -841630034, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -1433602810, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u5347\u9EBB2 Cimicifuga foetida"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 3
   - <Name>k__BackingField: Sour Jujube Seed
-    <Icon>k__BackingField: {fileID: 2075043580, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: 1113566614, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u9178\u67A32 Ziziphus jujuba var. spinosa"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 1
   - <Name>k__BackingField: Chinese Yam
-    <Icon>k__BackingField: {fileID: 153026779, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -450570778, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u5C71\u836F2 Dioscorea opposita"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 3
   - <Name>k__BackingField: Costus Root
-    <Icon>k__BackingField: {fileID: -2013580905, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: 2097280894, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u6728\u99992 Aucklandia lappa"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 1
   - <Name>k__BackingField: Ginseng
-    <Icon>k__BackingField: {fileID: -1173371273, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -844308676, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u4EBA\u53C22 Panax ginseng"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 3
   - <Name>k__BackingField: Dried Tangerine Peel
-    <Icon>k__BackingField: {fileID: -648599313, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -1833125458, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u9648\u76AE2 Citrus reticulata pericarpium"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 2
   - <Name>k__BackingField: Tree Peony Bark
-    <Icon>k__BackingField: {fileID: -140716175, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -890635659, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u4E39\u76AE Paeonia suffruticosa"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 2
   - <Name>k__BackingField: Peony flower
-    <Icon>k__BackingField: {fileID: -100382614, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -2061229683, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u7261\u4E39 Paeonia suffruticosa Andr"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 2
   - <Name>k__BackingField: Alisma Rhizome
-    <Icon>k__BackingField: {fileID: 419032397, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -687349013, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u6CFD\u6CFB2 Alisma orientale"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 3
   - <Name>k__BackingField: Licorice Root
-    <Icon>k__BackingField: {fileID: 543567648, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: 1852305363, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u7518\u83492 Glycyrrhiza uralensis"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 3
   - <Name>k__BackingField: Chinese Angelica Root
-    <Icon>k__BackingField: {fileID: 807272532, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: 2102888354, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u5F53\u5F522 Angelica sinensis"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 2
   - <Name>k__BackingField: White Peony Root
-    <Icon>k__BackingField: {fileID: 927360252, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -841630034, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u767D\u828D2 Paeonia lactiflora"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 2
   - <Name>k__BackingField: Prepared Rehmannia Root
-    <Icon>k__BackingField: {fileID: 1415791372, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: 438873668, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u719F\u57302 Rehmannia glutinosa Praeparata"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 3
   - <Name>k__BackingField: Fresh Ginger
-    <Icon>k__BackingField: {fileID: 1555472777, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: 2075043580, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u751F\u59DC2 Zingiber officinale"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 3
   - <Name>k__BackingField: Jujube Fruit
-    <Icon>k__BackingField: {fileID: 1906906137, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: -1702067902, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u5927\u67A32 Ziziphus jujuba"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 3
   - <Name>k__BackingField: Black Plum
-    <Icon>k__BackingField: {fileID: 2040036810, guid: 1a313cbd07cc1334f9af340caa30652e,
+    <Icon>k__BackingField: {fileID: 153026779, guid: 1a313cbd07cc1334f9af340caa30652e,
       type: 3}
     <Description>k__BackingField: "\u4E4C\u68852 Prunus mume"
     <Count>k__BackingField: 1
@@ -258,13 +258,13 @@ MonoBehaviour:
       type: 3}
     <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EA2\u8272\u8349\u836F"
     <Count>k__BackingField: 1
-    <Weight>k__BackingField: 3
+    <Weight>k__BackingField: 5
   - <Name>k__BackingField: GrindedGreenHerb
-    <Icon>k__BackingField: {fileID: -5462209628964838299, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
+    <Icon>k__BackingField: {fileID: -3533076754595367027, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
       type: 3}
     <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EFF\u8272\u8349\u836F"
     <Count>k__BackingField: 1
-    <Weight>k__BackingField: 4
+    <Weight>k__BackingField: 8
   - <Name>k__BackingField: GrindedBlueHerb
     <Icon>k__BackingField: {fileID: -5462209628964838299, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
       type: 3}
