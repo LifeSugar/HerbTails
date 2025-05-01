@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f509021b9a97542bca604aaa8b43da, type: 3}
+  m_Name: 2-Zhuayao
+  m_EditorClassIdentifier: 
+  lines:
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: This is the medicine cabinet.
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: You can view all the herbs we have in stock.
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: Select the herb you need, then drag it onto the scale.
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: Drag the weight slider to adjust the scale to the required amount.
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: Click 'Start' and check if the scale is balanced.
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: Once you're done, drag the herb into the backpack on the right.

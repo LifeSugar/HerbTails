@@ -14,6 +14,12 @@ namespace HT
         [Header("kanshu")] public CanvasPopIn libraryInteraction;
         
         public static ClickInteractions instance;
+        
+        public PrescriptionPanel prescriptionPanel;
+        
+        public Canvas LibraryCanvas;
+        public Button Button;
+        
 
         void Awake()
         {
@@ -22,6 +28,16 @@ namespace HT
 
         void Start()
         {
+            
+        }
+
+        void HandleTakePrescription()
+        {
+            var presname = TodaysPrescription.instance.prescriptions[TodaysPrescription.instance.currentPrescription];
+            var pres = ResourceManager.instance.GetPrescription(presname);
+            prescriptionPanel.gameObject.SetActive(true);
+            prescriptionPanel.SetUpPrescriptionPanel(pres);
+            JianYaoHandler.instance.testPrescription = pres;
             
         }
 
@@ -46,14 +62,27 @@ namespace HT
                         if (canvasPopIn == takePrescriptionInteraction)
                         {
                             
+                            HandleTakePrescription();
+                            
                         }
                         else if (canvasPopIn == libraryInteraction)
                         {
-                            
+                            LibraryCanvas.gameObject.SetActive(true);
+                            Button.gameObject.SetActive(false);
+                            InputHandler.instance.inDialogue = true;
                         }
                         else if (canvasPopIn == makeMedicineInteraction)
                         { 
+                            if (InputHandler.instance.firstZhiyao)
+                            {
+                                InputHandler.instance.inDialogue = true;
+                                DialogueManager.instance.currentData = InputHandler.instance.dialogueData1;
+                                DialogueManager.instance.StartDialogue();
+                                InputHandler.instance.inDialogue = true;
+                            }
                             InputHandler.instance.SwitchGameState(GameState.ZHUAYAO);
+                            this.gameObject.SetActive(false);
+                            InputHandler.instance.firstZhiyao = false;
                         }
                     }
                 }

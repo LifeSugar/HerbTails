@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,11 +14,18 @@ public class PieChart : MonoBehaviour
     public float duration;
     
 
+
     void Start()
     {
         SetUpMaskVisual(maskSprite);
         GenerateChart();
-        CountDown(maskSprite, duration);
+        // CountDown(maskSprite, duration);
+    }
+
+    public void clearChart()
+    {
+        values.Clear();
+        colors.Clear();
     }
 
     public void GenerateChart()
@@ -101,7 +109,7 @@ public class PieChart : MonoBehaviour
     
     float originFillAmount = 0;
     private float targetFillAmount = 1;
-    void CountDown(Image mask, float duration)
+    public void CountDown(Image mask, float duration)
     {
         Sequence countDown = DOTween.Sequence();
         countDown.Append(

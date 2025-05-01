@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   herbs:
   - <Name>k__BackingField: testherb1
-    <Icon>k__BackingField: {fileID: 3818981388294342849, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: 5284596829614838628, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testherb
     <Count>k__BackingField: 1
@@ -25,7 +25,7 @@ MonoBehaviour:
     <GrindedHerb>k__BackingField: Grindedtestherb1
     <SlicedHerb>k__BackingField: Slicedtestherb1
   - <Name>k__BackingField: testherb2
-    <Icon>k__BackingField: {fileID: -6717651570376631539, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: 5737710698041289318, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testherb2
     <Count>k__BackingField: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
     <GrindedHerb>k__BackingField: Grindedtestherb2
     <SlicedHerb>k__BackingField: Slicedtestherb2
   - <Name>k__BackingField: TestGreen
-    <Icon>k__BackingField: {fileID: -6158133412387137683, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: 6294194357801579896, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: thi is test Green one
     <Count>k__BackingField: 1
@@ -47,7 +47,7 @@ MonoBehaviour:
     <GrindedHerb>k__BackingField: GrindedTestGreen
     <SlicedHerb>k__BackingField: SlicedTestGreen
   - <Name>k__BackingField: TestRed
-    <Icon>k__BackingField: {fileID: 1974655671064983108, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+    <Icon>k__BackingField: {fileID: -6107325948083477697, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
       type: 3}
     <Description>k__BackingField: this is a testRed one
     <Count>k__BackingField: 1
@@ -68,36 +68,322 @@ MonoBehaviour:
     <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
     <GrindedHerb>k__BackingField: GrindedElement 2
     <SlicedHerb>k__BackingField: SlicedElement 2
-  - <Name>k__BackingField: "\u7EA2\u8272\u8349\u836F"
-    <Icon>k__BackingField: {fileID: 6855053106848714499, guid: 0424875c37027cd4cacc39661326f640,
+  - <Name>k__BackingField: RedHerb
+    <Icon>k__BackingField: {fileID: 859688861467451566, guid: 0424875c37027cd4cacc39661326f640,
       type: 3}
     <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EA2\u8272\u8349\u836F"
     <Count>k__BackingField: 1
-    <Weight>k__BackingField: 10
+    <Weight>k__BackingField: 5
     <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
       type: 3}
     <Color>k__BackingField: {r: 1, g: 0, b: 0, a: 1}
-    <GrindedHerb>k__BackingField: "Grinded\u7EA2\u8272\u8349\u836F"
-    <SlicedHerb>k__BackingField: "Sliced\u7EA2\u8272\u8349\u836F"
-  - <Name>k__BackingField: "\u7EFF\u8272\u8349\u836F"
-    <Icon>k__BackingField: {fileID: -908541043714362580, guid: 0424875c37027cd4cacc39661326f640,
+    <GrindedHerb>k__BackingField: GrindedRedHerb
+    <SlicedHerb>k__BackingField: SlicedRedHerb
+  - <Name>k__BackingField: GreenHerb
+    <Icon>k__BackingField: {fileID: 6855053106848714499, guid: 0424875c37027cd4cacc39661326f640,
       type: 3}
     <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EFF\u8272\u8349\u836F"
     <Count>k__BackingField: 1
-    <Weight>k__BackingField: 15
+    <Weight>k__BackingField: 8
     <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
       type: 3}
     <Color>k__BackingField: {r: 0.30588236, g: 0.654902, b: 0.18039216, a: 1}
-    <GrindedHerb>k__BackingField: "Grinded\u7EFF\u8272\u8349\u836F"
-    <SlicedHerb>k__BackingField: "Sliced\u7EFF\u8272\u8349\u836F"
-  - <Name>k__BackingField: "\u84DD\u8272\u8349\u836F"
-    <Icon>k__BackingField: {fileID: 859688861467451566, guid: 0424875c37027cd4cacc39661326f640,
+    <GrindedHerb>k__BackingField: GrindedGreenHerb
+    <SlicedHerb>k__BackingField: SlicedGreenHerb
+  - <Name>k__BackingField: BlueHerb
+    <Icon>k__BackingField: {fileID: -908541043714362580, guid: 0424875c37027cd4cacc39661326f640,
       type: 3}
     <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u84DD\u8272\u8349\u836F"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 5
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.05490196, g: 0.15686275, b: 0.25490198, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedBlueHerb
+  - <Name>k__BackingField: Atractylodes Macrocephala Rhizome
+    <Icon>k__BackingField: {fileID: 392048018, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u767D\u672F2 Atractylodes macrocephala"
     <Count>k__BackingField: 1
     <Weight>k__BackingField: 15
     <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
       type: 3}
-    <Color>k__BackingField: {r: 0.05490196, g: 0.15686275, b: 0.25490198, a: 1}
-    <GrindedHerb>k__BackingField: "Grinded\u84DD\u8272\u8349\u836F"
-    <SlicedHerb>k__BackingField: "Sliced\u84DD\u8272\u8349\u836F"
+    <Color>k__BackingField: {r: 0.8901961, g: 0.5568628, b: 0.7607843, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedAtractylodes Macrocephala Rhizome
+  - <Name>k__BackingField: Bupleurum Root
+    <Icon>k__BackingField: {fileID: 1555990274, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u67F4\u80E12 Bupleurum chinense"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 15
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.9372549, g: 0.9019608, b: 0.54509807, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedBupleurum Root
+  - <Name>k__BackingField: Chuanxiong Rhizome
+    <Icon>k__BackingField: {fileID: -260697245, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u5DDD\u828E2 Ligusticum chuanxiong"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 2
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.4509804, g: 0.28627452, b: 0.17254902, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedChuanxiong Rhizome
+  - <Name>k__BackingField: Astragalus Root
+    <Icon>k__BackingField: {fileID: -532744407, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u9EC4\u82AA2 Astragalus membranaceus"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.9372549, g: 0.9019608, b: 0.54509807, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedAstragalus Root
+  - <Name>k__BackingField: Pinellia Rhizome
+    <Icon>k__BackingField: {fileID: 521979050, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u534A\u590F2 Pinellia ternata"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.60784316, g: 0.77254903, b: 0.38039216, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedPinellia Rhizome
+  - <Name>k__BackingField: Polygala Root
+    <Icon>k__BackingField: {fileID: -136882815, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u8FDC\u5FD72 Polygala tenuifolia"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 1
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.8352941, g: 0.75686276, b: 0.8862745, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedPolygala Root
+  - <Name>k__BackingField: Anemarrhena Rhizome
+    <Icon>k__BackingField: {fileID: -1711690863, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u77E5\u6BCD2 Anemarrhena asphodeloides"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 6
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.9372549, g: 0.9019608, b: 0.54509807, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedAnemarrhena Rhizome
+  - <Name>k__BackingField: Longan Aril
+    <Icon>k__BackingField: {fileID: -1301820214, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u9F99\u773C2 Dimocarpus longan"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 1
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.7647059, g: 0.63529414, b: 0.4, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedLongan Aril
+  - <Name>k__BackingField: Poria
+    <Icon>k__BackingField: {fileID: 122459925, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u832F\u82D32 Poria cocos"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 1
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.4509804, g: 0.28627452, b: 0.17254902, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedPoria
+  - <Name>k__BackingField: Cornelian Cherry Fruit
+    <Icon>k__BackingField: {fileID: -2138619268, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u5C71\u8331\u84382 Cornus officinalis"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.7607843, g: 0.25490198, b: 0.13333334, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedCornelian Cherry Fruit
+  - <Name>k__BackingField: Cimicifuga Rhizome
+    <Icon>k__BackingField: {fileID: -1433602810, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u5347\u9EBB2 Cimicifuga foetida"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.4509804, g: 0.28627452, b: 0.17254902, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedCimicifuga Rhizome
+  - <Name>k__BackingField: Sour Jujube Seed
+    <Icon>k__BackingField: {fileID: 1113566614, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u9178\u67A32 Ziziphus jujuba var. spinosa"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 1
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.7019608, g: 0.25490198, b: 0.15294118, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedSour Jujube Seed
+  - <Name>k__BackingField: Chinese Yam
+    <Icon>k__BackingField: {fileID: -450570778, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u5C71\u836F2 Dioscorea opposita"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.60784316, g: 0.4392157, b: 0.25882354, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedChinese Yam
+  - <Name>k__BackingField: Costus Root
+    <Icon>k__BackingField: {fileID: 2097280894, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u6728\u99992 Aucklandia lappa"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 1
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.92941177, g: 0.87058824, b: 0.7490196, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedCostus Root
+  - <Name>k__BackingField: Ginseng
+    <Icon>k__BackingField: {fileID: -844308676, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u4EBA\u53C22 Panax ginseng"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.8352941, g: 0.4745098, b: 0.13333334, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedGinseng
+  - <Name>k__BackingField: Dried Tangerine Peel
+    <Icon>k__BackingField: {fileID: -1833125458, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u9648\u76AE2 Citrus reticulata pericarpium"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 2
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.8901961, g: 0.5568628, b: 0.7607843, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedDried Tangerine Peel
+  - <Name>k__BackingField: Tree Peony Bark
+    <Icon>k__BackingField: {fileID: -890635659, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u4E39\u76AE Paeonia suffruticosa"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 2
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.7647059, g: 0.63529414, b: 0.4, a: 1}
+    <GrindedHerb>k__BackingField: GrindedGreenHerb
+    <SlicedHerb>k__BackingField: SlicedTree Peony Bark
+  - <Name>k__BackingField: Peony flower
+    <Icon>k__BackingField: {fileID: -2061229683, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u7261\u4E39 Paeonia suffruticosa Andr"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 2
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.30588236, g: 0.654902, b: 0.18039216, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedPeony flower
+  - <Name>k__BackingField: Alisma Rhizome
+    <Icon>k__BackingField: {fileID: -687349013, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u6CFD\u6CFB2 Alisma orientale"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.92941177, g: 0.87058824, b: 0.7490196, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedAlisma Rhizome
+  - <Name>k__BackingField: Licorice Root
+    <Icon>k__BackingField: {fileID: 1852305363, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u7518\u83492 Glycyrrhiza uralensis"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.60784316, g: 0.77254903, b: 0.38039216, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedLicorice Root
+  - <Name>k__BackingField: Chinese Angelica Root
+    <Icon>k__BackingField: {fileID: 2102888354, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u5F53\u5F522 Angelica sinensis"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 2
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.60784316, g: 0.77254903, b: 0.38039216, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedChinese Angelica Root
+  - <Name>k__BackingField: White Peony Root
+    <Icon>k__BackingField: {fileID: -841630034, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u767D\u828D2 Paeonia lactiflora"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 2
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.9411765, g: 0.99215686, b: 0.6509804, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedWhite Peony Root
+  - <Name>k__BackingField: Prepared Rehmannia Root
+    <Icon>k__BackingField: {fileID: 438873668, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u719F\u57302 Rehmannia glutinosa Praeparata"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.7019608, g: 0.25490198, b: 0.15294118, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedPrepared Rehmannia Root
+  - <Name>k__BackingField: Fresh Ginger
+    <Icon>k__BackingField: {fileID: 2075043580, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u751F\u59DC2 Zingiber officinale"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.9372549, g: 0.9019608, b: 0.54509807, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedFresh Ginger
+  - <Name>k__BackingField: Jujube Fruit
+    <Icon>k__BackingField: {fileID: -1702067902, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u5927\u67A32 Ziziphus jujuba"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.7019608, g: 0.25490198, b: 0.15294118, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedJujube Fruit
+  - <Name>k__BackingField: Black Plum
+    <Icon>k__BackingField: {fileID: 153026779, guid: 1a313cbd07cc1334f9af340caa30652e,
+      type: 3}
+    <Description>k__BackingField: "\u4E4C\u68852 Prunus mume"
+    <Count>k__BackingField: 1
+    <Weight>k__BackingField: 1
+    <Prefab>k__BackingField: {fileID: 6249099469938500266, guid: 72c4903649be69440aa7c7ba371d39b4,
+      type: 3}
+    <Color>k__BackingField: {r: 0.9137255, g: 0.44313726, b: 0.19607843, a: 1}
+    <GrindedHerb>k__BackingField: GrindedBlueHerb
+    <SlicedHerb>k__BackingField: SlicedBlack Plum

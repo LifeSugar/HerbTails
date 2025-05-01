@@ -5,10 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e40cbe1-aaa5-498f-8584-e1608bab0441" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TodaysPrescription.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TodaysPrescription.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HerbTails/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/asset.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DataExcels/asset.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataExcels/~$asset.xlsx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Dialogue/1-Start.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Dialogue/1-Start.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.CraftMaterialScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.CraftMaterialScriptableObject.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.GrindedHerbScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.GrindedHerbScriptableObject.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.HerbScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.HerbScriptableObject.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/MoYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/MoYaoHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.ItemScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.ItemScriptableObject.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.MedicineScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.MedicineScriptableObject.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/HT.PrescriptionScriptableObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HT.PrescriptionScriptableObject.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Home.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Home.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/prototype/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/prototype/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ClickInteractions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ClickInteractions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/Cangku.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/Cangku.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/JianYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/JianYaoHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ShanZi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ShanZi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ZhuaYaoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CraftParts/ZhuaYaoHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/AssetUpadater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/AssetUpadater.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StarterInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StarterInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PieChart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PieChart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PrescriptionPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PrescriptionPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UISprite/font/HYXiaoXueYouYaTi-75U SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UISprite/font/HYXiaoXueYouYaTi-75U SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UISprite/testMedicine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UISprite/testMedicine.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +63,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/HerbsInPort.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CraftParts/ShanZi.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/JianYaoHandlerEditor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -50,7 +81,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.6494465&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;0427&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -63,7 +94,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../build/build218.app/Contents/MacOS/TailsOfHerbs" />
+      <option name="EXE_PATH" value="$USER_HOME$/OneDrive/草药物语/build/2.16.19\TailsOfHerbs.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Administrator\OneDrive\草药物语\build\2.16.19" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -71,7 +102,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.34f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\UnityProjects\HerbTails -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\UnityProjects\HerbTails" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -79,7 +110,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.34f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\UnityProjects\HerbTails -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\UnityProjects\HerbTails" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -148,7 +179,15 @@
       <workItem from="1745703972202" duration="11202000" />
       <workItem from="1745720160929" duration="151000" />
       <workItem from="1745760317553" duration="6640000" />
-      <workItem from="1745769479615" duration="418000" />
+      <workItem from="1745769479615" duration="3097000" />
+      <workItem from="1745775053057" duration="14000" />
+      <workItem from="1745779100382" duration="16115000" />
+      <workItem from="1745802780954" duration="4136000" />
+      <workItem from="1745855500135" duration="4901000" />
+      <workItem from="1746033290913" duration="11134000" />
+      <workItem from="1746048786273" duration="16119000" />
+      <workItem from="1746067800904" duration="20933000" />
+      <workItem from="1746089301189" duration="1156000" />
     </task>
     <servers />
   </component>

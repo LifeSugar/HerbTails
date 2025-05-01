@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f509021b9a97542bca604aaa8b43da, type: 3}
+  m_Name: 4-Aoyao
+  m_EditorClassIdentifier: 
+  lines:
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: "Now that we have all the herbs, it's time for the next step \u2014
+      decoction."
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: Take the herbs from your backpack and put them into the pot.
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: Perfect match! The herbs are in place, and the timer has been set.
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: Fan the flames to keep the fire going.
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: Decoction requires careful control of the heat.
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: "Watch the flame closely and time it right \u2014 controlling the
+      duration is key!"
+  - characterName: Shifu
+    characterPortrait: {fileID: 21300000, guid: 768d11b8433bbbb45a1faf9d3ce37356,
+      type: 3}
+    dialogueText: The medicine is ready! Put it into your backpack, and we can deliver
+      it to the patient!

@@ -34,7 +34,7 @@ namespace HT
         {
             
             RaycastHit hit;
-            if (Input.GetMouseButtonDown(0) && !JianYaoHandler.instance.shanziInHand)
+            if (Input.GetMouseButtonDown(0) && !JianYaoHandler.instance.shanziInHand && CursorSlot.instance.isEmpty)
             {
                 Ray ray = PixelCameraManager.Instance.viewCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
                 Debug.DrawRay(ray.origin, ray.direction * 999f, Color.red);
@@ -47,6 +47,8 @@ namespace HT
                     shanziTransform.position = new Vector3(hit.point.x, shanziHeight, hit.point.z);
                     JianYaoHandler.instance.shanziInHand = true;
                     shanziTransform.gameObject.SetActive(true);
+                    
+                    JianYaoHandler.instance.SetTimer(JianYaoHandler.instance.testPrescription);
                 }
             }
             else if (JianYaoHandler.instance.shanziInHand)
@@ -71,6 +73,15 @@ namespace HT
                 }
             }
             
+        }
+
+        public void ReleaseShanzi()
+        {
+            shanziTransform.gameObject.SetActive(false);
+            shanziTransform.position = originalPos;
+            shanziCollider.gameObject.transform.parent.gameObject.SetActive(true);
+            posHelper.gameObject.SetActive(false);
+            JianYaoHandler.instance.shanziInHand = false;
         }
 
         public void Wave(float clickFrequenccy)

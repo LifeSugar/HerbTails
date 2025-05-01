@@ -12,4 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4030e78f999043ce82a3b4e4c7eaec04, type: 3}
   m_Name: HT.MedicineScriptableObject
   m_EditorClassIdentifier: 
-  medicines: []
+  medicines:
+  - <Name>k__BackingField: Example_Medicine1
+    <Icon>k__BackingField: {fileID: 5284596829614838628, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: Example_Medicine2
+    <Icon>k__BackingField: {fileID: 5737710698041289318, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: Example_Medicine3
+    <Icon>k__BackingField: {fileID: 6294194357801579896, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      type: 3}
+    <Description>k__BackingField: description
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: Test_Medicine
+    <Icon>k__BackingField: {fileID: 21300000, guid: 94606e704f3b8b74bac535913bc9f93a,
+      type: 3}
+    <Description>k__BackingField: This medicine is for testing. Drink it, and the
+      game will develop itself.
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0
+  - <Name>k__BackingField: shit
+    <Icon>k__BackingField: {fileID: 21300000, guid: cd9411be7d266c345b430ca5294a3fb0,
+      type: 3}
+    <Description>k__BackingField: ?????
+    <Count>k__BackingField: 1
+    <Quality>k__BackingField: 0

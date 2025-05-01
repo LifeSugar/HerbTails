@@ -45,7 +45,8 @@ namespace HT
 
         void Update()
         {
-            if (!isHeld && Input.GetMouseButtonDown(0)) TryGrab();
+            if (!isHeld && Input.GetMouseButtonDown(0) && CursorSlot.instance.isEmpty)
+                TryGrab();
             if (isHeld && Input.GetMouseButtonUp(0)) Release();
 
             if (isHeld)

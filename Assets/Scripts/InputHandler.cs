@@ -100,6 +100,9 @@ namespace HT
                 case GameState.ZHUAYAO: 
                     ZhuaYaoHandler.instance.Tick();
                     break;
+                case GameState.MOYAO:
+                    MoYaoHandler.instance.Tick();
+                    break;
                 case GameState.INSCENE:
                     InSceneHandler();
                     break;
@@ -221,34 +224,89 @@ namespace HT
             
         }
 
+        public void EndDialogue()
+        {
+            inDialogue = false;
+        }
+
 
         #region UI
 
         public Button jianyaoButton;
         public Button zhuaYaoButton;
         public Button moyaoButton;
-        public Button qieYaoButton;
+        public Button BackButton;
+        // public Button showPrescriptButton;
+
+        public GameObject clicksInscene;
 
         void InitializeButtons()
         {
             jianyaoButton.onClick.AddListener(() =>
             {
                 if (!isTransitioning)
+                {
+                    if (firstJianYao)
+                    {
+                        InputHandler.instance.inDialogue = true;
+                        DialogueManager.instance.currentData = dialogueData3;
+                        DialogueManager.instance.StartDialogue();
+                    }
                     SwitchGameState(GameState.JIANYAO);
+                    clicksInscene.SetActive(false);
+                    firstJianYao = false;
+                }
+                    
             });
             zhuaYaoButton.onClick.AddListener(() =>
             {
                 if (!isTransitioning)
+                {
                     SwitchGameState(GameState.ZHUAYAO);
+                    clicksInscene.SetActive(false);
+                }
+                    
             });
             moyaoButton.onClick.AddListener(() =>
             {
                 if (!isTransitioning)
+                {
+                    if (firstMoyao)
+                    {
+                        InputHandler.instance.inDialogue = true;
+                        DialogueManager.instance.currentData = dialogueData2;
+                        DialogueManager.instance.StartDialogue();
+                    }
                     SwitchGameState(GameState.MOYAO);
+                    clicksInscene.SetActive(false);
+                    firstMoyao = false;
+                }
+                    
+            });
+            BackButton.onClick.AddListener(() =>
+            {
+                if (!isTransitioning)
+                {
+                    SwitchGameState(GameState.INSCENE);
+                    clicksInscene.SetActive(true);
+                }
             });
         }
 
         #endregion
+        
+        [Header("first")]
+        public bool firstZhiyao = true;
+        public DialogueData dialogueData1;
+        public bool firstMoyao = true;
+        public DialogueData dialogueData2;
+        public bool firstJianYao = true;
+        public DialogueData dialogueData3;
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
         
         
     }

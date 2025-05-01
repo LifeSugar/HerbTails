@@ -32,8 +32,7 @@ namespace HT
         [SerializeField] private List<RuntimeHerb> herbsIn = new List<RuntimeHerb>();
         private void Start()
         {
-            faMa = GetComponentInChildren<FaMa>();
-            balance = GetComponentInChildren<Balance>();
+            
             InputHandler.instance.OnStateChange += SwitchZhuaYao;
             measureButton.onClick.AddListener(() => StartMeasuring());
         }
@@ -124,6 +123,8 @@ namespace HT
                             GameObject herbPrefab = Instantiate(herbGot.Prefab, pos, Quaternion.identity);
                             herbPrefab.transform.parent = this.transform;
                             var rtHerb = herbPrefab.GetComponent<RuntimeHerb>();
+                            var mat = herbPrefab.GetComponent<MeshRenderer>().material;
+                            mat.SetColor("_DiffuseColor", herbGot.Color);
                             Utility.DeepCopyHerb(herbGot, rtHerb.herb, false);
                             herbsIn.Add(rtHerb);
                             cursorItem.Count -= 1;
@@ -162,7 +163,7 @@ namespace HT
                 {
                     if (Physics.Raycast(ray, out RaycastHit hit))
                     {
-                        Debug.Log(hit.collider.gameObject.name);
+                        // Debug.Log(hit.collider.gameObject.name);
                         if (hit.collider == chengPan)
                         {
                             var cursorItem = CursorSlot.instance.cursorItem;
@@ -194,6 +195,29 @@ namespace HT
             else
             {
                 instance = this;
+
+                if (ResetZhuaYao.Instance != null)
+                {
+                    measureButton = ResetZhuaYao.Instance.StartZhuaYaoBtn;
+                    ZhuaYaoPanel = ResetZhuaYao.Instance.ZhuaYaoPanel;
+                    weightText = ResetZhuaYao.Instance.weightText;
+                }
+                
+                faMa = GetComponentInChildren<FaMa>();
+                balance = GetComponentInChildren<Balance>();
+                
+            }
+        }
+
+        public bool isEmpty()
+        {
+            if (herbsIn.Count == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

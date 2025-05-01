@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace HT
 {
+    [ExecuteInEditMode]
     public class ResourceManager : MonoBehaviour
     {
         // 用于缓存各类数据项的名称和在列表中的索引
@@ -13,6 +14,7 @@ namespace HT
         Dictionary<String, int> slicedHerb_ids = new Dictionary<String, int>();
         Dictionary<string, int> craftMaterial_ids = new Dictionary<string, int>();
         Dictionary<string, int> medicine_ids = new Dictionary<string, int>();
+        Dictionary<string, int> prescription_ids = new Dictionary<string, int>();
 
         // 单例模式，方便其他脚本通过 ResourceManager.instance 调用接口
         public static ResourceManager instance;
@@ -28,6 +30,25 @@ namespace HT
             LoadGrindedHerbs();
             LoadCraftMaterials();
             LoadMedicines();
+            LoadPrescriptions();
+        }
+
+        public void LoadEverything()
+        {
+            item_ids.Clear();
+            herb_ids.Clear();
+            grindedHerb_ids.Clear();
+            slicedHerb_ids.Clear();
+            craftMaterial_ids.Clear();
+            medicine_ids.Clear();
+            prescription_ids.Clear();
+            
+            LoadItems();
+            LoadHerbs();
+            LoadGrindedHerbs();
+            LoadCraftMaterials();
+            LoadMedicines();
+            LoadPrescriptions();
         }
 
         #region Items
@@ -389,6 +410,61 @@ namespace HT
         {
             int index = -1;
             if (medicine_ids.TryGetValue(name, out index))
+            {
+                return index;
+            }
+            return -1;
+        }
+        #endregion
+        
+        
+        
+        #region Prescriptions
+        void LoadPrescriptions()
+        {
+            var obj = Resources.Load("HT.PrescriptionScriptableObject") as PrescriptionScriptableObject;
+            if (obj == null)
+            {
+                Debug.Log("PrescriptionSO could not be loaded!");
+                return;
+            }
+        
+            for (int i = 0; i < obj.prescriptions.Count; i++)
+            {
+                if (prescription_ids.ContainsKey(obj.prescriptions[i].Name))
+                {
+                    Debug.Log("Prescription is a duplicate: " + obj.prescriptions[i].Name);
+                }
+                else
+                {
+                    prescription_ids.Add(obj.prescriptions[i].Name, i);
+                }
+            }
+        }
+
+        public Prescription GetPrescription(string name)
+        {
+            var obj = Resources.Load("HT.PrescriptionScriptableObject") as PrescriptionScriptableObject;
+            if (obj == null)
+            {
+                Debug.Log("PrescriptionSO could not be loaded!");
+                return null;
+            }
+        
+            int index = GetPrescriptionIdFromString(name);
+            if (index == -1)
+            {
+                Debug.Log("Prescription not found: " + name);
+                return null;
+            }
+            return obj.prescriptions[index];
+        }
+        
+
+        int GetPrescriptionIdFromString(string name)
+        {
+            int index = -1;
+            if (prescription_ids.TryGetValue(name, out index))
             {
                 return index;
             }
