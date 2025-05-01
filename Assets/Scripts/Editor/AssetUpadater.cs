@@ -267,7 +267,7 @@ public class AssetUpadater : EditorWindow
     Debug.Log("Grinded Herbs 已从 Excel 更新完成！");
 }
     
-        public static void UpdateMedicinesFromExcel()
+    public static void UpdateMedicinesFromExcel()
     {
         // 加载 MedicineScriptableObject
         var medSO = AssetDatabase.LoadAssetAtPath<MedicineScriptableObject>(medicinePath);
@@ -335,11 +335,6 @@ public class AssetUpadater : EditorWindow
         Debug.Log("Medicines 已从 Excel 的 sheet2 更新完成！");
     }
         
-    
-
-
-
-    
     public static void GetIcon(IRow row,  int iconColumnIndex,  Item item)
     {
         string iconData = row.GetCell(iconColumnIndex)?.StringCellValue?.Trim();
@@ -416,9 +411,7 @@ public class AssetUpadater : EditorWindow
             }
         }
     }
-
     
-
     public static void UpadateItems<T>( List<T> inputsitems) where T : Item
     {
         ItemScriptableObject itemSO = AssetDatabase.LoadAssetAtPath<ItemScriptableObject>(itemPath);
