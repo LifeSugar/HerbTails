@@ -44,6 +44,7 @@ public class AssetUpadater : EditorWindow
         if (GUILayout.Button("Update Herbs", EditorStyles.miniButton))
         {
             UpdateHerbsFromExcel();
+            ResourceManager.instance.LoadEverything();
         }
         GUILayout.Label("Herbs为sheet0", EditorStyles.boldLabel);
 
@@ -51,6 +52,7 @@ public class AssetUpadater : EditorWindow
         if (GUILayout.Button("Update Grinded Herbs", EditorStyles.miniButton))
         {
             UpdateGrindedHerbsFromExcel();
+            ResourceManager.instance.LoadEverything();
         }
         GUILayout.Label("Grinded Herbs为sheet1", EditorStyles.boldLabel);
         
@@ -58,13 +60,22 @@ public class AssetUpadater : EditorWindow
         if (GUILayout.Button("Update Medicines", EditorStyles.miniButton))
         {
             UpdateMedicinesFromExcel();
+            ResourceManager.instance.LoadEverything();
         }
         GUILayout.Label("Medicines 为 sheet2", EditorStyles.boldLabel);
         
         GUILayout.Space(20);
         if (GUILayout.Button("Update Prescriptions", EditorStyles.miniButton))
+        {
             UpdatePrescriptionsFromExcel();
+            ResourceManager.instance.LoadEverything();
+        }
+            
         GUILayout.Label("Prescriptions 为 sheet3", EditorStyles.boldLabel);
+        
+        GUILayout.Space(20);
+        if (GUILayout.Button("Clear All", EditorStyles.miniButton))
+            ClearAll();
     }
 
     
@@ -250,7 +261,7 @@ public class AssetUpadater : EditorWindow
 
 
     EditorUtility.SetDirty(grindedHerbSO);
-    UpadateItems(grindedHerbSO.grindedHerbs);
+    UpadateItems<GrindedHerb>(grindedHerbSO.grindedHerbs);
     UpdateCraftMaterials<GrindedHerb>(grindedHerbSO.grindedHerbs);
     AssetDatabase.SaveAssets();
     Debug.Log("Grinded Herbs 已从 Excel 更新完成！");
@@ -328,41 +339,58 @@ public class AssetUpadater : EditorWindow
     
     public static void GetIcon(IRow row,  int iconColumnIndex,  Item item)
     {
-        string iconData = row.GetCell(iconColumnIndex).StringCellValue.Trim(); // "Assets/Textures/Icons/SpriteSheet.png|TestGreenSprite"
-        string[] parts = iconData.Split('|');
-        if (parts.Length == 2)
+        var iconData = row.GetCell(iconColumnIndex)?.StringCellValue?.Trim();
+        if (string.IsNullOrEmpty(iconData))
         {
-            string sheetPath = parts[0].Trim();
-            string spriteName = parts[1].Trim();
- 
+            Debug.LogWarning("Icon 数据为空");
+            return;
+        }
+
+        var parts = iconData.Split('|');
+        if (parts.Length != 2)
+        {
+            Debug.LogWarning("Icon 数据格式不正确，请确保格式为: SpriteSheetPath|SpriteIndexOrName");
+            return;
+        }
+
+        string sheetPath     = parts[0].Trim();    // e.g. "Assets/.../excel.aseprite" 或者 ".../icons.png"
+        string spriteKey     = parts[1].Trim();    // 要么是数字索引，要么是 Sprite 名称
+
+        var allAssets = AssetDatabase.LoadAllAssetsAtPath(sheetPath);
+        var sprites   = allAssets.OfType<Sprite>().ToArray();
+        if (sprites.Length == 0)
+        {
+            Debug.LogWarning($"在路径 {sheetPath} 没有加载到任何 Sprite");
+            return;
+        }
+
+        Sprite target = null;
+
+        if (int.TryParse(spriteKey, out int idx))
+        {
+            if (idx >= 0 && idx < sprites.Length)
+                target = sprites[idx];
+        }
+
+        if (target == null)
+            target = sprites.FirstOrDefault(s => s.name.Equals(spriteKey, StringComparison.OrdinalIgnoreCase));
+
+        if (target == null)
+        {
             
-            // 加载 sprite sheet 中的所有 Sprite（确保 sprite sheet 的 Import Settings 中 Sprite Mode 为 Multiple）
-            Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(sheetPath)
-                .OfType<Sprite>()
-                .ToArray();
-            string extension = ".aseprite";
-            string cleanSheetPath = sheetPath;
-            if (cleanSheetPath.EndsWith(extension, System.StringComparison.OrdinalIgnoreCase))
-            {
-                cleanSheetPath = cleanSheetPath.Substring(0, cleanSheetPath.Length - extension.Length);
-            }
-            
-            // 除后缀的 cleanSheetPath 拼接 spriteName
-            // Sprite targetSprite = sprites.FirstOrDefault(s => s.name.Equals(cleanSheetPath + "_" + spriteName, System.StringComparison.OrdinalIgnoreCase));
-            Sprite targetSprite = sprites[int.Parse(spriteName)];
-    
-            if (targetSprite != null)
-            {
-                item.Icon = targetSprite;
-            }
-            else
-            {
-                Debug.LogWarning($"在 {sheetPath} 中未找到名称为 {cleanSheetPath}_{spriteName} 的 Sprite");
-            }
+            string withoutExt = Path.ChangeExtension(sheetPath, null);
+            string baseName   = Path.GetFileNameWithoutExtension(withoutExt);
+            string composite  = $"{baseName}_{spriteKey}";
+            target = sprites.FirstOrDefault(s => s.name.Equals(composite, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (target != null)
+        {
+            item.Icon = target;
         }
         else
         {
-            Debug.LogWarning("Icon 数据格式不正确，请确保格式为: SpriteSheetPath|SpriteName");
+            Debug.LogWarning($"无法在 {sheetPath} 中找到 对应 “{spriteKey}” 的 Sprite");
         }
     }
     private static void TryParseColorFromText(ICell cell, ref Color color, int rowIndex)
@@ -455,101 +483,95 @@ public class AssetUpadater : EditorWindow
             }
         }
     }
-
+    
     public static void UpdatePrescriptionsFromExcel()
+{
+    var so = AssetDatabase.LoadAssetAtPath<PrescriptionScriptableObject>(prescriptionPath);
+    if (so == null)
     {
-        // 1. 加载 SO
-        var so = AssetDatabase.LoadAssetAtPath<PrescriptionScriptableObject>(prescriptionPath);
-        if (so == null)
+        Debug.LogError("找不到资产: " + prescriptionPath);
+        return;
+    }
+    if (!File.Exists(excelPath))
+    {
+        Debug.LogError("找不到 Excel 文件: " + excelPath);
+        return;
+    }
+
+    using var stream = File.Open(excelPath, FileMode.Open, FileAccess.Read);
+    IWorkbook wb = new XSSFWorkbook(stream);
+    ISheet sheet = wb.GetSheetAt(3);
+
+    Prescription current = null;
+    string currentField = null;
+
+    for (int r = 0; r <= sheet.LastRowNum; r++)
+    {
+        IRow row = sheet.GetRow(r);
+        if (row == null) continue;
+
+        // A 列文本
+        var aCell = row.GetCell(0);
+        string aText = aCell?.ToString().Trim();
+
+        if (!string.IsNullOrEmpty(aText))
         {
-            Debug.LogError("找不到资产: " + prescriptionPath);
-            return;
-        }
-
-        if (!File.Exists(excelPath))
-        {
-            Debug.LogError("找不到 Excel 文件: " + excelPath);
-            return;
-        }
-
-        // 2. 打开第四个 sheet
-        using var stream = File.Open(excelPath, FileMode.Open, FileAccess.Read);
-        IWorkbook wb = new XSSFWorkbook(stream);
-        ISheet sheet = wb.GetSheetAt(3);
-
-        Prescription current = null;
-        string currentField = null;
-
-        // 3. 从第 0 行开始，遇到 A 列写了 “Name” 就开启一个新处方
-        for (int r = 0; r <= sheet.LastRowNum; r++)
-        {
-            IRow row = sheet.GetRow(r);
-            if (row == null) continue;
-
-            // 读取 A 列
-            var aCell = row.GetCell(0);
-            string aText = aCell?.ToString().Trim();
-
-            if (!string.IsNullOrEmpty(aText))
+            // 碰到 Name，开新处方，然后跳过本行解析数据
+            if (aText.Equals("Name", StringComparison.OrdinalIgnoreCase))
             {
-                // A 列有内容，可能是 Name / CraftMaterials|weight / Medicine / FirePeriod
-                if (aText.Equals("Name", StringComparison.OrdinalIgnoreCase))
+                var nameCell = row.GetCell(1);
+                if (nameCell == null) continue;
+
+                string name = nameCell.ToString().Trim();
+                current = so.prescriptions.Find(p => p.Name == name);
+                if (current == null)
                 {
-                    // 新处方起点
-                    var nameCell = row.GetCell(1);
-                    if (nameCell == null) continue;
-
-                    string name = nameCell.ToString().Trim();
-                    // 尝试找已存在
-                    current = so.prescriptions.Find(p => p.Name == name);
-                    if (current == null)
+                    current = new Prescription
                     {
-                        current = new Prescription
-                        {
-                            Name = name,
-                            CraftMaterials = new List<CraftMaterial>(),
-                            Weights = new List<int>(),
-                            FirePeriods = new List<FirePeriod>()
-                        };
-                        so.prescriptions.Add(current);
-                    }
-                    else
-                    {
-                        // 清空旧数据
-                        current.CraftMaterials.Clear();
-                        current.Weights.Clear();
-                        current.FirePeriods.Clear();
-                        current.ResultMedicine = null;
-                    }
-
-                    // 重置state，不立刻解析本行第 B 列（Name行只有名称）
-                    currentField = null;
+                        Name = name,
+                        CraftMaterials = new List<CraftMaterial>(),
+                        Weights        = new List<int>(),
+                        FirePeriods    = new List<FirePeriod>()
+                    };
+                    so.prescriptions.Add(current);
                 }
                 else
                 {
-                    // 切换到下划字段
-                    currentField = aText;
+                    current.CraftMaterials.Clear();
+                    current.Weights.Clear();
+                    current.FirePeriods.Clear();
+                    current.ResultMedicine = null;
                 }
 
+                currentField = null;
                 continue;
             }
 
-            // 如果 A 列空，说明是 currentField 下某个子项
-            if (current == null || string.IsNullOrEmpty(currentField))
-                continue;
-
-            var dataCell = row.GetCell(1);
-            if (dataCell == null) continue;
-            string raw = dataCell.ToString().Trim();
-            if (string.IsNullOrEmpty(raw)) continue;
-
-            switch (currentField)
+            // 碰到字段标题（也要解析本行的第一条数据）
+            if (aText.Equals("CraftMaterials|weight", StringComparison.OrdinalIgnoreCase)
+             || aText.Equals("Medicine",             StringComparison.OrdinalIgnoreCase)
+             || aText.Equals("FirePeriod",           StringComparison.OrdinalIgnoreCase))
             {
-                case "CraftMaterials|weight":
+                currentField = aText;
+                // 注意：这里不跳 continue，让下面也能读取本行 B 列数据
+            }
+        }
+
+        // 如果不是 Name 行，且已经在某个 prescription 里，且 currentField 已经选定
+        if (current == null || string.IsNullOrEmpty(currentField))
+            continue;
+
+        var dataCell = row.GetCell(1);
+        if (dataCell == null) continue;
+        string raw = dataCell.ToString().Trim();
+        if (string.IsNullOrEmpty(raw)) continue;
+
+        switch (currentField)
+        {
+            case "CraftMaterials|weight":
                 {
                     var parts = raw.Split('|');
-                    if (parts.Length == 2 &&
-                        int.TryParse(parts[1], out int w))
+                    if (parts.Length == 2 && int.TryParse(parts[1], out int w))
                     {
                         var mat = ResourceManager.instance.GetCraftMaterial(parts[0]);
                         if (mat != null)
@@ -559,35 +581,172 @@ public class AssetUpadater : EditorWindow
                         }
                     }
                 }
-                    break;
+                break;
 
-                case "Medicine":
+            case "Medicine":
                 {
                     var med = ResourceManager.instance.GetMedicine(raw);
                     if (med != null)
                         current.ResultMedicine = med;
                 }
-                    break;
+                break;
 
-                case "FirePeriod":
+            case "FirePeriod":
                 {
                     var parts = raw.Split('|');
-                    if (parts.Length == 2 &&
-                        Enum.TryParse<FirePower>(parts[0], true, out var fp) &&
-                        float.TryParse(parts[1], out var dur))
+                    if (parts.Length == 2
+                     && Enum.TryParse<FirePower>(parts[0], true, out var fp)
+                     && float.TryParse(parts[1], out var dur))
                     {
                         current.FirePeriods.Add(new FirePeriod
                         {
                             FirePower = fp,
-                            Duration = dur
+                            Duration  = dur
                         });
                     }
                 }
-                    break;
-            }
+                break;
         }
-
     }
+
+    EditorUtility.SetDirty(so);
+    AssetDatabase.SaveAssets();
+    Debug.Log("Prescriptions 已从 sheet3 更新完成！");
+}
+
+
+    // public static void UpdatePrescriptionsFromExcel()
+    // {
+    //     // 1. 加载 SO
+    //     var so = AssetDatabase.LoadAssetAtPath<PrescriptionScriptableObject>(prescriptionPath);
+    //     if (so == null)
+    //     {
+    //         Debug.LogError("找不到资产: " + prescriptionPath);
+    //         return;
+    //     }
+    //
+    //     if (!File.Exists(excelPath))
+    //     {
+    //         Debug.LogError("找不到 Excel 文件: " + excelPath);
+    //         return;
+    //     }
+    //
+    //     // 2. 打开第四个 sheet
+    //     using var stream = File.Open(excelPath, FileMode.Open, FileAccess.Read);
+    //     IWorkbook wb = new XSSFWorkbook(stream);
+    //     ISheet sheet = wb.GetSheetAt(3);
+    //
+    //     Prescription current = null;
+    //     string currentField = null;
+    //
+    //     // 3. 从第 0 行开始，遇到 A 列写了 “Name” 就开启一个新处方
+    //     for (int r = 0; r <= sheet.LastRowNum; r++)
+    //     {
+    //         IRow row = sheet.GetRow(r);
+    //         if (row == null) continue;
+    //
+    //         // 读取 A 列
+    //         var aCell = row.GetCell(0);
+    //         string aText = aCell?.ToString().Trim();
+    //
+    //         if (!string.IsNullOrEmpty(aText))
+    //         {
+    //             // A 列有内容，可能是 Name / CraftMaterials|weight / Medicine / FirePeriod
+    //             if (aText.Equals("Name", StringComparison.OrdinalIgnoreCase))
+    //             {
+    //                 // 新处方起点
+    //                 var nameCell = row.GetCell(1);
+    //                 if (nameCell == null) continue;
+    //
+    //                 string name = nameCell.ToString().Trim();
+    //                 // 尝试找已存在
+    //                 current = so.prescriptions.Find(p => p.Name == name);
+    //                 if (current == null)
+    //                 {
+    //                     current = new Prescription
+    //                     {
+    //                         Name = name,
+    //                         CraftMaterials = new List<CraftMaterial>(),
+    //                         Weights = new List<int>(),
+    //                         FirePeriods = new List<FirePeriod>()
+    //                     };
+    //                     so.prescriptions.Add(current);
+    //                 }
+    //                 else
+    //                 {
+    //                     // 清空旧数据
+    //                     current.CraftMaterials.Clear();
+    //                     current.Weights.Clear();
+    //                     current.FirePeriods.Clear();
+    //                     current.ResultMedicine = null;
+    //                 }
+    //
+    //                 // 重置state，不立刻解析本行第 B 列（Name行只有名称）
+    //                 currentField = null;
+    //             }
+    //             else
+    //             {
+    //                 // 切换到下划字段
+    //                 currentField = aText;
+    //             }
+    //
+    //             continue;
+    //         }
+    //
+    //         // 如果 A 列空，说明是 currentField 下某个子项
+    //         if (current == null || string.IsNullOrEmpty(currentField))
+    //             continue;
+    //
+    //         var dataCell = row.GetCell(1);
+    //         if (dataCell == null) continue;
+    //         string raw = dataCell.ToString().Trim();
+    //         if (string.IsNullOrEmpty(raw)) continue;
+    //
+    //         switch (currentField)
+    //         {
+    //             case "CraftMaterials|weight":
+    //             {
+    //                 var parts = raw.Split('|');
+    //                 if (parts.Length == 2 &&
+    //                     int.TryParse(parts[1], out int w))
+    //                 {
+    //                     var mat = ResourceManager.instance.GetCraftMaterial(parts[0]);
+    //                     if (mat != null)
+    //                     {
+    //                         current.CraftMaterials.Add(mat);
+    //                         current.Weights.Add(w);
+    //                     }
+    //                 }
+    //             }
+    //                 break;
+    //
+    //             case "Medicine":
+    //             {
+    //                 var med = ResourceManager.instance.GetMedicine(raw);
+    //                 if (med != null)
+    //                     current.ResultMedicine = med;
+    //             }
+    //                 break;
+    //
+    //             case "FirePeriod":
+    //             {
+    //                 var parts = raw.Split('|');
+    //                 if (parts.Length == 2 &&
+    //                     Enum.TryParse<FirePower>(parts[0], true, out var fp) &&
+    //                     float.TryParse(parts[1], out var dur))
+    //                 {
+    //                     current.FirePeriods.Add(new FirePeriod
+    //                     {
+    //                         FirePower = fp,
+    //                         Duration = dur
+    //                     });
+    //                 }
+    //             }
+    //                 break;
+    //         }
+    //     }
+    //
+    // }
     //  public static void UpdatePrescriptionsFromExcel()
     // {
     //     // 1. 加载 PrescriptionScriptableObject
@@ -706,4 +865,18 @@ public class AssetUpadater : EditorWindow
     //     AssetDatabase.SaveAssets();
     //     Debug.Log("Prescriptions 已从 Excel 的 sheet3 更新完成！");
     // }
+
+    public void ClearAll()
+    {
+        var so = AssetDatabase.LoadAssetAtPath<PrescriptionScriptableObject>(prescriptionPath);
+        so.prescriptions.Clear();
+        var herbs = AssetDatabase.LoadAssetAtPath<HerbScriptableObject>(herbsPath);
+        herbs.herbs.Clear();
+        var medicines = AssetDatabase.LoadAssetAtPath<MedicineScriptableObject>(medicinePath);
+        medicines.medicines.Clear();
+        var craftm = AssetDatabase.LoadAssetAtPath<CraftMaterialScriptableObject>(craftMaterialPath);
+        craftm.craftMaterials.Clear();
+        var iso = AssetDatabase.LoadAssetAtPath<ItemScriptableObject>(itemPath);
+        iso.items.Clear();
+    }
 }

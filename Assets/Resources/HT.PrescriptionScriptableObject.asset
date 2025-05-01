@@ -15,58 +15,22 @@ MonoBehaviour:
   prescriptions:
   - <Name>k__BackingField: example_prescription1
     <CraftMaterials>k__BackingField:
-    - <Name>k__BackingField: "\u7EA2\u8272\u8349\u836F"
-      <Icon>k__BackingField: {fileID: 6855053106848714499, guid: 0424875c37027cd4cacc39661326f640,
-        type: 3}
-      <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EA2\u8272\u8349\u836F"
-      <Count>k__BackingField: 1
-      <Weight>k__BackingField: 10
-    - <Name>k__BackingField: "\u7EFF\u8272\u8349\u836F"
-      <Icon>k__BackingField: {fileID: -908541043714362580, guid: 0424875c37027cd4cacc39661326f640,
-        type: 3}
-      <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EFF\u8272\u8349\u836F"
-      <Count>k__BackingField: 1
-      <Weight>k__BackingField: 15
     - <Name>k__BackingField: "\u78E8\u788E\u7684\u7EA2\u8272\u8349\u836F"
-      <Icon>k__BackingField: {fileID: 111190947532276143, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
+      <Icon>k__BackingField: {fileID: -3533076754595367027, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
         type: 3}
       <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EA2\u8272\u8349\u836F"
       <Count>k__BackingField: 1
-      <Weight>k__BackingField: 10
+      <Weight>k__BackingField: 3
     - <Name>k__BackingField: "\u78E8\u788E\u7684\u7EFF\u8272\u8349\u836F"
       <Icon>k__BackingField: {fileID: -5462209628964838299, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
         type: 3}
       <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EFF\u8272\u8349\u836F"
       <Count>k__BackingField: 1
-      <Weight>k__BackingField: 15
-    - <Name>k__BackingField: "\u7EA2\u8272\u8349\u836F"
-      <Icon>k__BackingField: {fileID: 6855053106848714499, guid: 0424875c37027cd4cacc39661326f640,
-        type: 3}
-      <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EA2\u8272\u8349\u836F"
-      <Count>k__BackingField: 1
-      <Weight>k__BackingField: 10
-    - <Name>k__BackingField: "\u7EFF\u8272\u8349\u836F"
-      <Icon>k__BackingField: {fileID: -908541043714362580, guid: 0424875c37027cd4cacc39661326f640,
-        type: 3}
-      <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EFF\u8272\u8349\u836F"
-      <Count>k__BackingField: 1
-      <Weight>k__BackingField: 15
-    - <Name>k__BackingField: "\u78E8\u788E\u7684\u7EA2\u8272\u8349\u836F"
-      <Icon>k__BackingField: {fileID: 111190947532276143, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
-        type: 3}
-      <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EA2\u8272\u8349\u836F"
-      <Count>k__BackingField: 1
-      <Weight>k__BackingField: 10
-    - <Name>k__BackingField: "\u78E8\u788E\u7684\u7EFF\u8272\u8349\u836F"
-      <Icon>k__BackingField: {fileID: -5462209628964838299, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
-        type: 3}
-      <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EFF\u8272\u8349\u836F"
-      <Count>k__BackingField: 1
-      <Weight>k__BackingField: 15
-    <Weights>k__BackingField: 0f000000200000000f000000200000000f000000200000000f00000020000000
+      <Weight>k__BackingField: 4
+    <Weights>k__BackingField: 0f00000020000000
     <ResultMedicine>k__BackingField:
       <Name>k__BackingField: Example_Medicine2
-      <Icon>k__BackingField: {fileID: -6717651570376631539, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+      <Icon>k__BackingField: {fileID: -3778226297182608806, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
         type: 3}
       <Description>k__BackingField: description
       <Count>k__BackingField: 1
@@ -80,6 +44,41 @@ MonoBehaviour:
       Duration: 6
     - FirePower: 3
       Duration: 3
+  - <Name>k__BackingField: example_prescription2
+    <CraftMaterials>k__BackingField:
+    - <Name>k__BackingField: Cornelian Cherry Fruit
+      <Icon>k__BackingField: {fileID: 1852305363, guid: 1a313cbd07cc1334f9af340caa30652e,
+        type: 3}
+      <Description>k__BackingField: "\u5C71\u8331\u84382 Cornus officinalis"
+      <Count>k__BackingField: 1
+      <Weight>k__BackingField: 3
+    - <Name>k__BackingField: White Peony Root
+      <Icon>k__BackingField: {fileID: 927360252, guid: 1a313cbd07cc1334f9af340caa30652e,
+        type: 3}
+      <Description>k__BackingField: "\u767D\u828D2 Paeonia lactiflora"
+      <Count>k__BackingField: 1
+      <Weight>k__BackingField: 2
+    - <Name>k__BackingField: Fresh Ginger
+      <Icon>k__BackingField: {fileID: 1555472777, guid: 1a313cbd07cc1334f9af340caa30652e,
+        type: 3}
+      <Description>k__BackingField: "\u751F\u59DC2 Zingiber officinale"
+      <Count>k__BackingField: 1
+      <Weight>k__BackingField: 3
+    - <Name>k__BackingField: Licorice Root
+      <Icon>k__BackingField: {fileID: 543567648, guid: 1a313cbd07cc1334f9af340caa30652e,
+        type: 3}
+      <Description>k__BackingField: "\u7518\u83492 Glycyrrhiza uralensis"
+      <Count>k__BackingField: 1
+      <Weight>k__BackingField: 3
+    <Weights>k__BackingField: 0f000000200000000f00000020000000
+    <ResultMedicine>k__BackingField:
+      <Name>k__BackingField: Example_Medicine2
+      <Icon>k__BackingField: {fileID: -3778226297182608806, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+        type: 3}
+      <Description>k__BackingField: description
+      <Count>k__BackingField: 1
+      <Quality>k__BackingField: 0
+    <FirePeriods>k__BackingField:
     - FirePower: 3
       Duration: 5
     - FirePower: 3
@@ -88,3 +87,48 @@ MonoBehaviour:
       Duration: 6
     - FirePower: 3
       Duration: 3
+  - <Name>k__BackingField: TestPrescription
+    <CraftMaterials>k__BackingField:
+    - <Name>k__BackingField: RedHerb
+      <Icon>k__BackingField: {fileID: -908541043714362580, guid: 0424875c37027cd4cacc39661326f640,
+        type: 3}
+      <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u7EA2\u8272\u8349\u836F"
+      <Count>k__BackingField: 1
+      <Weight>k__BackingField: 3
+    - <Name>k__BackingField: BlueHerb
+      <Icon>k__BackingField: {fileID: 6855053106848714499, guid: 0424875c37027cd4cacc39661326f640,
+        type: 3}
+      <Description>k__BackingField: "\u8FD9\u662F\u6D4B\u8BD5\u7528\u7684\u84DD\u8272\u8349\u836F"
+      <Count>k__BackingField: 1
+      <Weight>k__BackingField: 5
+    - <Name>k__BackingField: GrindedRedHerb
+      <Icon>k__BackingField: {fileID: 111190947532276143, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
+        type: 3}
+      <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EA2\u8272\u8349\u836F"
+      <Count>k__BackingField: 1
+      <Weight>k__BackingField: 3
+    - <Name>k__BackingField: GrindedGreenHerb
+      <Icon>k__BackingField: {fileID: -5462209628964838299, guid: bf39c74ac8e95cc48a6e7cd87b1b9d5a,
+        type: 3}
+      <Description>k__BackingField: "\u6D4B\u8BD5\u7684\u7EFF\u8272\u8349\u836F"
+      <Count>k__BackingField: 1
+      <Weight>k__BackingField: 4
+    <Weights>k__BackingField: 0f0000001e0000000f00000020000000
+    <ResultMedicine>k__BackingField:
+      <Name>k__BackingField: Test_Medicine
+      <Icon>k__BackingField: {fileID: -7765231214244175895, guid: 71f42f1efd1d245bda73b5a0d60b0b4e,
+        type: 3}
+      <Description>k__BackingField: "\u201CLove all, trust a few,\nDo wrong to none:
+        be able for thine enemy\nRather in power than use; and keep thy friend\nUnder
+        thy own life's key: be check'd for silence,\nBut never tax'd for speech.\u201D"
+      <Count>k__BackingField: 1
+      <Quality>k__BackingField: 0
+    <FirePeriods>k__BackingField:
+    - FirePower: 1
+      Duration: 5
+    - FirePower: 2
+      Duration: 5
+    - FirePower: 3
+      Duration: 6
+    - FirePower: 2
+      Duration: 5

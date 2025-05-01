@@ -30,6 +30,25 @@ namespace HT
             LoadGrindedHerbs();
             LoadCraftMaterials();
             LoadMedicines();
+            LoadPrescriptions();
+        }
+
+        public void LoadEverything()
+        {
+            item_ids.Clear();
+            herb_ids.Clear();
+            grindedHerb_ids.Clear();
+            slicedHerb_ids.Clear();
+            craftMaterial_ids.Clear();
+            medicine_ids.Clear();
+            prescription_ids.Clear();
+            
+            LoadItems();
+            LoadHerbs();
+            LoadGrindedHerbs();
+            LoadCraftMaterials();
+            LoadMedicines();
+            LoadPrescriptions();
         }
 
         #region Items
@@ -412,13 +431,13 @@ namespace HT
         
             for (int i = 0; i < obj.prescriptions.Count; i++)
             {
-                if (herb_ids.ContainsKey(obj.prescriptions[i].Name))
+                if (prescription_ids.ContainsKey(obj.prescriptions[i].Name))
                 {
                     Debug.Log("Prescription is a duplicate: " + obj.prescriptions[i].Name);
                 }
                 else
                 {
-                    herb_ids.Add(obj.prescriptions[i].Name, i);
+                    prescription_ids.Add(obj.prescriptions[i].Name, i);
                 }
             }
         }

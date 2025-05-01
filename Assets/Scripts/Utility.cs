@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using NPOI.SS.Formula.Functions;
 using UnityEngine;
 using PixelPerfectURP;
 
@@ -147,6 +148,17 @@ namespace HT
         
             // 3) 用左侧相机的视口坐标转换，得到射线
             return RealCam.ViewportPointToRay(new Vector3(u, v, 0));
+        }
+
+        public static UISlot CreateUISlotFromItem(Item item, int count, GridTypes gridType)
+        {
+            var uiSlot = new UISlot();
+            uiSlot.Name = item.Name;
+            uiSlot.Icon = item.Icon;
+            uiSlot.Count = count;
+            uiSlot.GridType = gridType;
+            
+            return uiSlot;
         }
         
         

@@ -1,11 +1,12 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace HT
 {
-    public class InventorySlot : MonoBehaviour
+    public class InventorySlot : MonoBehaviour,  IPointerEnterHandler, IPointerExitHandler
     {
         
         // 移除了原来的 GridTypes slotGridType 字段
@@ -14,6 +15,9 @@ namespace HT
         public bool isEmpty;
         public Button slotButton;
         public Image slotImage;
+        
+        public RectTransform description;
+        public TextMeshProUGUI descriptionText;
 
         public void UpdateSlot()
         {
@@ -23,6 +27,7 @@ namespace HT
                 isEmpty = true;
                 count.gameObject.SetActive(false);
                 slotImage.gameObject.SetActive(false);
+                descriptionText.text = "";
             }
             else
             {
@@ -31,8 +36,27 @@ namespace HT
                 slotImage.gameObject.SetActive(true);
                 slotImage.sprite = slotItem.Icon;
                 count.text = slotItem.Count.ToString();
+                descriptionText.text = slotItem.Name;
             }
         }
+        
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            if (description != null && isEmpty == false)
+            {
+                // this.GetComponent<RectTransform>().SetAsLastSibling();
+                description.gameObject.SetActive(true);
+                // description.SetAsLastSibling(); // 置顶
+            }
+                
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            if (description != null)
+                description.gameObject.SetActive(false);
+        }
+
 
         public bool readOnly = false;
         public void OnClickSlot()
